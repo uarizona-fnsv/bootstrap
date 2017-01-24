@@ -15,6 +15,22 @@ html {
           box-sizing: inherit;
 }
 
+@font-face {
+  font-family: "MiloSerifWeb";
+  src: url("../fonts/fileName.eot");
+  src: url("../fonts/fileName.eot?#iefix") format("embedded-opentype"), url("../fonts/fileName.woff") format("woff"), url("../fonts/fileName.ttf") format("truetype"), url("../fonts/fileName.svg#svgLabel") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiloWeb";
+  src: url("../fonts/fileName.eot");
+  src: url("../fonts/fileName.eot?#iefix") format("embedded-opentype"), url("../fonts/fileName.woff") format("woff"), url("../fonts/fileName.ttf") format("truetype"), url("../fonts/fileName.svg#svgLabel") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   position: relative;
   margin-left: auto;

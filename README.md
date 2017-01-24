@@ -1,3 +1,53 @@
+# FSO Bootstrap
+
+This is a fork of Bootstrap v4 with slight modifications for UA coloring and fonts.
+
+### Updating from Bootstrap
+
+Twitter's repository is set up as remote 'twitter', so to update with the latest version simply pull and rebase. However, best practice may be to pull into a new branch and resolve the likely merge conflicts before merging with our master branch.
+
+Until v4 is final, the remote branch to pull from is `v4-dev`.
+
+```shell
+git fetch twitter v4-dev
+git rebase twitter/v4-dev
+```
+
+### Getting started
+
+You will need to have a few things installed globally. Node, npm, bower, and Ruby in particular.
+
+To work with the docs server, you will also need bundle and grunt.
+
+```shell
+npm install -g grunt-cli
+gem install bundler
+```
+
+You will need to run a few commands to get your enviornment up and running:
+
+```shell
+npm install
+bower install
+bundle install
+```
+
+
+### Development
+
+Most variables and settings are taken care of through the `scss/_custom.scss` file.
+
+To test and lint, use `grunt test`.
+
+To build the `dist/` directory, use `grunt dist`
+
+To build the documentation fileset (to view your changes), use `grunt docs`. Make sure you build the `dist/` directory first.
+
+All of these can also be completed with a simple `grunt`.
+
+To deploy the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
+
+
 # [Bootstrap](https://getbootstrap.com)
 
 [![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
