@@ -40,6 +40,12 @@
 // Close
 // Code
 
+//
+//  Import Custom files/additions here, including added packages
+//
+@import "../node_modules/sass-font-face/font-face";
+@import 'custom_addons';
+
 @mixin _assert-ascending($map, $map-name) {
   $prev-key: null;
   $prev-num: null;
@@ -247,14 +253,6 @@ $grid-gutter-widths: (
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-
-// Official UA Font importing
-
-// Font Faces like a boss
-@import "../node_modules/sass-font-face/font-face";
-
-@include font-face('MiloSerifWeb', '../fonts/', fileName, svgLabel);
-@include font-face('MiloWeb', '../fonts/', fileName, svgLabel);
 
 $font-family-serif:      MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
 $font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif !default;

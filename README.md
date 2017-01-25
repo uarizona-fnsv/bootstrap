@@ -13,6 +13,8 @@ git fetch twitter v4-dev
 git rebase twitter/v4-dev
 ```
 
+Fortunately, most of our code edits are held within custom files that won't necessarily create merge conflicts.
+
 ### Getting started
 
 You will need to have a few things installed globally. Node, npm, bower, and Ruby in particular.
@@ -32,10 +34,15 @@ bower install
 bundle install
 ```
 
-
 ### Development
 
 Most variables and settings are taken care of through the `scss/_custom.scss` file.
+
+Documentation is found in the `docs/` folder. Please update documentation with any changes to how things work. As of right now, this is only necessary for our custom components.
+
+The documentation site is built using [Jekyll](https://jekyllrb.com/docs/home/), which is a simple to use, markdown-based static-site generator. Generally this means you can write some information in a markdown file, include some examples, then you'll be good to go!
+
+#### Development Tools Usage
 
 To test and lint, use `grunt test`.
 
@@ -47,6 +54,11 @@ All of these can also be completed with a simple `grunt`.
 
 To deploy the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
 
+### Deploying the Documentation Website
+
+TODO. Probs should be a grunt task or shell script or both or something.
+
+For now, just go to the `_gh_pages` folder and run 
 
 # [Bootstrap](https://getbootstrap.com)
 

@@ -1,0 +1,8 @@
+- name: Left-Up Arrow
+  class: ua-brand-up-left-arrow
+
+- name: Left Arrow
+  class: ua-brand-left-arrow
+
+- name: Uaccess
+  class: ua-brand-uaccess
