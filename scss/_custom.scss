@@ -44,7 +44,9 @@
 //  Import Custom files/additions here, including added packages
 //
 @import "../node_modules/sass-font-face/font-face";
-@import 'custom_addons';
+@import "custom-addons/fonts";
+@import "custom-addons/ua_brand_icons";
+@import "custom-addons/font-awesome/font-awesome";
 
 @mixin _assert-ascending($map, $map-name) {
   $prev-key: null;

@@ -136,6 +136,14 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      fonts: {
+        expand: true,
+        cwd: 'fonts/',
+        src: [
+          '**/*'
+        ],
+        dest: 'docs/dist/fonts/'
       }
     },
 
@@ -229,20 +237,20 @@ module.exports = function (grunt) {
       }
     },
 
-    buildcontrol: {
-      options: {
-        dir: '_gh_pages',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:twbs/derpstrap.git',
-          branch: 'gh-pages'
-        }
-      }
-    },
+    // buildcontrol: {
+    //   options: {
+    //     dir: '_gh_pages',
+    //     commit: true,
+    //     push: true,
+    //     message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+    //   },
+    //   pages: {
+    //     options: {
+    //       remote: 'git@github.com:twbs/derpstrap.git',
+    //       branch: 'gh-pages'
+    //     }
+    //   }
+    // },
 
     compress: {
       main: {
@@ -328,7 +336,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs-css', ['exec:clean-css-docs', 'exec:postcss-docs'])
   grunt.registerTask('lint-docs-css', ['exec:scss-lint-docs'])
   grunt.registerTask('docs-js', ['exec:uglify-docs'])
-  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs'])
+  grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs', 'copy:fonts'])
   grunt.registerTask('docs-github', ['jekyll:github'])
 
   grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress'])

@@ -1,5 +1,5 @@
 # Ignore docs files
-# _gh_pages Unignoring this to allow pushing to a docs site
+_gh_pages
 _site
 
 # Ignore ruby files

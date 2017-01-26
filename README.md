@@ -50,9 +50,9 @@ To build the `dist/` directory, use `grunt dist`
 
 To build the documentation fileset (to view your changes), use `grunt docs`. Make sure you build the `dist/` directory first.
 
-All of these can also be completed with a simple `grunt`.
-
 To deploy the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
+
+Sometimes jekyll won't recompile into `_gh-pages` properly, so you may need to delete the folder and restart the server.
 
 ### Deploying the Documentation Website
 

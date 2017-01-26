@@ -1,13 +1,11 @@
----
+<!-- ---
 layout: docs
-title: UA Branding Icons
-description: Documentation and examples for branding icons, the UA's icon font.
+title: Branding
+description: Indicate the current page's location within a navigational hierarchy.
 group: components
 ---
 
-Icons are packaged for quick use.
-
-## Available Icons
+Indicate the current page's location within a navigational hierarchy. Separators are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content).
 
 {% for icon in site.data.branding-icons %}
   <div class="text-center">
@@ -17,5 +15,5 @@ Icons are packaged for quick use.
       <i class="{{ icon.class }}"></i>
     {% end example %}
   </div>
-{% endfor %}
+{% endfor %}-->
 
