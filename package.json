@@ -32,7 +32,8 @@
     "uglify": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output dist/js/bootstrap.min.js dist/js/bootstrap.js",
     "uglify-docs": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output docs/assets/js/docs.min.js docs/assets/js/vendor/anchor.min.js docs/assets/js/vendor/clipboard.min.js docs/assets/js/vendor/holder.min.js docs/assets/js/src/application.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "npm run eslint && grunt test"
+    "test": "npm run eslint && grunt test",
+    "rebuild-docs": "rm -rf _gh_pages && grunt dist && grunt docs"
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",

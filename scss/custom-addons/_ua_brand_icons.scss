@@ -1,6 +1,9 @@
 @include font-face('ua-brand-symbols', '../fonts/', 'ua-brand-symbols', 'ua-brand-symbols');
 
-[class^="ua-"], [class*=" ua-"] {
+$ua-css-prefix: ua !default;
+
+.#{$ua-css-prefix} {
+//[class^="ua-"], [class*=" ua-"] {
 	font-family: 'ua-brand-symbols';
 	font-style: normal;
 	font-weight: normal;

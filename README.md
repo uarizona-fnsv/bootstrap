@@ -46,13 +46,11 @@ The documentation site is built using [Jekyll](https://jekyllrb.com/docs/home/),
 
 To test and lint, use `grunt test`.
 
-To build the `dist/` directory, use `grunt dist`
+To build the docs server (i.e. you are editing documentation or want to see how your changes look), run  `npm run rebuild-docs`, which will delete the existing (if any) docs deployment and then run necessary grunt tasks to build the documentation.
 
-To build the documentation fileset (to view your changes), use `grunt docs`. Make sure you build the `dist/` directory first.
+To start the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
 
-To deploy the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
-
-Sometimes jekyll won't recompile into `_gh-pages` properly, so you may need to delete the folder and restart the server.
+Once the server is running, a watch task should see any changes to sass, js, or jekyll and pull those files in on a page refresh. If a change isn't reflected, rebuild the server.
 
 ### Deploying the Documentation Website
 

@@ -27,16 +27,28 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
 
+$uared: #ab0520 !default;
+$mesa:  #b75527 !default;
+$sand:  #f19e1f !default;
+$cactus:#5c8727 !default;
+$azblue:#0c234b !default;
+$azblue-light:#395180 !default; //Arizona Blue +30% White
+$sky:   #84d2e2 !default;
+$river: #076873 !default;
+$sage:  #4a634e !default;
+$silver:#6f868d !default;
+$ash:   #333 !default;
+
 // Local docs variables
-$bd-purple:         #563d7c;
+$bd-purple:         $azblue;
 $bd-purple-bright:  lighten(saturate($bd-purple, 5%), 15%);
-$bd-purple-light:   #cdbfe3;
-$bd-graphite:       #2a2730;
+$bd-purple-light:   $azblue-light;
+$bd-graphite:       $ash;
 $bd-graphite-light: lighten($bd-graphite, 40%);
-$bd-yellow:         #ffe484;
-$bd-danger:         #d9534f;
-$bd-warning:        #f0ad4e;
-$bd-info:           #5bc0de;
+$bd-yellow:         $uared;
+$bd-danger:         $mesa;
+$bd-warning:        $sand;
+$bd-info:           $river;
 
 // Load docs components
 @import "booticon";

@@ -112,9 +112,9 @@ $blue:   #395180 !default; //Arizona Blue +30% White
 $teal:   #84d2e2 !default; //Sky
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
-$river:  #076873 !default;
 
-// Legacy Palette
+// Other UA colors
+$river:  #076873 !default;
 $sage: #4a634e !default;
 $silver: #6f868d !default;
 $ash: #333 !default;
@@ -280,6 +280,7 @@ $font-size-h5: 1.25rem !default;
 $font-size-h6: 1rem !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
+$headings-font-family-big: $font-family-serif;
 $headings-font-family:   inherit !default;
 $headings-font-weight:   500 !default;
 $headings-line-height:   1.1 !default;
@@ -685,20 +686,20 @@ $jumbotron-bg:                   $gray-lighter !default;
 // Define colors for form feedback states and, by default, alerts.
 
 $state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
+$state-success-bg:               $brand-success !default;
 $state-success-border:           darken($state-success-bg, 5%) !default;
 
 $state-info-text:                #31708f !default;
-$state-info-bg:                  #d9edf7 !default;
+$state-info-bg:                  $brand-info !default;
 $state-info-border:              darken($state-info-bg, 7%) !default;
 
 $state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               #fcf8e3 !default;
+$state-warning-bg:               $brand-warning !default;
 $mark-bg:                        $state-warning-bg !default;
 $state-warning-border:           darken($state-warning-bg, 5%) !default;
 
 $state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
+$state-danger-bg:                $brand-danger !default;
 $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 
