@@ -7,7 +7,9 @@ group: components
 
 A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.
 
-## Example
+## Examples
+
+Standard Jumbotron:
 
 {% example html %}
 <div class="jumbotron">
@@ -17,6 +19,32 @@ A lightweight, flexible component that can optionally extend the entire viewport
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+{% endexample %}
+
+To use either UA Red or Arizona Blue as the jumbotron background, add the `.uared` or `.azblue` class.
+
+{% example html %}
+<div class="jumbotron uared">
+  <h1 class="display-3 text-white">Hello, world!</h1>
+  <p class="lead text-white">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p class="text-white">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead text-white">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+{% endexample %}
+
+{% example html %}
+<div class="jumbotron azblue">
+  <h1 class="display-3 text-white">Hello, world!</h1>
+  <p class="lead text-white">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p class="text-white">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead text-white">
+    <a class="btn btn-uared btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
 {% endexample %}

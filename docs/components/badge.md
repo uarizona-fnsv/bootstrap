@@ -36,6 +36,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 <span class="badge badge-info">Info</span>
 <span class="badge badge-warning">Warning</span>
 <span class="badge badge-danger">Danger</span>
+<span class="badge badge-uared">UA Red</span>
 {% endexample %}
 
 {% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
@@ -52,6 +53,7 @@ Use the `.badge-pill` modifier class to make badges more rounded (with a larger 
 <span class="badge badge-pill badge-info">Info</span>
 <span class="badge badge-pill badge-warning">Warning</span>
 <span class="badge badge-pill badge-danger">Danger</span>
+<span class="badge badge-pill badge-uared">UA Red</span>
 {% endexample %}
 
 ## Links
@@ -65,4 +67,5 @@ Using the `.badge` classes with the `<a>` element quickly provide _actionable_ b
 <a href="#" class="badge badge-info">Info</a>
 <a href="#" class="badge badge-warning">Warning</a>
 <a href="#" class="badge badge-danger">Danger</a>
+<a href="#" class="badge badge-uared">UA Red</a>
 {% endexample %}

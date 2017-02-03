@@ -7,6 +7,14 @@
   @include media-breakpoint-up(sm) {
     padding: ($jumbotron-padding * 2) $jumbotron-padding;
   }
+
+  &.uared {
+    background-color: $uared;
+  }
+
+  &.azblue {
+    background-color: $blue;
+  }
 }
 
 .jumbotron-hr {

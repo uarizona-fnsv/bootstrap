@@ -119,6 +119,14 @@ $sage: #4a634e !default;
 $silver: #6f868d !default;
 $ash: #333 !default;
 
+// Neutral Palette
+$light-cactus: #cfe0d8;
+$light-sky:    #c8d9d8;
+$light-river:  #b68ec1;
+$light-sand:   #fce1b6;
+$light-mesa:   #fae7d8;
+$light-brick:  #e6e3d9;
+
 // Create grayscale
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
@@ -203,7 +211,7 @@ $body-color:    $gray-dark !default;
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary !default;
+$link-color:            $uared !default;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
@@ -401,6 +409,10 @@ $btn-warning-border:             $btn-warning-bg !default;
 $btn-danger-color:               $white !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              $btn-danger-bg !default;
+
+$btn-uared-color:                $white !default;
+$btn-uared-bg:                   $uared !default;
+$btn-uared-border:               $btn-uared-bg !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -685,21 +697,21 @@ $jumbotron-bg:                   $gray-lighter !default;
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               $brand-success !default;
+$state-success-text:             $brand-success !default;
+$state-success-bg:               lighten($brand-success, 40%) !default;
 $state-success-border:           darken($state-success-bg, 5%) !default;
 
-$state-info-text:                #31708f !default;
-$state-info-bg:                  $brand-info !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-text:                darken($brand-info, 20%) !default;
+$state-info-bg:                  lighten($brand-info, 20%) !default;
+$state-info-border:              darken($state-info-bg, 5%) !default;
 
-$state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               $brand-warning !default;
-$mark-bg:                        $state-warning-bg !default;
+$state-warning-text:             darken($brand-warning, 10%) !default;
+$state-warning-bg:               $light-sand !default;
+$mark-bg:                        $light-sand !default;
 $state-warning-border:           darken($state-warning-bg, 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                $brand-danger !default;
+$state-danger-text:              $uared !default;
+$state-danger-bg:                lighten($brand-danger, 20%) !default;
 $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 
@@ -770,6 +782,7 @@ $badge-success-bg:            $brand-success !default;
 $badge-info-bg:               $brand-info !default;
 $badge-warning-bg:            $brand-warning !default;
 $badge-danger-bg:             $brand-danger !default;
+$badge-uared-bg:              $uared !default;
 
 $badge-color:                 $white !default;
 $badge-link-hover-color:      $white !default;

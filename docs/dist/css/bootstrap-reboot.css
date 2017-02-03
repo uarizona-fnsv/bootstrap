@@ -3498,14 +3498,14 @@ sup {
 }
 
 a {
-  color: #395180;
+  color: #ab0520;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #21304b;
+  color: #610312;
   text-decoration: underline;
 }
 

@@ -38,6 +38,9 @@ Bootstrap includes six predefined button styles, each serving its own semantic p
 
 <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
 <button type="button" class="btn btn-link">Link</button>
+
+<!-- An additional option that works in place of the primary button color using UA Red -->
+<button type="button" class="btn btn-uared">UA Red</button>
 {% endexample %}
 
 {% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
@@ -68,6 +71,7 @@ In need of a button, but not the hefty background colors they bring? Replace the
 <button type="button" class="btn btn-outline-info">Info</button>
 <button type="button" class="btn btn-outline-warning">Warning</button>
 <button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-uared-danger">UA Red</button>
 {% endexample %}
 
 

@@ -118,6 +118,9 @@
 .card-danger {
   @include card-variant($brand-danger, $brand-danger);
 }
+.card-uared {
+  @include card-variant($uared, $uared);
+}
 
 // Remove all backgrounds
 .card-outline-primary {
@@ -137,6 +140,9 @@
 }
 .card-outline-danger {
   @include card-outline-variant($btn-danger-bg);
+}
+.card-outline-uared {
+  @include card-outline-variant($btn-uared-bg);
 }
 
 //
