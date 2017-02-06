@@ -90,6 +90,13 @@ Use the included utility classes to recreate the small secondary heading text fr
 </h3>
 {% endexample %}
 
+Use Milo Web Sans on `h1` and `h2` instead of Milo Web (the default) with the `.sans` class.
+
+{% example html %}
+<h1 class="sans">h1. Bootstrap heading</h1>
+<h2 class="sans">h2. Bootstrap heading</h2>
+{% endexample %}
+
 ## Display headings
 
 Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
@@ -196,6 +203,15 @@ Add `.blockquote-reverse` for a blockquote with right-aligned content.
 </blockquote>
 {% endexample %}
 
+### Uppercase
+
+Add `.uppercase` to any text element.
+
+{% example html %}
+<h1 class="uppercase">h1. Bootstrap heading</h1>
+<p class="uppercase">This text is now uppercase</p>
+{% endexample %}
+
 ## Lists
 
 ### Unstyled
@@ -221,6 +237,30 @@ Remove the default `list-style` and left margin on list items (immediate childre
   <li>Eget porttitor lorem</li>
 </ul>
 {% endexample %}
+
+<!--### Triangle Bullets
+
+
+
+{% example html %}
+<ul class="list-style-triangle">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
+{% endexample %}-->
 
 ### Inline
 

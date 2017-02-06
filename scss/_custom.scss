@@ -43,10 +43,8 @@
 //
 //  Import Custom files/additions here, including added packages
 //
-@import "../node_modules/sass-font-face/font-face";
-@import "custom-addons/fonts";
-@import "custom-addons/ua_brand_icons";
-@import "custom-addons/font-awesome/font-awesome";
+
+// NOTE: Did this in bootstrap.scss since I want those additions to use the variables presented here.
 
 @mixin _assert-ascending($map, $map-name) {
   $prev-key: null;

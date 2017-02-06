@@ -3380,6 +3380,14 @@
   clip: auto;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.sans {
+  font-family: MiloWeb, Verdana, Geneva, sans-serif;
+}
+
 @media print {
   *,
   *::before,

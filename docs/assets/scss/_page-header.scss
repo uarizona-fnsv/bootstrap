@@ -3,9 +3,8 @@
 .bd-pageheader {
   padding: 2rem ($grid-gutter-width-base / 2);
   margin-bottom: 1.5rem;
-  color: $bd-purple-light;
   text-align: center;
-  background-color: $bd-purple;
+  background-color: $azblue;
 
   .container {
     position: relative;
@@ -21,6 +20,7 @@
     margin-bottom: 0;
     font-size: 1.25rem;
     font-weight: 300;
+    color: #ccc;
   }
 
   @include media-breakpoint-up(sm) {
