@@ -30,7 +30,7 @@
   pages:
     - title: Alerts
     - title: Badge
-    - title: Branding
+    - title: Brand Icons
     - title: Breadcrumb
     - title: Buttons
     - title: Button group
@@ -38,6 +38,7 @@
     - title: Carousel
     - title: Collapse
     - title: Dropdowns
+    - title: Font Awesome Icons
     - title: Forms
     - title: Input group
     - title: Jumbotron
