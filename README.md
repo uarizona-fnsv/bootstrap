@@ -54,9 +54,77 @@ Once the server is running, a watch task should see any changes to sass, js, or 
 
 ### Deploying the Documentation Website
 
-TODO. Probs should be a grunt task or shell script or both or something.
+Deploy to the documentation site via:
+```shell
+git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
+git push docsserver master
+```
 
-For now, just go to the `_gh_pages` folder and run 
+TODO. Set up a grunt task? (bootstrap did it through one, currently commented out)
+
+### Setting up the documentation server
+
+The documentation server need to be running Jekyll and Ruby. To make this process easy (as well as updating), use rvm to handle the installation.
+
+Install Ruby:
+```shell
+curl -L https://get.rvm.io | bash -s stable # install rvm
+source ~/.rvm/scripts/rvm                   # source rvm to use right now
+rvm requirements                            # install any requirements
+rvm install <version>                       # install the latest stable (v2.4.0 as of 2/9/17)
+rvm use <version>                           # use the version you installed
+ruby --version                              # double check what's running
+```
+
+Install the latest RubyGems and Jekyll:
+```shell
+rvm rubygems current                        # install the latest rubygems
+gem install jekyll                          # install Jekyll (finally!) NOTE: don't use sudo since that bypasses rvm for some reason.
+```
+
+Prepare the server for pulling and deploying from gitlab:
+```shell
+sudo apt-get install git-core                        # install git core
+cd /                                                 # switch to a new repo
+sudo mkdir repos && cd repos
+sudo mkdir bootstrapdocs.git && cd bootstrapdocs.git
+sudo git init --bare                                 # initialize a bare repo. Very important!
+```
+
+Set up the script to run whenever an incoming push occurs:
+```shell
+cd hooks
+sudo touch post-receive
+sudo vi post-receive
+```
+
+Paste in the following:
+```script
+#!/bin/bash -l
+GIT_REPO=$HOME/repos/bootstrap.git
+TMP_GIT_CLONE=$HOME/tmp/git/bootstrap
+PUBLIC_WWW=/var/www/bootstrap
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
+```
+
+Now, give the script write permissions:
+```shell
+sudo chmod +x post-receive
+```
+
+Now you should be able to add this repo as a git remote and then push to it to start a build.
+
+On your local machine:
+```shell
+git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
+git push docsserver master
+```
+
+Then, the script should run, deploying the site.
 
 # [Bootstrap](https://getbootstrap.com)
 

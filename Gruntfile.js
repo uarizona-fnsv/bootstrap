@@ -337,10 +337,10 @@ module.exports = function (grunt) {
   grunt.registerTask('lint-docs-css', ['exec:scss-lint-docs'])
   grunt.registerTask('docs-js', ['exec:uglify-docs'])
   grunt.registerTask('docs', ['lint-docs-css', 'docs-css', 'docs-js', 'clean:docs', 'copy:docs', 'copy:fonts'])
-  grunt.registerTask('docs-github', ['jekyll:github'])
+  // grunt.registerTask('docs-github', ['jekyll:github'])
 
   grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress'])
 
   // Publish to GitHub
-  grunt.registerTask('publish', ['buildcontrol:pages'])
+  // grunt.registerTask('publish', ['buildcontrol:pages'])
 }
