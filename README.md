@@ -64,6 +64,8 @@ TODO. Set up a grunt task? (bootstrap did it through one, currently commented ou
 
 ### Setting up the documentation server
 
+NOTE: This process doesn't currently work.
+
 The documentation server need to be running Jekyll and Ruby. To make this process easy (as well as updating), use rvm to handle the installation.
 
 Install Ruby:
@@ -87,7 +89,7 @@ Prepare the server for pulling and deploying from gitlab:
 sudo apt-get install git-core                        # install git core
 cd /                                                 # switch to a new repo
 sudo mkdir repos && cd repos
-sudo mkdir bootstrapdocs.git && cd bootstrapdocs.git
+sudo mkdir bootstrap.git && cd bootstrap.git
 sudo git init --bare                                 # initialize a bare repo. Very important!
 ```
 

@@ -3,14 +3,14 @@
 .bd-masthead {
   position: relative;
   padding: 3rem ($grid-gutter-width-base / 2) 2rem;
-  color: $bd-purple-light;
+  color: $bd-purple;
   text-align: center;
-  background-image: linear-gradient(135deg, darken($bd-purple, 20%), $bd-purple, lighten(saturate($bd-purple, 5%), 15%));
+  background-image: linear-gradient(135deg, darken($bd-purple, 5%), $bd-purple, lighten($bd-purple, 5%));
 
   .bd-booticon {
     margin: 0 auto 2rem;
-    color: $bd-purple-light;
-    border-color: $bd-purple-light;
+    color: #fff;
+    border-color: #fff;
   }
 
   h1 {

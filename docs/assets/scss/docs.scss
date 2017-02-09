@@ -35,17 +35,19 @@ $azblue:       #0c234b !default;
 $azblue-light: #395180 !default; //Arizona Blue +30% White
 $sky:          #84d2e2 !default;
 $river:        #076873 !default;
+$light-brick:  #e6e3d9 !default;
+$light-river:  #b6bec1 !default;
 $sage:         #4a634e !default;
 $silver:       #6f868d !default;
 $ash:          #333 !default;
 
 // Local docs variables
-$bd-purple:         $azblue;
+$bd-purple:         $uared;
 $bd-purple-bright:  lighten(saturate($bd-purple, 5%), 15%);
-$bd-purple-light:   $azblue-light;
+$bd-purple-light:   lighten($bd-purple, 30%);
 $bd-graphite:       $ash;
 $bd-graphite-light: lighten($bd-graphite, 40%);
-$bd-yellow:         $silver;
+$bd-yellow:         $light-river;
 $bd-danger:         $mesa;
 $bd-warning:        $sand;
 $bd-info:           $river;
