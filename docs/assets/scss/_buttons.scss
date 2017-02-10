@@ -4,14 +4,14 @@
 
 .btn-bs {
   font-weight: 500;
-  color: $bd-purple-bright;
-  border-color: $bd-purple-bright;
+  color: $bd-purple;
+  border-color: $bd-purple;
 
   &:hover,
   &:focus,
   &:active {
     color: #fff;
-    background-color: $bd-purple-bright;
-    border-color: $bd-purple-bright;
+    background-color: $bd-purple-light;
+    border-color: $bd-purple-light;
   }
 }

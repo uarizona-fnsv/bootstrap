@@ -14,7 +14,8 @@
   "homepage": "https://getbootstrap.com",
   "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
   "contributors": [
-    "Twitter, Inc."
+    "Twitter, Inc.",
+    "Univserity of Arizona FSO FAST"
   ],
   "scripts": {
     "change-version": "node grunt/change-version.js",
