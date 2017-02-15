@@ -17,3 +17,32 @@
 @include bg-variant('.bg-danger', $brand-danger);
 
 @include bg-variant('.bg-inverse', $brand-inverse);
+
+@include bg-variant('.bg-uared', $uared);
+
+@include bg-variant('.bg-arizonablue', $arizonablue);
+
+@include bg-variant('.bg-cactus', $cactus);
+
+@include bg-variant('.bg-sky', $sky);
+
+@include bg-variant('.bg-river', $river);
+
+@include bg-variant('.bg-sand', $sand);
+
+@include bg-variant('.bg-mesa', $mesa);
+
+@include bg-variant('.bg-brick', $brick);
+
+@include bg-variant('.bg-light-cactus', $light-cactus);
+
+@include bg-variant('.bg-light-sky', $light-sky);
+
+@include bg-variant('.bg-light-river', $light-river);
+
+@include bg-variant('.bg-light-sand', $light-sand);
+
+@include bg-variant('.bg-light-mesa', $light-mesa);
+
+@include bg-variant('.bg-light-brick', $light-brick);
+
