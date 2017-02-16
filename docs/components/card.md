@@ -375,7 +375,7 @@ By default, cards use dark text and assume a light background. You can reverse t
 You can also use `.card-inverse` with the [contextual backgrounds variants](#background-variants).
 
 {% example html %}
-<div class="card card-inverse" style="background-color: #333; border-color: #333;">
+<div class="card card-inverse bg-ash" style="border-color: #333;">
   <div class="card-block">
     <h3 class="card-title">Special title treatment</h3>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

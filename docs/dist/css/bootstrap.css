@@ -9454,6 +9454,230 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   background-color: #101112 !important;
 }
 
+.bg-uared {
+  background-color: #ab0520 !important;
+}
+
+a.bg-uared:focus, a.bg-uared:hover {
+  background-color: #790417 !important;
+}
+
+.bg-uared-black30 {
+  background-color: #8f1124 !important;
+}
+
+a.bg-uared-black30:focus, a.bg-uared-black30:hover {
+  background-color: #610c19 !important;
+}
+
+.bg-uared-black60 {
+  background-color: #63000b !important;
+}
+
+a.bg-uared-black60:focus, a.bg-uared-black60:hover {
+  background-color: #300005 !important;
+}
+
+.bg-uared-white30 {
+  background-color: #cc665e !important;
+}
+
+a.bg-uared-white30:focus, a.bg-uared-white30:hover {
+  background-color: #bc453b !important;
+}
+
+.bg-uared-white60 {
+  background-color: #dea094 !important;
+}
+
+a.bg-uared-white60:focus, a.bg-uared-white60:hover {
+  background-color: #d27d6d !important;
+}
+
+.bg-arizonablue {
+  background-color: #0c234b !important;
+}
+
+a.bg-arizonablue:focus, a.bg-arizonablue:hover {
+  background-color: #050e1f !important;
+}
+
+.bg-arizonablue-black30 {
+  background-color: #00194a !important;
+}
+
+a.bg-arizonablue-black30:focus, a.bg-arizonablue-black30:hover {
+  background-color: #000817 !important;
+}
+
+.bg-arizonablue-black60 {
+  background-color: #000136 !important;
+}
+
+a.bg-arizonablue-black60:focus, a.bg-arizonablue-black60:hover {
+  background-color: #000003 !important;
+}
+
+.bg-arizonablue-white30 {
+  background-color: #395180 !important;
+}
+
+a.bg-arizonablue-white30:focus, a.bg-arizonablue-white30:hover {
+  background-color: #293b5d !important;
+}
+
+.bg-arizonablue-white60 {
+  background-color: #7b89ae !important;
+}
+
+a.bg-arizonablue-white60:focus, a.bg-arizonablue-white60:hover {
+  background-color: #5e6e98 !important;
+}
+
+.bg-cactus {
+  background-color: #5c8727 !important;
+}
+
+a.bg-cactus:focus, a.bg-cactus:hover {
+  background-color: #415f1c !important;
+}
+
+.bg-sky {
+  background-color: #84d2e2 !important;
+}
+
+a.bg-sky:focus, a.bg-sky:hover {
+  background-color: #5bc3d8 !important;
+}
+
+.bg-river {
+  background-color: #076873 !important;
+}
+
+a.bg-river:focus, a.bg-river:hover {
+  background-color: #043d43 !important;
+}
+
+.bg-sand {
+  background-color: #f19e1f !important;
+}
+
+a.bg-sand:focus, a.bg-sand:hover {
+  background-color: #d0830d !important;
+}
+
+.bg-mesa {
+  background-color: #b75527 !important;
+}
+
+a.bg-mesa:focus, a.bg-mesa:hover {
+  background-color: #8d411e !important;
+}
+
+.bg-brick {
+  background-color: #4a3027 !important;
+}
+
+a.bg-brick:focus, a.bg-brick:hover {
+  background-color: #291a15 !important;
+}
+
+.bg-light-cactus {
+  background-color: #cfe0d8 !important;
+}
+
+a.bg-light-cactus:focus, a.bg-light-cactus:hover {
+  background-color: #b0ccbf !important;
+}
+
+.bg-light-sky {
+  background-color: #c8d9d8 !important;
+}
+
+a.bg-light-sky:focus, a.bg-light-sky:hover {
+  background-color: #aac4c3 !important;
+}
+
+.bg-light-river {
+  background-color: #b6bec1 !important;
+}
+
+a.bg-light-river:focus, a.bg-light-river:hover {
+  background-color: #9aa5aa !important;
+}
+
+.bg-light-sand {
+  background-color: #fce1b6 !important;
+}
+
+a.bg-light-sand:focus, a.bg-light-sand:hover {
+  background-color: #facd85 !important;
+}
+
+.bg-light-mesa {
+  background-color: #fae7d8 !important;
+}
+
+a.bg-light-mesa:focus, a.bg-light-mesa:hover {
+  background-color: #f4cbab !important;
+}
+
+.bg-light-brick {
+  background-color: #e6e3d9 !important;
+}
+
+a.bg-light-brick:focus, a.bg-light-brick:hover {
+  background-color: #d2ccba !important;
+}
+
+.bg-sage {
+  background-color: #4a634e !important;
+}
+
+a.bg-sage:focus, a.bg-sage:hover {
+  background-color: #344637 !important;
+}
+
+.bg-silver {
+  background-color: #6f868d !important;
+}
+
+a.bg-silver:focus, a.bg-silver:hover {
+  background-color: #596b70 !important;
+}
+
+.bg-silver-dark {
+  background-color: #49595e !important;
+}
+
+a.bg-silver-dark:focus, a.bg-silver-dark:hover {
+  background-color: #333e41 !important;
+}
+
+.bg-silver-tint {
+  background-color: #eef1f1 !important;
+}
+
+a.bg-silver-tint:focus, a.bg-silver-tint:hover {
+  background-color: #d2dada !important;
+}
+
+.bg-ash {
+  background-color: #333 !important;
+}
+
+a.bg-ash:focus, a.bg-ash:hover {
+  background-color: #1a1a1a !important;
+}
+
+.bg-ash-tint {
+  background-color: #f7f9f9 !important;
+}
+
+a.bg-ash-tint:focus, a.bg-ash-tint:hover {
+  background-color: #dae3e3 !important;
+}
+
 .border-0 {
   border: 0 !important;
 }
