@@ -20,7 +20,23 @@
 
 @include bg-variant('.bg-uared', $uared);
 
+@include bg-variant('.bg-uared-black30', $uared-black30);
+
+@include bg-variant('.bg-uared-black60', $uared-black60);
+
+@include bg-variant('.bg-uared-white30', $uared-white30);
+
+@include bg-variant('.bg-uared-white60', $uared-white60);
+
 @include bg-variant('.bg-arizonablue', $arizonablue);
+
+@include bg-variant('.bg-arizonablue-black30', $arizonablue-black30);
+
+@include bg-variant('.bg-arizonablue-black60', $arizonablue-black60);
+
+@include bg-variant('.bg-arizonablue-white30', $arizonablue-white30);
+
+@include bg-variant('.bg-arizonablue-white60', $arizonablue-white60);
 
 @include bg-variant('.bg-cactus', $cactus);
 
@@ -46,3 +62,14 @@
 
 @include bg-variant('.bg-light-brick', $light-brick);
 
+@include bg-variant('.bg-sage', $sage);
+
+@include bg-variant('.bg-silver', $silver);
+
+@include bg-variant('.bg-silver-dark', $silver-dark);
+
+@include bg-variant('.bg-silver-tint', $silver-tint);
+
+@include bg-variant('.bg-ash', $ash);
+
+@include bg-variant('.bg-ash-tint', $ash-tint);
