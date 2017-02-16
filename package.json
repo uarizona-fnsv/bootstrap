@@ -36,7 +36,8 @@
     "test": "npm run eslint && grunt test",
     "build": "grunt dist && grunt docs",
     "rebuild": "rm -rf _gh_pages && grunt dist && grunt docs",
-    "build-docs": "grunt docs"
+    "build-docs": "grunt docs",
+    "dist": "grunt dist"
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
