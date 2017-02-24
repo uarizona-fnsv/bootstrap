@@ -36,8 +36,8 @@ repo:             https://gitlab.fso.arizona.edu.com/fast/fso-bootstrap
 slack:            https://bootstrap-slack.herokuapp.com
 
 download:
-  source:         https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/repository/archive.zip?ref=v0.1
-  dist:           https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/uploads/58d0e951fabf5b167d251b1d710f8ec8/fso-bootstrap-v0.1-dist.zip
+  source:         https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/repository/archive.zip?ref=v1.2
+  dist:           https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/uploads/69f4c9ed9fd7111ec0ce3dc29dfcac99/fso-bootstrap-v0.1.2-dist.zip
 
 blog:             https://blog.getbootstrap.com
 expo:             https://expo.getbootstrap.com
