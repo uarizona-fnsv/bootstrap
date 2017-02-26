@@ -131,14 +131,14 @@ $ash-tint:    #f7f9f9 !default;
 // Grayscale and brand colors for use across Bootstrap.
 $white:  #fff !default;
 $black:  #000 !default;
-$red:    #d9534f !default;
+$red:    $uared-white30 !default;
 $orange: $mesa !default;
 $yellow: $sand !default;
 $green:  $cactus !default;
 $blue:   $arizonablue-white30 !default;
 $teal:   $sky !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+// $pink:   #ff5b77 !default;
+// $purple: #613d7c !default;
 
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
