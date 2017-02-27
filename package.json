@@ -1,6 +1,6 @@
 {
   "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "description": "Bootstrap with the sweet stylings of FSO",
   "version": "4.0.0-alpha.6",
   "keywords": [
     "css",
@@ -11,11 +11,11 @@
     "framework",
     "web"
   ],
-  "homepage": "https://getbootstrap.com",
+  "homepage": "https://bootstrap.fso.arizona.edu.com",
   "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
   "contributors": [
     "Twitter, Inc.",
-    "Univserity of Arizona FSO FAST"
+    "Univserity of Arizona FSO IT"
   ],
   "scripts": {
     "change-version": "node grunt/change-version.js",
@@ -44,10 +44,10 @@
   "main": "dist/js/bootstrap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twbs/bootstrap.git"
+    "url": "https://gitlab.fso.arizona.edu/FAST/fso-bootstrap"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/issues"
   },
   "license": "MIT",
   "dependencies": {

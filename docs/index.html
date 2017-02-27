@@ -16,10 +16,10 @@ layout: home
 <div class="bd-featurette">
   <div class="container">
     <h2 class="bd-featurette-title">Easy to get started.</h2>
-    <p class="lead">Quickly include Bootstrap's CSS and JS into any project. Use your favorite package manager, download the source, or use the Bootstrap CDN.</p>
+    <p class="lead">Quickly include Bootstrap's CSS and JS into any project. Use your favorite package manager or download the source.</p>
 
     <div class="row">
-      <div class="col-sm-6 mb-3">
+      {% comment %}<div class="col-sm-6 mb-3">
         <h4>Managed dependencies</h4>
         <p>Include Bootstrap's source Sass and JavaScript files via Bower, Composer, Meteor, or npm. Package managed installs don't include documentation, but do include our Gruntfile and readme.</p>
         <p>
@@ -38,10 +38,21 @@ layout: home
       </div>
     </div>
 
-    <hr class="half-rule mt-0">
+    <hr class="half-rule mt-0">{% endcomment %}
 
-    <p><strong>Looking for something else?</strong> Compiled builds of Bootstrap's CSS and JS are also available.</p>
-    <a href="{{ site.baseurl }}/getting-started/download/" class="btn btn-bs">More download options</a>
+    <div class="col-sm-6 mb-3">
+      <h4>NPM</h4>
+      <p>Include FSO Bootstrap's source Sass and Javasript files via npm. Packaged installs don't include documentation, but do include our gruntfile and readme.</p>
+{% highlight bash%}
+npm install --save-dev git+ssh://git@gitlab.fso.arizona.edu:Fast/fso-bootstrap.git@">=0.1.2"
+{% endhighlight %}
+    </div>
+
+    <div class="col-sm-6 mb-3">
+      <h4>Manual Installation</h4>
+      <p><strong>Looking for something else?</strong> Compiled builds of Bootstrap's CSS and JS are also available.</p>
+      <a href="{{ site.baseurl }}/getting-started/download/" class="btn btn-bs">More download options</a>
+    </div>
   </div>
 </div>
 
