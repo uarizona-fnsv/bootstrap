@@ -92,40 +92,54 @@
 
 // Colors
 //
-// Grayscale and brand colors for use across Bootstrap.
+// Primary Palatte
+$arizonablue-white60: #7b89ae !default;
+$arizonablue-white30: #395180 !default;
+$arizonablue:         #0c234b !default;
+$arizonablue-black30: #00194a !default;
+$arizonablue-black60: #000136 !default;
+$uared-white60:       #dea094 !default;
+$uared-white30:       #cc665e !default;
+$uared:               #ab0520 !default;
+$uared-black30:       #8f1124 !default;
+$uared-black60:       #63000b !default;
 
-$white:  #fff !default;
-$black:  #000 !default;
-//
-// Grayscale and brand colors for use across Bootstrap.
-
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #d9534f !default;
-$uared:  #ab0520 !default; //UA Red
-$orange: #b75527 !default; //Mesa
-$yellow: #f19e1f !default; //Sand
-$green:  #5c8727 !default; //Cactus
-$blue:   #395180 !default; //Arizona Blue +30% White
-$teal:   #84d2e2 !default; //Sky
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
-
-// Other UA colors
+// Secondary Palette
+$cactus: #5c8727 !default;
+$sky:    #84d2e2 !default;
 $river:  #076873 !default;
-$sage: #4a634e !default;
-$silver: #6f868d !default;
-$ash: #333 !default;
+$sand:   #f19e1f !default;
+$mesa:   #b75527 !default;
+$brick:  #4a3027 !default;
 
 // Neutral Palette
 $light-cactus: #cfe0d8;
 $light-sky:    #c8d9d8;
-$light-river:  #b68ec1;
+$light-river:  #b6bec1;
 $light-sand:   #fce1b6;
 $light-mesa:   #fae7d8;
 $light-brick:  #e6e3d9;
 
-// Create grayscale
+// Legacy Palette
+$sage:        #4a634e !default;
+$silver:      #6f868d !default;
+$silver-dark: #49595e !default;
+$silver-tint: #eef1f1 !default;
+$ash:         #333 !default;
+$ash-tint:    #f7f9f9 !default;
+
+// Grayscale and brand colors for use across Bootstrap.
+$white:  #fff !default;
+$black:  #000 !default;
+$red:    $uared-white30 !default;
+$orange: $mesa !default;
+$yellow: $sand !default;
+$green:  $cactus !default;
+$blue:   $arizonablue-white30 !default;
+$teal:   $sky !default;
+// $pink:   #ff5b77 !default;
+// $purple: #613d7c !default;
+
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
 $gray-light:                #636c72 !default;

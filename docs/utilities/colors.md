@@ -39,6 +39,61 @@ Similar to the contextual text color classes, easily set the background of an el
 <div class="bg-faded">Cras mattis consectetur purus sit amet fermentum.</div>
 {% endexample %}
 
+All UA colors are available.
+
+#### Arizona Blue
+
+{% example html %}
+<div class="bg-arizonablue-white60 text-white">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-arizonablue-white30 text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-arizonablue text-white">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-arizonablue-black30 text-white">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-arizonablue-black60 text-white">Donec ullamcorper nulla non metus auctor fringilla.</div>
+{% endexample %}
+
+#### UA Red
+
+{% example html %}
+<div class="bg-uared-white60 text-white">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-uared-white30 text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-uared text-white">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-uared-black30 text-white">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-uared-black60 text-white">Donec ullamcorper nulla non metus auctor fringilla.</div>
+{% endexample %}
+
+#### Secondary
+
+{% example html %}
+<div class="bg-cactus text-white">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-sky text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-river text-white">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-sand text-white">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-mesa text-white">Donec ullamcorper nulla non metus auctor fringilla.</div>
+<div class="bg-brick text-white">Cras mattis consectetur purus sit amet fermentum.</div>
+{% endexample %}
+
+#### Neutral
+
+{% example html %}
+<div class="bg-light-cactus">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-light-sky">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-light-river">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-light-sand">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-light-mesa">Donec ullamcorper nulla non metus auctor fringilla.</div>
+<div class="bg-light-brick">Cras mattis consectetur purus sit amet fermentum.</div>
+{% endexample %}
+
+#### Legacy
+
+{% example html %}
+<div class="bg-sage text-white">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-silver text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-silver-dark text-white">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-sliver-tint">Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-ash text-white">Donec ullamcorper nulla non metus auctor fringilla.</div>
+<div class="bg-ash-tint">Cras mattis consectetur purus sit amet fermentum.</div>
+{% endexample %}
+
 {% callout info %}
 #### Dealing with specificity
 
