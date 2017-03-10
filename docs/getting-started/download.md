@@ -23,7 +23,7 @@ group: getting-started
 
 <a href="{{ site.download.source }}" class="btn btn-bs" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 
-<!--## Bootstrap CDN
+## Bootstrap CDN
 
 Skip the download and use the Bootstrap CDN to deliver Bootstrap's compiled CSS and JS to your project.
 
@@ -32,7 +32,7 @@ Skip the download and use the Bootstrap CDN to deliver Bootstrap's compiled CSS 
 <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
 {% endhighlight %}-->
 
-<!--## Package managers
+## Package managers
 
 Pull in Bootstrap's **source files** into nearly any project with some of the most popular package managers. No matter the package manager, Bootstrap will **require a Sass compiler, [Autoprefixer](https://github.com/postcss/autoprefixer), and [postcss-flexbugs-fixes](https://github.com/luisrudge/postcss-flexbugs-fixes)** for a setup that matches our official compiled versions.
 
@@ -95,4 +95,4 @@ Install-Package bootstrap -Pre
 Install-Package bootstrap.sass -Pre
 {% endhighlight %}
 
-The `-Pre` is required until Bootstrap v4 has a stable release.-->
+The `-Pre` is required until Bootstrap v4 has a stable release.

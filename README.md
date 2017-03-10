@@ -64,7 +64,7 @@ TODO. Set up a grunt task? (bootstrap did it through one, currently commented ou
 
 ### Setting up the documentation server
 
-NOTE: This process doesn't currently work.
+NOTE: This process doesn't currently work. In the meantime, clone the repo on the server, build it using `bundle exec jekyll build`, and use `sudo rsync -av /<path-to-repo>/_gh_pages/ /var/www/html/`. Nginx will then serve the content.
 
 The documentation server need to be running Jekyll and Ruby. To make this process easy (as well as updating), use rvm to handle the installation.
 
