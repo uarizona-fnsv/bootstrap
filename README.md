@@ -2,6 +2,8 @@
 
 This is a fork of Bootstrap v4 with slight modifications for UA coloring and fonts.
 
+Documentation site available at: https://fast.pages.fso.arizona.edu/fso-bootstrap/
+
 ### Updating from Bootstrap
 
 Twitter's repository is set up as remote 'twitter', so to update with the latest version simply pull and rebase. However, best practice may be to pull into a new branch and resolve the likely merge conflicts before merging with our master branch.

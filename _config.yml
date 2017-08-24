@@ -13,8 +13,8 @@ source:           docs
 destination:      _gh_pages
 host:             0.0.0.0
 port:             9001
-baseurl:          ""
-url:              http://test.fso.arizona.edu
+baseurl:          "/fso-bootstrap"
+url:              "/"
 encoding:         UTF-8
 exclude:          [assets/scss/]
 
