@@ -5,7 +5,7 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://brand.arizona.edu/sites/default/files/v2/ua-brand-fonts/milo.css");
+@import url("https://cdn.uadigital.arizona.edu/lib/ua-brand-fonts/1.0.0/milo.min.css");
 @font-face {
   font-family: "ua-brand-symbols";
   src: url("../fonts/ua-brand-symbols.eot");
