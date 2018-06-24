@@ -2,8 +2,6 @@
 
 This is a fork of Bootstrap v4 with slight modifications for UA coloring and fonts.
 
-Documentation site available at: https://fast.pages.fso.arizona.edu/fso-bootstrap/
-
 ### Updating from Bootstrap
 
 Twitter's repository is set up as remote 'twitter', so to update with the latest version simply pull and rebase. However, best practice may be to pull into a new branch and resolve the likely merge conflicts before merging with our master branch.
@@ -50,142 +48,82 @@ To test and lint, use `grunt test`.
 
 To build the docs server (i.e. you are editing documentation or want to see how your changes look), run  `npm run rebuild-docs`, which will delete the existing (if any) docs deployment and then run necessary grunt tasks to build the documentation.
 
-To start the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001/fso-bootstrap/`.
+To start the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
 
 Once the server is running, a watch task should see any changes to sass, js, or jekyll and pull those files in on a page refresh. If a change isn't reflected, rebuild the server.
 
-# [Bootstrap](https://getbootstrap.com)
+### Deploying the Documentation Website
 
-[![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
-![Bower version](https://img.shields.io/bower/v/bootstrap.svg)
-[![npm version](https://img.shields.io/npm/v/bootstrap.svg)](https://www.npmjs.com/package/bootstrap)
-[![Gem version](https://img.shields.io/gem/v/bootstrap.svg)](https://rubygems.org/gems/bootstrap)
-[![Build Status](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap)
-[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap?type=dev)
-[![Meteor Atmosphere](https://img.shields.io/badge/meteor-twbs%3Abootstrap-blue.svg)](https://atmospherejs.com/twbs/bootstrap)
-[![Packagist Prerelease](https://img.shields.io/packagist/vpre/twbs/bootstrap.svg)](https://packagist.org/packages/twbs/bootstrap)
-[![NuGet](https://img.shields.io/nuget/vpre/bootstrap.svg)](https://www.nuget.org/packages/bootstrap/4.0.0-alpha5)
-
-[![Selenium Test Status](https://saucelabs.com/browser-matrix/bootstrap.svg)](https://saucelabs.com/u/bootstrap)
-
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thornton](https://twitter.com/fat), and maintained by the [core team](https://github.com/orgs/twbs/people) with the massive support and involvement of the community.
-
-To get started, check out <https://getbootstrap.com>!
-
-## Table of contents
-
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Community](#community)
-- [Versioning](#versioning)
-- [Creators](#creators)
-- [Copyright and license](#copyright-and-license)
-
-## Quick start
-
-Several quick start options are available:
-
-- [Download the latest release.](https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.6.zip)
-- Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
-- Install with [npm](https://www.npmjs.com): `npm install bootstrap@4.0.0-alpha.6`
-- Install with [yarn](https://github.com/yarnpkg/yarn): `yarn add bootstrap@4.0.0-alpha.6`
-- Install with [Composer](https://getcomposer.org): `composer require twbs/bootstrap:4.0.0-alpha.6`
-- Install with [Bower](https://bower.io): `bower install bootstrap#v4.0.0-alpha.6`
-- Install with [NuGet](https://www.nuget.org): CSS: `Install-Package bootstrap -Pre` Sass: `Install-Package bootstrap.sass -Pre` (`-Pre` is only required until Bootstrap v4 has a stable release).
-
-Read the [Getting started page](https://getbootstrap.com/getting-started/) for information on the framework contents, templates and examples, and more.
-
-### What's included
-
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
-
-```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.css.map
-│   ├── bootstrap.min.css
-│   └── bootstrap.min.css.map
-└── js/
-    ├── bootstrap.js
-    └── bootstrap.min.js
+Deploy to the documentation site via:
+```shell
+git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
+git push docsserver master
 ```
 
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). CSS [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) (`bootstrap.*.map`) are available for use with certain browsers' developer tools.
+TODO. Set up a grunt task? (bootstrap did it through one, currently commented out)
 
+### Setting up the documentation server
 
-## Bugs and feature requests
+NOTE: This process doesn't currently work. In the meantime, clone the repo on the server, build it using `bundle exec jekyll build`, and use `sudo rsync -av /<path-to-repo>/_gh_pages/ /var/www/html/`. Nginx will then serve the content.
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/bootstrap/issues/new).
+The documentation server need to be running Jekyll and Ruby. To make this process easy (as well as updating), use rvm to handle the installation.
 
+Install Ruby:
+```shell
+curl -L https://get.rvm.io | bash -s stable # install rvm
+source ~/.rvm/scripts/rvm                   # source rvm to use right now
+rvm requirements                            # install any requirements
+rvm install <version>                       # install the latest stable (v2.4.0 as of 2/9/17)
+rvm use <version>                           # use the version you installed
+ruby --version                              # double check what's running
+```
 
-## Documentation
+Install the latest RubyGems and Jekyll:
+```shell
+rvm rubygems current                        # install the latest rubygems
+gem install jekyll                          # install Jekyll (finally!) NOTE: don't use sudo since that bypasses rvm for some reason.
+```
 
-Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](https://jekyllrb.com) and publicly hosted on GitHub Pages at <https://getbootstrap.com>. The docs may also be run locally.
+Prepare the server for pulling and deploying from gitlab:
+```shell
+sudo apt-get install git-core                        # install git core
+cd /                                                 # switch to a new repo
+sudo mkdir repos && cd repos
+sudo mkdir bootstrap.git && cd bootstrap.git
+sudo git init --bare                                 # initialize a bare repo. Very important!
+```
 
-### Running documentation locally
+Set up the script to run whenever an incoming push occurs:
+```shell
+cd hooks
+sudo touch post-receive
+sudo vi post-receive
+```
 
-1. Run through the [tooling setup](https://github.com/twbs/bootstrap/blob/v4-dev/docs/getting-started/build-tools.md#tooling-setup) to install Jekyll (the site builder) and other Ruby dependencies with `bundle install`.
-2. Run `grunt` (or a specific set of Grunt tasks) to rebuild distributed CSS and JavaScript files, as well as our docs assets.
-3. From the root `/bootstrap` directory, run `bundle exec jekyll serve` in the command line.
-4. Open <http://localhost:9001> in your browser, and voilà.
+Paste in the following:
+```script
+#!/bin/bash -l
+GIT_REPO=$HOME/repos/bootstrap.git
+TMP_GIT_CLONE=$HOME/tmp/git/bootstrap
+PUBLIC_WWW=/var/www/bootstrap
 
-Learn more about using Jekyll by reading its [documentation](https://jekyllrb.com/docs/home/).
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
+```
 
-### Documentation for previous releases
+Now, give the script write permissions:
+```shell
+sudo chmod +x post-receive
+```
 
-Documentation for v2.3.2 has been made available for the time being at <https://getbootstrap.com/2.3.2/> while folks transition to Bootstrap 3.
+Now you should be able to add this repo as a git remote and then push to it to start a build.
 
-[Previous releases](https://github.com/twbs/bootstrap/releases) and their documentation are also available for download.
+On your local machine:
+```shell
+git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
+git push docsserver master
+```
 
-
-
-## Contributing
-
-Please read through our [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-Moreover, if your pull request contains JavaScript patches or features, you must include [relevant unit tests](https://github.com/twbs/bootstrap/tree/master/js/tests). All HTML and CSS should conform to the [Code Guide](https://github.com/mdo/code-guide), maintained by [Mark Otto](https://github.com/mdo).
-
-Editor preferences are available in the [editor config](https://github.com/twbs/bootstrap/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
-## Community
-
-Get updates on Bootstrap's development and chat with the project maintainers and community members.
-
-- Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The Official Bootstrap Blog](https://blog.getbootstrap.com).
-- Join [the official Slack room](https://bootstrap-slack.herokuapp.com).
-- Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`bootstrap-4`](https://stackoverflow.com/questions/tagged/bootstrap-4)).
-- Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
-
-
-
-## Versioning
-
-For transparency into our release cycle and in striving to maintain backward compatibility, Bootstrap is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
-
-See [the Releases section of our GitHub project](https://github.com/twbs/bootstrap/releases) for changelogs for each release version of Bootstrap. Release announcement posts on [the official Bootstrap blog](https://blog.getbootstrap.com) contain summaries of the most noteworthy changes made in each release.
-
-
-## Creators
-
-**Mark Otto**
-
-- <https://twitter.com/mdo>
-- <https://github.com/mdo>
-
-**Jacob Thornton**
-
-- <https://twitter.com/fat>
-- <https://github.com/fat>
-
-
-
-## Copyright and license
-
-Code and documentation copyright 2011-2017 the [Bootstrap Authors](https://github.com/twbs/bootstrap/graphs/contributors) and [Twitter, Inc.](https://twitter.com) Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).
+Then, the script should run, deploying the site.
