@@ -1,11 +1,4 @@
 @import url("https://brand.arizona.edu/sites/default/files/v2/ua-brand-fonts/milo.css");
-@font-face {
-  font-family: "ua-brand-symbols";
-  font-style: "ua-brand-symbols";
-  font-weight: "ua-brand-symbols";
-  src: url("../fonts/.eot?") format("eot"), url("../fonts/.woff2") format("woff2"), url("../fonts/.woff") format("woff"), url("../fonts/.ttf") format("truetype"), url("../fonts/.svg#ua-brand-symbols") format("svg");
-}
-
 .ua {
   font-family: 'ua-brand-symbols';
   font-style: normal;
