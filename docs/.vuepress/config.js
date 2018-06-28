@@ -28,7 +28,7 @@ module.exports = {
         sidebar: {
             '/components/': [
                 ['/components/', 'Components'],
-                ['alert', 'Alert'],
+                ['alerts', 'Alerts'],
                 ['badge', 'Badge'],
                 ['breadcrumb', 'Breadcrumb'],
                 ['button-group', 'Button Group'],

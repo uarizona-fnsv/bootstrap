@@ -36,8 +36,9 @@
     "clean-css-cli": "^4.1.10",
     "eslint": "^5.0.0",
     "eslint-plugin-vue": "^4.5.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.9.0",
     "postcss-cli": "^5.0.0",
-    "prismjs": "^1.15.0"
+    "prismjs": "^1.15.0",
+    "sass-loader": "^7.0.3"
   }
 }
