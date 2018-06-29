@@ -1,6 +1,6 @@
 # Collapse
 
-<p class="lead"></p>
+<p class="lead">Toggle the visibility of content across your project with a few classes and our JavaScript plugins.</p>
 
 <example>
 

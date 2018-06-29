@@ -1,6 +1,6 @@
 # Dropdowns
 
-<p class="lead"></p>
+<p class="lead">Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.</p>
 
 <example>
 
