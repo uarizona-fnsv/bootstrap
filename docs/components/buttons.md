@@ -8,7 +8,9 @@ FSO Bootstrap adds several extra button types: `uared`, ...
 
 <example>
     <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-uared">UA Red</button>
+    <button type="button" class="btn btn-primary-dark">Primary (Dark)</button>
+    <button type="button" class="btn btn-primary-light">Primary (Light)</button>
+    <button type="button" class="btn btn-accent">Accent</button>
     <button type="button" class="btn btn-secondary">Secondary</button>
     <button type="button" class="btn btn-success">Success</button>
     <button type="button" class="btn btn-danger">Danger</button>
@@ -23,7 +25,9 @@ FSO Bootstrap adds several extra button types: `uared`, ...
 
 <example>
     <button type="button" class="btn btn-outline-primary">Primary</button>
-    <button type="button" class="btn btn-outline-uared">UA Red</button>
+    <button type="button" class="btn btn-outline-primary-dark">Primary (Dark)</button>
+    <button type="button" class="btn btn-outline-primary-light">Primary (Light)</button>
+    <button type="button" class="btn btn-outline-accent">Accent</button>
     <button type="button" class="btn btn-outline-secondary">Secondary</button>
     <button type="button" class="btn btn-outline-success">Success</button>
     <button type="button" class="btn btn-outline-danger">Danger</button>

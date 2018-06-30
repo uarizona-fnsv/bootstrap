@@ -56,8 +56,10 @@ $ua-colors: map-merge((
 // Override/add-to the bootstrap theme colors
 // We aren't touching `dark`, `light`, or `secondary`
 $theme-colors: (
-  "primary": $arizonablue,
-  "uared": $uared,
+  "primary": $azurite,
+  "primary-dark": $arizonablue,
+  "primary-light": $oasis,
+  "accent": $uared,
   // "secondary": $darksilver,
   "success": $leaf,
   "info": $sky,
