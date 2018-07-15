@@ -111,7 +111,7 @@ export default {
     cursor pointer
     position relative
     display inline-block
-    margin-left 1.5rem
+    // margin-left 1.5rem
     line-height 2rem
   .repo-link
     margin-left 1.5rem

@@ -51,6 +51,84 @@ export default {
             margin-bottom: 0;
         }
     }
+
+    + p {
+        margin-top: 2rem;
+    }
+
+    > .form-control {
+        + .form-control {
+            margin-top: .5rem;
+        }
+    }
+
+    > .nav + .nav,
+    > .alert + .alert,
+    > .navbar + .navbar,
+    > .progress + .progress,
+    > .progress + .btn {
+        margin-top: 1rem;
+    }
+
+    > .dropdown-menu:first-child {
+        position: static;
+        display: block;
+    }
+
+    > .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    > .close {
+        float: none;
+    }
+
+    > .btn-group {
+        margin-top: .25rem;
+        margin-bottom: .25rem;
+    }
+
+    > .btn-toolbar + .btn-toolbar {
+        margin-top: .5rem;
+    }
+
+    .input-group {
+        margin-bottom: .5rem;
+    }
+
+    > textarea.form-control {
+        resize: vertical;
+    }
+
+    > .list-group {
+        max-width: 400px;
+    }
+
+    .fixed-top,
+    .sticky-top {
+        position: static;
+        margin: -1rem -1rem 1rem;
+    }
+
+    .fixed-bottom {
+        position: static;
+        margin: 1rem -1rem -1rem;
+    }
+
+    @media screen and (min-width: 576px) {
+        .fixed-top,
+        .sticky-top {
+            margin: -1.5rem -1.5rem 1rem;
+        }
+        .fixed-bottom {
+            margin: 1rem -1.5rem -1.5rem;
+        }
+    }
+
+    .pagination {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
 }
 
 // .bd-example::after {
