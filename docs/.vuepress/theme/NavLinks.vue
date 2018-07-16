@@ -1,8 +1,8 @@
 <template>
-  <nav class="nav-links" v-if="userLinks.length || repoLink">
+  <nav class="nav-links-docs" v-if="userLinks.length || repoLink">
     <!-- user links -->
     <div
-      class="nav-item"
+      class="nav-item-docs"
       v-for="item in userLinks"
       :key="item.link">
       <DropdownLink v-if="item.type === 'links'" :item="item"/>
@@ -100,32 +100,33 @@ export default {
 <style lang="stylus">
 @import './styles/config.styl'
 
-.nav-links
+.nav-links-docs
   display inline-block
   a
     line-height 1.4rem
     color inherit
     &:hover, &.router-link-active
       color $accentColor
-  .nav-item
+  .nav-item-docs
     cursor pointer
     position relative
     display inline-block
-    // margin-left 1.5rem
+    margin-left 1.5rem
     line-height 2rem
   .repo-link
     margin-left 1.5rem
 
 @media (max-width: $MQMobile)
-  .nav-links
-    .nav-item, .repo-link
+  .nav-links-docs
+    .nav-item-docs, .repo-link
       margin-left 0
 
 @media (min-width: $MQMobile)
-  .nav-links a
+  .nav-links-docs a
     &:hover, &.router-link-active
       color $textColor
-  .nav-item > a:not(.external)
+      text-decoration none
+  .nav-item-docs > a:not(.external)
     &:hover, &.router-link-active
       margin-bottom -2px
       border-bottom 2px solid lighten($accentColor, 8%)

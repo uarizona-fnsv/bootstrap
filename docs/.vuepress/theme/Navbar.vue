@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar-docs">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
     <router-link :to="$localePath" class="home-link">
       <img class="logo"
@@ -41,7 +41,7 @@ export default {
 <style lang="stylus">
 @import './styles/config.styl'
 
-.navbar
+.navbar-docs
   padding 0.7rem 1.5rem
   line-height $navbarHeight - 1.4rem
   position relative
