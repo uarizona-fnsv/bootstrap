@@ -6,15 +6,6 @@
     <div class="alert alert-primary" role="alert">
         A simple primary alert—check it out!
     </div>
-    <div class="alert alert-primary-dark" role="alert">
-        A simple primary (dark) alert—check it out!
-    </div>
-    <div class="alert alert-primary-light" role="alert">
-        A simple primary (light) alert—check it out!
-    </div>
-    <div class="alert alert-accent" role="alert">
-        A simple accent alert—check it out!
-    </div>
     <div class="alert alert-secondary" role="alert">
         A simple secondary alert—check it out!
     </div>

@@ -10,6 +10,10 @@ These examples show basic usage of what [Bootstrap content](http://getbootstrap.
 
 *Note*: Include `.sans` header options
 
+## Colors
+
+document font colors and background colors (theme, extra, legacy)
+
 ## Code
 
 ## Images

@@ -64,7 +64,7 @@ We only set a `height` value on the `.progress`, so if you change that value the
 
 ## Backgrounds
 
-Use background utility classes to change the appearance of individual progress bars.
+Use background utility classes to change the appearance of individual progress bars. A few examples are provided, however, any `bg-*` utility can be used to color a progress bar.
 
 <example>
 <div class="progress">
@@ -78,6 +78,12 @@ Use background utility classes to change the appearance of individual progress b
 </div>
 <div class="progress">
   <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar bg-accent" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar bg-sage" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 </example>
 

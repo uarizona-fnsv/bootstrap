@@ -10,10 +10,10 @@
   }
 
   &.jumbotron-blue {
-    background-color: theme-color('primary-dark');
+    background-color: extra-color('primary-dark');
   }
 
   &.jumbotron-red {
-    background-color: theme-color('accent');
+    background-color: extra-color('accent');
   }
 }

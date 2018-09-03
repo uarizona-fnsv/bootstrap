@@ -53,19 +53,34 @@ $ua-colors: map-merge((
   "copper": $copper
 ), $ua-colors);
 
-// Override/add-to the bootstrap theme colors
-// We aren't touching `dark`, `light`, or `secondary`
+// Override the default bootstrap theme colors
+// TODO: We aren't touching `dark`, `light`, or `secondary`... yet
 $theme-colors: (
   "primary": $azurite,
-  "primary-dark": $arizonablue,
-  "primary-light": $oasis,
-  "accent": $uared,
-  // "secondary": $darksilver,
   "success": $leaf,
   "info": $sky,
   "warning": $sand,
   "danger": $bloom
 );
+
+// Additional theme colors, kept seperate since we don't want all bootstrap
+// components to auto-compile them through for loops
+$extra-colors: () !default;
+$extra-colors: map-merge((
+  "primary-dark": $arizonablue,
+  "primary-light": $oasis,
+  "accent": $uared
+), $extra-colors);
+
+// Legacy colors
+$legacy-colors: () !default;
+$legacy-colors: map-merge((
+  "ash": $ash,
+  "sage": $sage,
+  "silver": $silver,
+  "dark-silver": $darksilver,
+  "copper": $copper
+), $legacy-colors);
 
 
 // Fonts
@@ -74,10 +89,19 @@ $theme-colors: (
 
 $font-family-serif:      MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
 $font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif !default;
-
-$headings-font-family: $font-family-sans-serif !default;
+$headings-font-family:   $font-family-sans-serif !default;
 
 // Headings
 //
 // TODO: Make h1 and h2 use serif font
 $big-headings-font-family: $font-family-serif !default;
+
+// Links
+//
+// Make links the accent color
+
+$link-color: extra-color("accent") !default;
+
+// Pagination
+
+$pagination-active-bg: extra-color("accent") !default;
