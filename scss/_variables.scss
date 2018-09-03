@@ -75,9 +75,9 @@ $theme-colors: (
 $font-family-serif:      MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
 $font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif !default;
 
-$headings-font-family: $font-family-serif !default;
+$headings-font-family: $font-family-sans-serif !default;
 
 // Headings
 //
 // TODO: Make h1 and h2 use serif font
-$big-headings-font: $font-family-serif !default;
+$big-headings-font-family: $font-family-serif !default;

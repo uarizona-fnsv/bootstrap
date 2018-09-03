@@ -8,6 +8,8 @@ These examples show basic usage of what [Bootstrap content](http://getbootstrap.
 
 ## Typography
 
+*Note*: Include `.sans` header options
+
 ## Code
 
 ## Images
