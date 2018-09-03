@@ -28,7 +28,7 @@
   "author": "Taylor, Riley Hal",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.1.3",
     "vuepress": "^0.14.0"
   },
   "devDependencies": {
