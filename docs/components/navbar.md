@@ -1,6 +1,8 @@
-# Navbar
-
-<p class="lead">Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.</p>
+---
+title: 'Navbar'
+description: 'Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.'
+bootstrapLink: ''
+---
 
 ## How it works
 
@@ -83,13 +85,11 @@ The `.navbar-brand` can be applied to most elements, but an anchor works best as
 
 Adding images to the `.navbar-brand` will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
 
-TODO: Images!
-
 <example>
 <!-- Just an image -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <!-- <img src="{{ site.baseurl }}/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+    <img :src="$site.base + 'logo.png'" width="30" height="30" alt="">
   </a>
 </nav>
 </example>
@@ -391,31 +391,31 @@ Use our [position utilities]() to place navbars in non-static positions. Choose 
 
 Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully supported in every browser](https://caniuse.com/#feat=css-sticky)**.
 
-TODO: Make sure these don't overtake the page nav
+TODO: Make these look better
 
-<!-- <example>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Default</a>
-</nav>
+<example>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Default</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fixed top</a>
-</nav>
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed top</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar fixed-bottom navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fixed bottom</a>
-</nav>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="#">Sticky top</a>
-</nav>
-</example> -->
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Sticky top</a>
+  </nav>
+</example>
 
 ## Responsive behaviors
 

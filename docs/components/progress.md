@@ -1,6 +1,8 @@
-# Progress
-
-<p class="lead">Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.</p>
+---
+title: 'Progress'
+description: 'Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.'
+bootstrapLink: ''
+---
 
 ## How it works
 
@@ -64,7 +66,7 @@ We only set a `height` value on the `.progress`, so if you change that value the
 
 ## Backgrounds
 
-Use background utility classes to change the appearance of individual progress bars.
+Use background utility classes to change the appearance of individual progress bars. A few examples are provided, however, any `bg-*` utility can be used to color a progress bar.
 
 <example>
 <div class="progress">
@@ -78,6 +80,12 @@ Use background utility classes to change the appearance of individual progress b
 </div>
 <div class="progress">
   <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar bg-accent" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar bg-sage" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 </example>
 
@@ -121,11 +129,6 @@ The striped gradient can also be animated. Add `.progress-bar-animated` to `.pro
 
 <example>
     <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
     </div>
-    <button type="button" class="btn btn-secondary bd-toggle-animated-progress" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Toggle animation
-    </button>
 </example>
-
-TODO: Make this example work

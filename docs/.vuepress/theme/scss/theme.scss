@@ -6,6 +6,7 @@
 @import './arrow';
 @import './wrapper';
 @import './toc';
+@import './docs';
 
 // html, body {
 //   padding: 0;
@@ -47,8 +48,8 @@
 }
 
 .sidebar {
-  font-size: 15px;
-  background-color: #fff;
+  font-size: 1.0rem;
+  background-color: $coolgray;
   width: $sidebarWidth;
   position: fixed;
   z-index: 10;
@@ -62,13 +63,13 @@
 }
 
 .content:not(.custom) {
-    @extend %wrapper;
-  > *:first-child {
-    margin-top: $navbarHeight;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+  @extend %wrapper;
+  // > *:first-child {
+  //   margin-top: $navbarHeight;
+  // }
+  // a:hover {
+  //   text-decoration: underline;
+  // }
   p.demo {
     padding: 1rem 1.5rem;
     border: 1px solid #ddd;
@@ -93,18 +94,18 @@
 //   text-decoration: none;
 // }
 
-p a code {
-  font-weight: 400;
-  color: $accentColor;
-}
+// p a code {
+//   font-weight: 400;
+//   color: $accentColor;
+// }
 
-kbd {
-  background: #eee;
-  border: solid 0.15rem #ddd;
-  border-bottom: solid 0.25rem #ddd;
-  border-radius: 0.15rem;
-  padding: 0 0.15em;
-}
+// kbd {
+//   background: #eee;
+//   border: solid 0.15rem #ddd;
+//   border-bottom: solid 0.25rem #ddd;
+//   border-radius: 0.15rem;
+//   padding: 0 0.15em;
+// }
 
 // blockquote {
 //   font-size: 1.2rem;
@@ -122,7 +123,7 @@ kbd {
 //   font-weight: 600;
 // }
 
-// h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 //   font-weight: 600;
 //   line-height: 1.25;
 //   .content:not(.custom) > & {
@@ -137,10 +138,11 @@ kbd {
 //       }
 //     }
 //   }
-//   &:hover .header-anchor {
-//     opacity: 1;
-//   }
-// }
+  &:hover .header-anchor {
+    opacity: 1;
+    display: block;
+  }
+}
 
 // h1 {
 //   font-size: 2.2rem;
@@ -159,13 +161,15 @@ kbd {
 a.header-anchor {
   font-size: 0.85em;
   float: left;
-  margin-left: -0.87em;
+  margin-left: -0.76em;
   padding-right: 0.23em;
   margin-top: 0.125em;
   display: none;
+  color: $accentColor;
   &:hover {
     text-decoration: none;
     display: block;
+    color: lighten($accentColor, 8%)
   }
 }
 

@@ -1,11 +1,21 @@
 <template>
   <div class="page">
+    <div class="page-header">
+      <div class="d-flex flex-row justify-content-end">
+        <a class="btn btn-outline-info" :href="$page.frontmatter.bootstrapLink"
+           target="_blank" rel="noopener noreferrer">
+          <span>Bootstrap Docs</span>
+        </a>
+        <a class="btn btn-outline-dark ml-1" :href="editLink"
+           target="_blank" rel="noopener noreferrer">
+          <span>Edit in Gitlab</span>
+        </a>
+      </div>
+      <h1 class="display-4">{{ $page.title }}</h1>
+      <p class="lead">{{ $page.frontmatter.description }}</p>
+    </div>
     <Content :custom="false"/>
     <div class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
       <div class="last-updated" v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
@@ -163,6 +173,11 @@ function find (page, items, offset) {
   padding-bottom: 2rem;
 }
 
+.page-header {
+  @extend %wrapper;
+  padding-bottom: 1rem;
+}
+
 .page-edit {
   @extend %wrapper;
   padding-top: 1rem;
@@ -193,7 +208,7 @@ function find (page, items, offset) {
   @extend %wrapper;
   padding-top: 1rem;
   padding-bottom: 0;
-  
+
   .inner {
     min-height: 2rem;
     margin-top: 0;
@@ -201,7 +216,7 @@ function find (page, items, offset) {
     padding-top: 1rem;
     overflow: auto;
   }
-  
+
   .next {
     float: right;
   }

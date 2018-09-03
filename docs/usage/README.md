@@ -1,5 +1,7 @@
 ---
-sidebar: auto
+title: 'Usage'
+description: ''
+bootstrapLink: ''
 ---
 
 # Hello

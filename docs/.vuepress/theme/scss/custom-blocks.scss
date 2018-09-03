@@ -1,38 +1,50 @@
 .custom-block {
-  .custom-block-title {
-    font-weight: 600;
-    margin-bottom: -0.4rem;
-  }
   &.tip, &.warning, &.danger {
-    padding: 0.1rem 1.5rem;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid $gray-500;
     border-left-width: 0.5rem;
-    border-left-style: solid;
-    margin: 1rem 0;
+    border-radius: 0.25rem;
   }
+
   &.tip {
-    background-color: #f3f5f7;
-    border-color: #42b983;
+    background-color: $gray-100;
+    border-color: theme-color("info");
+
+    .custom-block-title {
+      color: theme-color("info");
+    }
   }
+
   &.warning {
-    background-color: rgba(255, 229, 100, 0.3);
-    border-color: darken(#ffe564, 35%);
-    color: darken(#ffe564, 70%);
+    background-color: $gray-100;
+    border-color: theme-color("warning");
+
     .custom-block-title {
-      color: darken(#ffe564, 50%);
-    }
-    a {
-      color: $textColor;
+      color: theme-color("warning");
     }
   }
+
   &.danger {
-    background-color: #ffe6e6;
-    border-color: darken(red, 20%);
-    color: darken(red, 70%);
+    background-color: $gray-100;
+    border-color: theme-color("danger");
+
     .custom-block-title {
-      color: darken(red, 40%);
+      color: theme-color("danger");
     }
-    a {
-      color: $textColor;
-    }
+  }
+
+  .custom-block-title {
+    font-size: $h5-font-size;
+    margin-bottom: $headings-margin-bottom;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    // margin-bottom: -0.4rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }

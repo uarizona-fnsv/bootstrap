@@ -60,7 +60,7 @@ function renderChildren (h, children, path, route, maxDepth, depth = 1) {
 
 .sidebar .sidebar-sub-headers {
   padding-left: 1rem;
-  font-size: 0.95em;
+  font-size: 1.0rem;
 }
 
 a.sidebar-link {

@@ -1,0 +1,19 @@
+.jumbotron {
+  &.jumbotron-dark,
+  &.jumbotron-blue,
+  &.jumbotron-red {
+    color: $white;
+  }
+
+  &.jumbotron-dark {
+    background-color: theme-color('dark');
+  }
+
+  &.jumbotron-blue {
+    background-color: extra-color('primary-dark');
+  }
+
+  &.jumbotron-red {
+    background-color: extra-color('accent');
+  }
+}

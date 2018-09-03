@@ -1,6 +1,8 @@
-# Breadcrumb
-
-<p class="lead">Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</p>
+---
+title: 'Breadcrumb'
+description: 'Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.'
+bootstrapLink: ''
+---
 
 <example>
     <nav aria-label="breadcrumb">

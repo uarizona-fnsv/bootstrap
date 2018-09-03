@@ -1,7 +1,7 @@
-# Carousel
+---
+title: 'Carousel'
+description: 'A slideshow component for cycling through elements—images or slides of text—like a carousel.'
+bootstrapLink: ''
+---
 
-<p class="lead">A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
-
-<example>
-
-</example>
+See [Bootstrap's carousel documentation](http://getbootstrap.com/docs/4.1/components/carousel/) to learn more.

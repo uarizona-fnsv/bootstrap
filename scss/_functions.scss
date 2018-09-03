@@ -1,0 +1,7 @@
+@function extra-color($key: "primary-dark") {
+  @return map-get($extra-colors, $key);
+}
+
+@function legacy-color($key: "primary-dark") {
+  @return map-get($legacy-colors, $key);
+}

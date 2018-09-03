@@ -63,13 +63,13 @@ export default {
 
   .site-name {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     color: $white;
     position: relative;
   }
 
   .links {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     position: absolute;
     right: 1.5rem;
     top: 0.7rem;
