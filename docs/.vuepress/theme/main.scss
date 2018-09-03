@@ -1,3 +1,5 @@
+$contentWidth: 840px;
+
 .page {
   padding-left: 15rem;
 }
@@ -40,7 +42,9 @@
 }
 
 .content {
-  padding: 1rem;
+  max-width: $contentWidth;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 
   &:not(.custom) {
     > *:first-child {

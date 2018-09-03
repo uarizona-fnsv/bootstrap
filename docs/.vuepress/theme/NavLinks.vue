@@ -15,7 +15,8 @@
       target="_blank"
       rel="noopener noreferrer">
       {{ repoLabel }}
-      <OutboundLink/>
+      <!-- <OutboundLink/> -->
+      <i class="fa fa-link" aria-hidden="true"/>
     </a>
   </nav>
 </template>
@@ -97,37 +98,50 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@import './styles/config.styl'
+<style lang="scss">
+@import './scss/config.scss';
 
-.nav-links-docs
-  display inline-block
-  a
-    line-height 1.4rem
-    color inherit
-    &:hover, &.router-link-active
-      color $accentColor
-  .nav-item-docs
-    cursor pointer
-    position relative
-    display inline-block
-    margin-left 1.5rem
-    line-height 2rem
-  .repo-link
-    margin-left 1.5rem
+.nav-links-docs {
+  display: inline-block;
+  a {
+    line-height: 1.4rem;
+    color: inherit;
+    &:hover, &.router-link-active {
+      color: $accentColor;
+    }
+  }
+  .nav-item-docs {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+    line-height: 2rem;
+  }
+  .repo-link {
+    margin-left: 1.5rem;
+  }
+}
 
-@media (max-width: $MQMobile)
-  .nav-links-docs
-    .nav-item-docs, .repo-link
-      margin-left 0
+@media (max-width: $MQMobile) {
+  .nav-links-docs {
+    .nav-item-docs, .repo-link {
+      margin-left: 0;
+    }
+  }
+}
 
-@media (min-width: $MQMobile)
-  .nav-links-docs a
-    &:hover, &.router-link-active
-      color $textColor
-      text-decoration none
-  .nav-item-docs > a:not(.external)
-    &:hover, &.router-link-active
-      margin-bottom -2px
-      border-bottom 2px solid lighten($accentColor, 8%)
+@media (min-width: $MQMobile) {
+  .nav-links-docs a {
+    &:hover, &.router-link-active {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  .nav-item-docs > a:not(.external) {
+    &:hover, &.router-link-active {
+      margin-bottom: -2px;
+      border-bottom: 4px solid lighten($accentColor, 8%);
+    }
+  }
+}
 </style>
