@@ -391,31 +391,31 @@ Use our [position utilities]() to place navbars in non-static positions. Choose 
 
 Also note that **`.sticky-top` uses `position: sticky`, which [isn't fully supported in every browser](https://caniuse.com/#feat=css-sticky)**.
 
-TODO: Make sure these don't overtake the page nav
+TODO: Make these look better
 
-<!-- <example>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Default</a>
-</nav>
+<example>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Default</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fixed top</a>
-</nav>
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed top</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar fixed-bottom navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fixed bottom</a>
-</nav>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav>
 </example>
 
 <example>
-<nav class="navbar sticky-top navbar-light bg-light">
-  <a class="navbar-brand" href="#">Sticky top</a>
-</nav>
-</example> -->
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">Sticky top</a>
+  </nav>
+</example>
 
 ## Responsive behaviors
 

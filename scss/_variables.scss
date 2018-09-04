@@ -21,7 +21,7 @@ $leaf:   #70b865 !default;
 $river:  #007d84 !default;
 $silver: #9eabae !default;
 // Technically not a ua brand color anymore, but we need it. TODO: Maybe not? light sand was partially replaced by warm gray
-$sand:   #f19e1f !default; 
+$sand:   #f19e1f !default;
 $mesa:   #a95c42 !default;
 
 // Legacy colors
@@ -104,4 +104,4 @@ $link-color: extra-color("accent") !default;
 
 // Pagination
 
-$pagination-active-bg: extra-color("oasis") !default;
+$pagination-active-bg: extra-color("accent") !default;
