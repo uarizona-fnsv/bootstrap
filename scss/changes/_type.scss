@@ -1,3 +1,5 @@
+// Modifications to headings
+
 h1, h2,
 .h1, .h2 {
   margin-bottom: $headings-margin-bottom;
@@ -18,4 +20,33 @@ h3, h4, h5, h6,
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
+}
+
+// UA Triangle-style lists
+
+ul {
+  &.list-triangle {
+    overflow: hidden;
+
+    > li,
+    > ul li {
+      padding-left: 0;
+      position: relative;
+      list-style: none;
+
+      &:before {
+        position: absolute;
+        top: 8px;
+        left: -0.8em;
+        width: 0;
+        height: 0;
+        border-left: 4px solid #000;
+        border-bottom: 4px solid transparent;
+        content: '';
+  
+        border-top: 4px solid transparent;
+        border-right: 0;
+      }
+    }
+  }
 }

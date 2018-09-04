@@ -20,7 +20,8 @@ $warmgray: #f4ede5 !default;
 $leaf:   #70b865 !default;
 $river:  #007d84 !default;
 $silver: #9eabae !default;
-$sand:   #f19e1f !default; // Technically not a ua brand color anymore, but we need it.
+// Technically not a ua brand color anymore, but we need it. TODO: Maybe not? light sand was partially replaced by warm gray
+$sand:   #f19e1f !default; 
 $mesa:   #a95c42 !default;
 
 // Legacy colors
@@ -91,10 +92,9 @@ $font-family-serif:      MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Tim
 $font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif !default;
 $headings-font-family:   $font-family-sans-serif !default;
 
-// Headings
-//
-// TODO: Make h1 and h2 use serif font
 $big-headings-font-family: $font-family-serif !default;
+
+$mark-bg: $warmgray !default;
 
 // Links
 //
@@ -104,4 +104,4 @@ $link-color: extra-color("accent") !default;
 
 // Pagination
 
-$pagination-active-bg: extra-color("accent") !default;
+$pagination-active-bg: extra-color("oasis") !default;
