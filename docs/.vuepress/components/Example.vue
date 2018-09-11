@@ -1,20 +1,65 @@
 <script>
-export default {
-    render (h) {
-        return h('div', { class: 'example'}, [
-            h('div', { class: 'example-render' }, [
-                this.$slots.default
-            ]),
-            // h('div', { class: 'example-code'}, [
-            //     h('pre', [
-            //         h('code', [
-            //             this.code
-            //         ])
-            //     ])
-            // ])
-        ])
-    }
+import JSBeautify from 'js-beautify';
+import Prism from 'prismjs';
 
+const beautifyConfig = {
+  indent_inner_html: true,
+  indent_char: ' ',
+  indent_size: 2,
+  sep: '\n'
+}
+
+export default {
+  render (h) {
+    let code = this.showCode
+        ? h('div', { class: 'example-code language-html'}, [
+            h('pre', { class: 'language-html' }, [
+              h('code', { ref: 'code' }, [
+                this.code
+              ])
+            ])
+          ])
+        : '';
+
+    return h('div', { class: 'example' }, [
+      h('div', { class: `example-render ${this.extraClasses}`, ref: 'example' }, [
+        this.$slots.default
+      ]),
+      code
+    ])
+  },
+  props: {
+    extraClasses: {
+      type: String,
+      default: ''
+    },
+    showCode: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data () {
+    return {
+      code: ''
+    };
+  },
+  mounted () {
+    if (this.showCode) {
+      let content = this.preRender(this.$refs.example.innerHTML);
+      this.code = JSBeautify.html(content, beautifyConfig);
+      Prism.highlightElement(this.$refs.code);
+    }
+  },
+  updated () {
+    if (this.showCode) {
+      Prism.highlightElement(this.$refs.code);
+    }
+  },
+  methods: {
+    preRender (content) {
+      return content.replace(/\s+data-v-\S+="[^"]*"/g, '');
+    }
+  }
 };
 </script>
 
@@ -123,8 +168,6 @@ export default {
   }
 
   .example-code {
-    background-color: #f8f9fa;
-
     pre {
       margin-bottom: 0;
     }

@@ -10,11 +10,13 @@ Wrap inline snippets of code with `code`. Be sure to escape HTML angle brackets.
   <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
 </Example>
 
+::: tip FYI
+The above example renders the &lt;code&gt; element using the styling of this documentation site, not as it is in fso-bootstrap, so you will likely see some different rendering in action.
+:::
+
 ## Code blocks
 
 Use `pre`s for multiple lines of code. Once again, be sure to escape any angle brackets in the code for proper rendering. You may optionally add the `.pre-scrollable` class, which will set a max-height of 340px and provide a y-axis scrollbar.
-
-<!-- TODO: This needs to work properly, prism is messing it up? -->
 
 <Example>
   <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;

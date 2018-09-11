@@ -10,53 +10,6 @@ Bootstrap sets basic global display, typography, and link styles. When more cont
 
 All HTML headings, `<h1>` through `<h6>`, are available.
 
-<table>
-  <thead>
-    <tr>
-      <th>Heading</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        `<h1></h1>`
-      </td>
-      <td><span class="h1">h1. Bootstrap heading</span></td>
-    </tr>
-    <tr>
-      <td>
-        `<h2></h2>`"
-      </td>
-      <td><span class="h2">h2. Bootstrap heading</span></td>
-    </tr>
-    <tr>
-      <td>
-        `<h3></h3>`"
-      </td>
-      <td><span class="h3">h3. Bootstrap heading</span></td>
-    </tr>
-    <tr>
-      <td>
-        `<h4></h4>`"
-      </td>
-      <td><span class="h4">h4. Bootstrap heading</span></td>
-    </tr>
-    <tr>
-      <td>
-        `<h5></h5>`"
-      </td>
-      <td><span class="h5">h5. Bootstrap heading</span></td>
-    </tr>
-    <tr>
-      <td>
-        `<h6></h6>`"
-      </td>
-      <td><span class="h6">h6. Bootstrap heading</span></td>
-    </tr>
-  </tbody>
-</table>
-
 <Example>
   <h1>h1. Bootstrap heading</h1>
   <h2>h2. Bootstrap heading</h2>

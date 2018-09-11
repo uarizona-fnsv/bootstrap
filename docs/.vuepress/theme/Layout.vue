@@ -129,6 +129,5 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./scss/theme.scss" lang="scss"></style>
 <style src="../../../scss/custom.scss" lang="scss"></style>
