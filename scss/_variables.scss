@@ -13,23 +13,22 @@ $arizonablue: #0c234b !default;
 $midnight:    #001c48 !default;
 
 // Neutral colors
-$coolgray: #e2e9eb !default;
-$warmgray: #f4ede5 !default;
+$coolgray:    #e2e9eb !default;
+$warmgray:    #f4ede5 !default;
 
 // Secondary colors
-$leaf:   #70b865 !default;
-$river:  #007d84 !default;
-$silver: #9eabae !default;
-// Technically not a ua brand color anymore, but we need it. TODO: Maybe not? light sand was partially replaced by warm gray
-$sand:   #f19e1f !default;
-$mesa:   #a95c42 !default;
+$leaf:        #70b865 !default;
+$river:       #007d84 !default;
+$silver:      #9eabae !default;
+// Technically not a ua brand color anymore, but we need it for warning
+$sand:        #f19e1f !default;
 
 // Legacy colors
-$ash:        #403635 !default;
-$sage:       #4a634e !default;
+$ash:         #403635 !default;
+$sage:        #4a634e !default;
 // $silver is a legacy brand color too
-$darksilver: #49595e !default;
-$copper:       $mesa;
+$darksilver:  #49595e !default;
+$copper:      #a95c42 !default;
 
 // Colors map
 $ua-colors: () !default;
@@ -47,7 +46,6 @@ $ua-colors: map-merge((
   "leaf": $leaf,
   "river": $river,
   "silver": $silver,
-  "mesa": $mesa,
   "ash": $ash,
   "sage": $sage,
   "darksilver": $darksilver,
@@ -88,24 +86,28 @@ $legacy-colors: map-merge((
 //
 // Replace the bootstrap fonts with UA fonts
 
-$font-family-serif:      MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
-$font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif !default;
-$headings-font-family:   $font-family-sans-serif !default;
+$font-family-serif:        MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
+$font-family-sans-serif:   MiloWeb, Verdana, Geneva, sans-serif !default;
 
+// Bump up the base font size a slight amount since the milo fonts are a bit smaller than the
+// default bootstrap fonts.
+$font-size-base:           1rem * 1.1 !default; // Assumes the browser default, typically `16px`
+
+$headings-font-family:     $font-family-sans-serif !default;
 $big-headings-font-family: $font-family-serif !default;
 
-$mark-bg: $warmgray !default;
+$mark-bg:                  $warmgray !default;
 
 // Links
 //
 // Make links the accent color
 
-$link-color: extra-color("accent") !default;
+$link-color:               extra-color("accent") !default;
 
 // Pagination
 
-$pagination-active-bg: extra-color("accent") !default;
+$pagination-active-bg:     extra-color("accent") !default;
 
 // Code
 
-$code-color: extra-color("accent") !default;
+$code-color:               extra-color("accent") !default;

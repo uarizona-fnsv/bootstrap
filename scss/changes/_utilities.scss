@@ -23,3 +23,15 @@
     @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
   }
 }
+
+// Text
+//
+// Add additional text colors from `extra-colors` and `legacy-colors`
+
+@each $color, $value in $extra-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+@each $color, $value in $legacy-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}

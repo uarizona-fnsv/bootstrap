@@ -9,8 +9,10 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Overrides
-@import "changes/type";
-@import "changes/jumbotron";
+@import "changes/mixins/caret";
 @import "changes/buttons";
+@import "changes/dropdowns";
+@import "changes/jumbotron";
 @import "changes/utilities";
 @import "changes/table";
+@import "changes/type";

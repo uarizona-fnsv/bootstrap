@@ -41,6 +41,7 @@
     "postcss-cli": "^5.0.0",
     "pretty": "^2.0.0",
     "prismjs": "^1.15.0",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "vue-holderjs": "^1.0.2"
   }
 }

@@ -69,7 +69,7 @@ export default {
   }
 
   .links {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     position: absolute;
     right: 1.5rem;
     top: 0.7rem;

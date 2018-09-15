@@ -83,13 +83,11 @@ The `.navbar-brand` can be applied to most elements, but an anchor works best as
 
 Adding images to the `.navbar-brand` will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.
 
-TODO: Images!
-
 <example>
 <!-- Just an image -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <!-- <img src="{{ site.baseurl }}/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+    <img :src="$site.base + 'logo.png'" width="30" height="30" alt="">
   </a>
 </nav>
 </example>
