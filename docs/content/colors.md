@@ -1,43 +1,63 @@
+---
+colors: ['primary', 'primary-light', 'primary-dark', 'accent', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark']
+---
+
 # Colors
 
-TODO: document font colors and background colors (theme, extra, legacy)
+<p class="lead">Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.</p>
 
-TODO: Make these for loops work properly
+The colors available are shown below, with their purpose indicated by their name, which are common across our components. Colors marked with an asterisk (*) should be used sparingly and only when 'Primary' has already been used and differentiation is needed. As such, not all bootstrap components include these colors.
 
-<p class="lead">Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.
-group: utilities</p>
+These colors are a streamlined subset of the UA Branding colors, which are all still available for use and documented [here](./ua-branding.html).
 
-## Color
+Primary Light*
 
-<Example>
-  <!-- {% for color in site.data.theme-colors %}
-  <p class="text-{{ color.name }}{% if color.name == "light" %} bg-dark{% endif %}">.text-{{ color.name }}</p>
-  {% endfor %} -->
-  <p class="text-body">.text-body</p>
-  <p class="text-muted">.text-muted</p>
-  <p class="text-white bg-dark">.text-white</p>
-  <p class="text-black-50">.text-black-50</p>
-  <p class="text-white-50 bg-dark">.text-white-50</p>
-</Example>
+Primary
 
-Contextual text classes also work well on anchors with the provided hover and focus states. **Note that the `.text-white` and `.text-muted` class has no additional link styling beyond underline.**
+Primary Dark*
 
-<Example>
-  <!-- {% for color in site.data.theme-colors %}
-  <p><a href="#" class="text-{{ color.name }}{% if color.name == "light" %} bg-dark{% endif %}">{{ color.name | capitalize }} link</a></p>
-  {% endfor %} -->
-  <p><a href="#" class="text-muted">Muted link</a></p>
-  <p><a href="#" class="text-white bg-dark">White link</a></p>
-</Example>
+Accent*
+
+Secondary
+
+Info
+
+Success
+
+Warning
+
+Danger
+
+Light
+
+Dark
+
+## Text Color
+
+Be sure to keep in mind what is most useful/appropriate in a given situation. For more information on this, see above. Note that several of these colors are duplicates, for more info on this, also see above.
+
+<p v-for="color in $page.frontmatter.colors" :key="color"
+   :class="['text-' + color, { 'bg-dark': color == 'light'}]">
+  .text-{{ color }}
+</p>
+<p class="text-body">.text-body</p>
+<p class="text-muted">.text-muted</p>
+<p class="text-white bg-dark">.text-white</p>
+<p class="text-black-50">.text-black-50</p>
+<p class="text-white-50 bg-dark">.text-white-50</p>
 
 ## Background color
 
 Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities **do not set `color`**, so in some cases you'll want to use `.text-*` utilities.
 
+Be sure to keep in mind what is most useful/appropriate in a given situation. For more information on this, see above. Note that several of these colors are duplicates, for more info on this, also see above.
+
 <Example>
-  <!-- {% for color in site.data.theme-colors %}
-  <div class="p-3 mb-2 bg-{{ color.name }} {% if color.name == "light" or color.name == "warning" %}text-dark{% else %}text-white{% endif %}">.bg-{{ color.name }}</div>
-  {% endfor %} -->
+  <div v-for="color in $page.frontmatter.colors" :key="color"
+       class="p-3 mb-2"
+       :class="['bg-' + color, color == 'light' || color == 'warning' ? 'text-dark' : 'text-light']">
+    .bg-{{ color }}
+  </div>
   <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
   <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 </Example>

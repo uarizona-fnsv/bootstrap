@@ -1,3 +1,7 @@
+---
+colors: ['primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark']
+---
+
 # Tables
 
 <p class="lead">Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.</p>
@@ -504,48 +508,44 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
 
 Use contextual classes to color table rows or individual cells.
 
-<!-- TODO: Make this work in vuepress!!! -->
-<!-- <Example>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Class</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-active">
-        <th scope="row">Active</th>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      <tr>
-        <th scope="row">Default</th>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      {% for color in site.data.theme-colors %}
-      <tr class="table-{{ color.name }}">
-        <th scope="row">{{ color.name | capitalize }}</th>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>{% endfor %}
-    </tbody>
-  </table>
-</Example> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      <th scope="row">Active</th>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <th scope="row">Default</th>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr v-for="color in $page.frontmatter.colors" :key="color" :class="'table-' + color">
+      <th scope="row">{{ color }}</th>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+  </tbody>
+</table>
 
 ```html
 <!-- On rows -->
 <tr class="table-active">...</tr>
-{% for color in site.data.theme-colors %}
-<tr class="table-{{ color.name }}">...</tr>{% endfor %}
+<tr class="table-primary">...</tr>
+...
 
 <!-- On cells (`td` or `th`) -->
 <tr>
   <td class="table-active">...</td>
-  {% for color in site.data.theme-colors %}
-  <td class="table-{{ color.name }}">...</td>{% endfor %}
+  <td class="table-primary">...</td>
+  ...
 </tr>
 ```
 

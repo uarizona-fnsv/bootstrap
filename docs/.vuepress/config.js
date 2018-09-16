@@ -37,7 +37,8 @@ module.exports = {
         ['figures', 'Figures'],
         ['images', 'Images'],
         ['tables', 'Tables'],
-        ['typography', 'Typography']
+        ['typography', 'Typography'],
+        ['ua-branding', 'UA Branding Colors']
       ],
       '/components/': [
         ['/components/', 'Components'],

@@ -2,8 +2,6 @@
 
 <p class="lead">Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.</p>
 
-*Note*: Include `.sans` header options
-
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]().
 
 ## Headings
@@ -39,22 +37,31 @@ Headings can be customized in several ways.
 UA branding guidelines dictate a serif font for `h1` and `h2`, however, both can be overriden using the `sans` class.
 
 <Example>
-  <h1 class="sans">h1. Bootstrap heading</h1>
-  <h2 class="sans">h2. Bootstrap heading</h2>
+  <h1 class="sans text-uppercase">h1. Bootstrap heading</h1>
+  <h2 class="sans text-uppercase">h2. Bootstrap heading</h2>
 </Example>
 
 When using non-serif headings, UA branding guidelines generally require they also be made uppercase (via `.text-uppercase`, like so. They can also be combined with text coloring classes.
 
 <Example>
-  <h1 class="sans">h1. Bootstrap heading</h1>
-  <h2 class="sans">h2. Bootstrap heading</h2>
+  <h1 class="sans text-uppercase">h1. Bootstrap heading</h1>
+  <h2 class="sans text-uppercase">h2. Bootstrap heading</h2>
   <h3>h3. Bootstrap heading</h3>
   <h4>h4. Bootstrap heading</h4>
 </Example>
 
-Generally, Use `wildcatblue` for `h1` and `h2`, and `azurite` for `h3` and `h4`. Avoid coloring on `h5` and `h6`, though grayscale variations are okay.
+When coloring the headers, use `primay-dark` (aka "Wildcat Blue") for `h1` and `h2`, and `primary` (aka "Azurite") for `h3` and `h4`. Avoid coloring on `h5` and `h6`, though grayscale variations are okay. Avoid using uppercase fonts on `h5` and `h6` as well, though the option is available.
 
-TODO: Text coloring options
+<Example>
+  <h1 class="sans text-uppercase text-primary-dark">h1. Bootstrap heading</h1>
+  <h2 class="sans text-uppercase text-primary-dark">h2. Bootstrap heading</h2>
+  <h3 class="text-uppercase text-primary">h3. Bootstrap heading</h3>
+  <h4 class="text-uppercase text-primary">h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6 class="text-black-50">h6. Bootstrap heading</h6>
+</Example>
+
+Don't color sans-serif headings
 
 
 #### Secondary Heading
