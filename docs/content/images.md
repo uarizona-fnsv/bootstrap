@@ -1,8 +1,8 @@
-# Images
-
-<p class="lead">Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.</p>
-
-TODO: Holder.js isn't working, need to import it differently
+---
+title: 'Images'
+description: 'Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.'
+bootstrap-link: ''
+---
 
 ## Responsive images
 

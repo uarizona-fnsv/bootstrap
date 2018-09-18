@@ -1,6 +1,8 @@
-# Navs
-
-<p class="lead">Documentation and examples for how to use Bootstrap’s included navigation components.</p>
+---
+title: 'Navs'
+description: 'Documentation and examples for how to use Bootstrap’s included navigation components.'
+bootstrap-link: ''
+---
 
 ## Base nav
 

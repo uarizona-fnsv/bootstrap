@@ -1,44 +1,48 @@
 ---
-colors: ['primary', 'primary-light', 'primary-dark', 'accent', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark']
+title: 'Colors'
+description: 'Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.'
+bootstrap-link: ''
+colors: [
+  { name: 'Primary Light', color: 'primary-light', hex: '#378dbd', alt: 'Oasis' },
+  { name: 'Primary', color: 'primary', hex: '#1e5288', alt: 'Azurite' },
+  { name: 'Primary Dark', color: 'primary-dark', hex: '#0c234b', alt: 'Arizona Blue' },
+  { name: 'Accent', color: 'accent', hex: '#ab0520', alt: 'UA Red' },
+  { name: 'Secondary', color: 'secondary', hex: '#9eabae', alt: 'n/a' },
+  { name: 'Info', color: 'info', hex: '#007d84', alt: 'River' },
+  { name: 'Success', color: 'success', hex: '#70b865', alt: 'Leaf' },
+  { name: 'Warning', color: 'warning', hex: '#f19e1f', alt: 'Sand' },
+  { name: 'Danger', color: 'danger', hex: '#ef4056', alt: 'Bloom' },
+  { name: 'Light', color: 'light', hex: '#f8f9fa', alt: 'n/a' },
+  { name: 'Dark', color: 'dark', hex: '#212529', alt: 'n/a' }
+]
 ---
 
-# Colors
-
-<p class="lead">Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.</p>
-
-The colors available are shown below, with their purpose indicated by their name, which are common across our components. Colors marked with an asterisk (*) should be used sparingly and only when 'Primary' has already been used and differentiation is needed. As such, not all bootstrap components include these colors.
+The colors available are shown below, with their purpose indicated by their name, which are common across our components. As such, not all bootstrap components include these colors.
 
 These colors are a streamlined subset of the UA Branding colors, which are all still available for use and documented [here](./ua-branding.html).
 
-Primary Light*
+<div class="mb-4 d-flex flex-row flex-wrap justify-content-center">
+  <div v-for="color in $page.frontmatter.colors" :key="color.color"
+       class="m-2 p-2 d-flex flex-column justify-content-center"
+       :class="['bg-' + color.color, color.color == 'light' ? 'text-dark' : 'text-light' ]"
+       style="width:200px; height:200px; text-align:center;">
+    <p class="h5">{{ color.name }}</p>
+    <p class="small">{{ color.alt }}</p>
+    <p>{{ color.hex }}</p>
+  </div>
+</div>
 
-Primary
+`Primary Light`, `Primary Dark`, and `Accent` should be used sparingly and only when 'Primary' has already been used and differentiation is needed. This often occurs in a toolbar with many buttons. In some occasions, `Accent` can replace `Primary`, especially if on a smaller area, such as a nested component with it's own independant functionality, or a modal/dialog.
 
-Primary Dark*
-
-Accent*
-
-Secondary
-
-Info
-
-Success
-
-Warning
-
-Danger
-
-Light
-
-Dark
+`Dark` and `Light` should also be used sparingly, and in instances where neutrality is needed. Keep in mind that each can be difficult to see depending on the background they are set in.
 
 ## Text Color
 
 Be sure to keep in mind what is most useful/appropriate in a given situation. For more information on this, see above. Note that several of these colors are duplicates, for more info on this, also see above.
 
-<p v-for="color in $page.frontmatter.colors" :key="color"
-   :class="['text-' + color, { 'bg-dark': color == 'light'}]">
-  .text-{{ color }}
+<p v-for="color in $page.frontmatter.colors" :key="color.color"
+   :class="['text-' + color.color, { 'bg-dark': color.color == 'light'}]">
+  .text-{{ color.color }}
 </p>
 <p class="text-body">.text-body</p>
 <p class="text-muted">.text-muted</p>
@@ -53,25 +57,14 @@ Similar to the contextual text color classes, easily set the background of an el
 Be sure to keep in mind what is most useful/appropriate in a given situation. For more information on this, see above. Note that several of these colors are duplicates, for more info on this, also see above.
 
 <Example>
-  <div v-for="color in $page.frontmatter.colors" :key="color"
+  <div v-for="color in $page.frontmatter.colors" :key="color.color"
        class="p-3 mb-2"
-       :class="['bg-' + color, color == 'light' || color == 'warning' ? 'text-dark' : 'text-light']">
-    .bg-{{ color }}
+       :class="['bg-' + color.color, color.color == 'light' ? 'text-dark' : 'text-light']">
+    .bg-{{ color.color }}
   </div>
   <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
   <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
 </Example>
-
-## Background gradient
-
-When `$enable-gradients` is set to true, you'll be able to use `.bg-gradient-` utility classes. **By default, `$enable-gradients` is disabled and the example below is intentionally broken.** This is done for easier customization from the moment you start using Bootstrap. [Learn about our Sass options]() to enable these classes and more.
-
-<Example>
-  <!-- {% for color in site.data.theme-colors %}
-  <div class="p-3 mb-2 bg-gradient-{{ color.name }} {% if color.name == "light" or color.name == "warning" %}text-dark{% else %}text-white{% endif %}">.bg-gradient-{{ color.name }}</div>
-  {% endfor %} -->
-</Example>
-
 
 ::: warning Dealing with specificity
 Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element's content in a `<div>` with the class.

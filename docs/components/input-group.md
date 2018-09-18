@@ -1,6 +1,8 @@
-# Input Group
-
-<p class="lead">Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.</p>
+---
+title: 'Input Group'
+description: 'Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.'
+bootstrap-link: ''
+---
 
 ## Basic example
 

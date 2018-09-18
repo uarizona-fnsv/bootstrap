@@ -1,10 +1,9 @@
 ---
+title: 'Tables'
+description: 'Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.'
+bootstrap-link: ''
 colors: ['primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark']
 ---
-
-# Tables
-
-<p class="lead">Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.</p>
 
 ## Examples
 

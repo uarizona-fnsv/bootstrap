@@ -1,29 +1,22 @@
-// Modifications to headings
-
+// Allow for serif h1 and h2 headings for when needing to comply with UA branding completely
 h1, h2,
 .h1, .h2 {
-  margin-bottom: $headings-margin-bottom;
-  font-family: $big-headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-
-  &.sans {
-    font-family: $headings-font-family !important;
+  &.serif {
+    font-family: $font-family-serif !important;
   }
 }
 
-h3, h4, h5, h6,
-.h3, .h4, .h5, .h6 {
-  margin-bottom: $headings-margin-bottom;
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
+// Type display classes should be serif by default, possible to override
+.display-1, .display-2, .display-3, .display-4 {
+  font-family: $font-family-serif !important;
+}
+
+// Use Milo (serif) font for text
+.text-serif {
+  font-family: $font-family-serif !important;
 }
 
 // UA Triangle-style lists
-
 ul {
   &.list-triangle {
     overflow: hidden;
@@ -43,7 +36,7 @@ ul {
         border-left: 4px solid #000;
         border-bottom: 4px solid transparent;
         content: '';
-  
+
         border-top: 4px solid transparent;
         border-right: 0;
       }

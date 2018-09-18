@@ -1,6 +1,8 @@
-# Jumbotron
-
-<p class="lead">Lightweight, flexible component for showcasing hero unit style content.</p>
+---
+title: 'Jumbotron'
+description: 'Lightweight, flexible component for showcasing hero unit style content.'
+bootstrap-link: ''
+---
 
 A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.
 

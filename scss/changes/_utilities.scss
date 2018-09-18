@@ -2,7 +2,7 @@
 
 // Backgrounds
 //
-// Add additional background colors from `extra-colors` and `legacy-colors`
+// Add additional background colors from `extra-colors` and `ua-colors`
 
 @each $color, $value in $extra-colors {
   @include bg-variant(".bg-#{$color}", $value);
@@ -14,12 +14,22 @@
   }
 }
 
-@each $color, $value in $legacy-colors {
+@each $color, $value in $ua-colors {
   @include bg-variant(".bg-#{$color}", $value);
 }
 
 @if $enable-gradients {
-  @each $color, $value in $legacy-colors {
+  @each $color, $value in $ua-colors {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+  }
+}
+
+@each $color, $value in $extra-colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $extra-colors {
     @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
   }
 }
@@ -32,6 +42,6 @@
   @include text-emphasis-variant(".text-#{$color}", $value);
 }
 
-@each $color, $value in $legacy-colors {
+@each $color, $value in $ua-colors {
   @include text-emphasis-variant(".text-#{$color}", $value);
 }

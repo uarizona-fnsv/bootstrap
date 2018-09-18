@@ -63,7 +63,7 @@ export default {
 
   .site-name {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     color: $white;
     position: relative;
   }

@@ -1,6 +1,8 @@
-# Pagination
-
-<p class="lead">Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.</p>
+---
+title: 'Pagination'
+description: 'Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.'
+bootstrap-link: ''
+---
 
 ## Overview
 

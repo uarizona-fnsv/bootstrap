@@ -1,6 +1,8 @@
-# Badges
-
-<p class="lead">Documentation and examples for badges, our small count and labeling component.</p>
+---
+title: 'Badges'
+description: 'Documentation and examples for badges, our small count and labeling component.'
+bootstrap-link: ''
+---
 
 Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units.
 

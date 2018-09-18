@@ -1,5 +1,9 @@
 <template>
   <div class="page">
+    <div class="page-header">
+      <h1 class="display-4">{{ $page.title }}</h1>
+      <p class="lead">{{ $page.frontmatter.description }}</p>
+    </div>
     <Content :custom="false"/>
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
@@ -163,6 +167,11 @@ function find (page, items, offset) {
   padding-bottom: 2rem;
 }
 
+.page-header {
+  @extend %wrapper;
+  padding-bottom: 1rem;
+}
+
 .page-edit {
   @extend %wrapper;
   padding-top: 1rem;
@@ -193,7 +202,7 @@ function find (page, items, offset) {
   @extend %wrapper;
   padding-top: 1rem;
   padding-bottom: 0;
-  
+
   .inner {
     min-height: 2rem;
     margin-top: 0;
@@ -201,7 +210,7 @@ function find (page, items, offset) {
     padding-top: 1rem;
     overflow: auto;
   }
-  
+
   .next {
     float: right;
   }

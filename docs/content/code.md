@@ -1,6 +1,8 @@
-# Code
-
-<p class="lead">Documentation and examples for displaying inline and multiline blocks of code with Bootstrap.</p>
+---
+title: 'Code'
+description: 'Documentation and examples for displaying inline and multiline blocks of code with Bootstrap.'
+bootstrap-link: ''
+---
 
 ## Inline code
 

@@ -1,6 +1,8 @@
-# Typography
-
-<p class="lead">Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.</p>
+---
+title: 'Typography'
+description: 'Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.'
+bootstrap-link: ''
+---
 
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]().
 
@@ -32,37 +34,55 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 
 Headings can be customized in several ways.
 
-#### Non-Serif Headers
+#### Coloring
 
-UA branding guidelines dictate a serif font for `h1` and `h2`, however, both can be overriden using the `sans` class.
+When coloring the headers, use `primay-dark` (aka "Wildcat Blue") for `h1` and `h2`, and `primary` (aka "Azurite") for `h3` and `h4`. Avoid coloring on `h5` and `h6`, though grayscale variations are okay.
 
 <Example>
-  <h1 class="sans text-uppercase">h1. Bootstrap heading</h1>
-  <h2 class="sans text-uppercase">h2. Bootstrap heading</h2>
+  <h1 class="text-primary-dark">h1. Bootstrap heading</h1>
+  <h2 class="text-primary-dark">h2. Bootstrap heading</h2>
+  <h3 class="text-primary">h3. Bootstrap heading</h3>
+  <h4 class="text-primary">h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6 class="text-black-50">h6. Bootstrap heading</h6>
 </Example>
+
+#### Meeting UA Branding Guidelines
+
+::: warning Avoid unless necessary
+Sometimes we are required to meet UA Branding guidelines. When required, use the options below for headings. Otherwise, don't use them. This is for a few reasons: serif headings create an awkward transition in document flow, and they don't completely fit, and they don't play nicely with UI elements.
+
+If writing a large text section, it may make sense to use the `.serif` heading. Think carefully about it before implementing. If a more distinct visual differentiation is wanted, try using the [Coloring](#coloring) guidelines first.
+:::
+
+UA branding guidelines dictate a serif font for `h1` and `h2`. We choose not to do this by default in FSO Bootstrap, however, we can acheive this requirement using the `serif` class when required to do so.
+
+<Example>
+  <h1 class="serif">h1. Bootstrap heading</h1>
+  <h2 class="serif">h2. Bootstrap heading</h2>
+</Example>
+
+Don't combine serif headings with uppercase text.
 
 When using non-serif headings, UA branding guidelines generally require they also be made uppercase (via `.text-uppercase`, like so. They can also be combined with text coloring classes.
 
 <Example>
-  <h1 class="sans text-uppercase">h1. Bootstrap heading</h1>
-  <h2 class="sans text-uppercase">h2. Bootstrap heading</h2>
+  <h1 class="text-uppercase">h1. Bootstrap heading</h1>
+  <h2 class="text-uppercase">h2. Bootstrap heading</h2>
   <h3>h3. Bootstrap heading</h3>
   <h4>h4. Bootstrap heading</h4>
 </Example>
 
-When coloring the headers, use `primay-dark` (aka "Wildcat Blue") for `h1` and `h2`, and `primary` (aka "Azurite") for `h3` and `h4`. Avoid coloring on `h5` and `h6`, though grayscale variations are okay. Avoid using uppercase fonts on `h5` and `h6` as well, though the option is available.
-
 <Example>
-  <h1 class="sans text-uppercase text-primary-dark">h1. Bootstrap heading</h1>
-  <h2 class="sans text-uppercase text-primary-dark">h2. Bootstrap heading</h2>
+  <h1 class="text-uppercase text-primary-dark">h1. Bootstrap heading</h1>
+  <h2 class="text-uppercase text-primary-dark">h2. Bootstrap heading</h2>
   <h3 class="text-uppercase text-primary">h3. Bootstrap heading</h3>
   <h4 class="text-uppercase text-primary">h4. Bootstrap heading</h4>
   <h5>h5. Bootstrap heading</h5>
   <h6 class="text-black-50">h6. Bootstrap heading</h6>
 </Example>
 
-Don't color sans-serif headings
-
+Don't color serif headings.
 
 #### Secondary Heading
 
@@ -77,7 +97,7 @@ Use the included utility classes to recreate the small secondary heading text fr
 
 ## Display headings
 
-Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
+Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style. To make it further stand out, display headings use the serif font.
 
 <Example>
   <h1 class="display-1">Display 1</h1>
@@ -250,6 +270,15 @@ Align terms and descriptions horizontally by using our grid system's predefined 
       </dl>
     </dd>
   </dl>
+</Example>
+
+## Serif
+
+Serif fonts should generally be avoided for text content. However, UA branding includes both a serif (Milo) and non-serif (Milo Sans) font. To catch any instances in which a serif font _is_ required, use the `.text-serif` utility.
+
+<Example>
+  <p>I'm sans serif.</p>
+  <p class="text-serif">I'm serif.</p>
 </Example>
 
 

@@ -1,8 +1,8 @@
-# Dropdowns
-
-<p class="lead">Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.</p>
-
-TODO: Fix dropdown menu examples and info blocks
+---
+title: 'Dropdowns'
+description: 'Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.'
+bootstrap-link: ''
+---
 
 ## Overview
 

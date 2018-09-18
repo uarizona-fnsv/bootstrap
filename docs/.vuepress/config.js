@@ -20,6 +20,13 @@ module.exports = {
   ],
   serviceWorker: true,
   evergreen: true,
+  markdown: {
+    anchor: {
+      permalink: true,
+      permalinkBefore: false,
+      permalinkSymbol: '#'
+    }
+  },
   // Config for the default theme
   themeConfig: {
     nav: [
@@ -68,6 +75,7 @@ module.exports = {
     lastUpdated: 'Last Updated',
     repo: 'https://gitlab.fso.arizona.edu/FAST/fso-bootstrap',
     docsDir: 'docs',
-    editLinks: true
+    editLinks: true,
+    logo: '/logo.png'
   }
 }

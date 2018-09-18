@@ -119,6 +119,10 @@ export default {
       float: none;
     }
 
+    > .btn {
+      margin-bottom: 0.25rem;
+    }
+
     > .btn-group {
       margin-top: .25rem;
       margin-bottom: .25rem;

@@ -1,6 +1,8 @@
-# Buttons
-
-<p class="lead">Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
+---
+title: 'Button'
+description: 'Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.'
+bootstrap-link: ''
+---
 
 FSO Bootstrap adds several extra button types: `accent`, `primary-light`, and `primary-dark`, which can be used to highlight additional main functionality and avoid using the same color. Generally, these additional buttons should be used sparingly and only after `primary` and `secondary` have been used. The exception occurs with `accent`, which can be used as the main button when used alone for a change of pace, especially when used on top of a blue or dark background.
 
@@ -8,8 +10,8 @@ FSO Bootstrap adds several extra button types: `accent`, `primary-light`, and `p
 
 <example>
     <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-primary-dark">Primary (Dark)</button>
-    <button type="button" class="btn btn-primary-light">Primary (Light)</button>
+    <button type="button" class="btn btn-primary-dark">Primary Dark</button>
+    <button type="button" class="btn btn-primary-light">Primary Light</button>
     <button type="button" class="btn btn-accent">Accent</button>
     <button type="button" class="btn btn-secondary">Secondary</button>
     <button type="button" class="btn btn-success">Success</button>
@@ -25,8 +27,8 @@ FSO Bootstrap adds several extra button types: `accent`, `primary-light`, and `p
 
 <example>
     <button type="button" class="btn btn-outline-primary">Primary</button>
-    <button type="button" class="btn btn-outline-primary-dark">Primary (Dark)</button>
-    <button type="button" class="btn btn-outline-primary-light">Primary (Light)</button>
+    <button type="button" class="btn btn-outline-primary-dark">Primary Dark</button>
+    <button type="button" class="btn btn-outline-primary-light">Primary Light</button>
     <button type="button" class="btn btn-outline-accent">Accent</button>
     <button type="button" class="btn btn-outline-secondary">Secondary</button>
     <button type="button" class="btn btn-outline-success">Success</button>
