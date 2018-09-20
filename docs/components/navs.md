@@ -1,7 +1,7 @@
 ---
 title: 'Navs'
 description: 'Documentation and examples for how to use Bootstrap’s included navigation components.'
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 ## Base nav

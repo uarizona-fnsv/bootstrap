@@ -1,7 +1,7 @@
 ---
 title: 'Collapse'
 description: 'Toggle the visibility of content across your project with a few classes and our JavaScript plugins.'
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 ## How it works

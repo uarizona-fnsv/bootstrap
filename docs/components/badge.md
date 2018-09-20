@@ -1,7 +1,7 @@
 ---
 title: 'Badges'
 description: 'Documentation and examples for badges, our small count and labeling component.'
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units.

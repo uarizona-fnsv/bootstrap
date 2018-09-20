@@ -1,7 +1,7 @@
 ---
 title: 'University of Arizona Branding Colors'
 description: 'These docs introduce the UA color palatte as well as our FSO Bootstrap Palatte (a subset of the UA branding colors with some additional options), as well as the many utilities available to implement these colors.'
-bootstrap-link: ''
+bootstrapLink: ''
 
 primary: [
   { name: 'Bloom', color: 'bloom', hex: '#ef4056' },

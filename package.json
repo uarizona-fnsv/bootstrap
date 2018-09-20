@@ -32,6 +32,7 @@
     "vuepress": "^0.14.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "autoprefixer": "^7.2.6",
     "clean-css-cli": "^4.1.10",
     "eslint": "^5.0.0",

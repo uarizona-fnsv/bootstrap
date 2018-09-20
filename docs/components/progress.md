@@ -1,7 +1,7 @@
 ---
 title: 'Progress'
 description: 'Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.'
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 ## How it works

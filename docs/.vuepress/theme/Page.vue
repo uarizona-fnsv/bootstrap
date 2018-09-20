@@ -1,15 +1,21 @@
 <template>
   <div class="page">
     <div class="page-header">
+      <div class="d-flex flex-row justify-content-end">
+        <a class="btn btn-outline-info" :href="$page.frontmatter.bootstrapLink"
+           target="_blank" rel="noopener noreferrer">
+          <span>Bootstrap Docs</span>
+        </a>
+        <a class="btn btn-outline-dark ml-1" :href="editLink"
+           target="_blank" rel="noopener noreferrer">
+          <span>Edit in Gitlab</span>
+        </a>
+      </div>
       <h1 class="display-4">{{ $page.title }}</h1>
       <p class="lead">{{ $page.frontmatter.description }}</p>
     </div>
     <Content :custom="false"/>
     <div class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
       <div class="last-updated" v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>

@@ -1,7 +1,7 @@
 ---
 title: 'Usage'
 description: ''
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 # Hello

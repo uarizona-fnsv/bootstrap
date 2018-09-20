@@ -1,7 +1,7 @@
 ---
 title: 'Typography'
 description: 'Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.'
-bootstrap-link: ''
+bootstrapLink: ''
 ---
 
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]().
