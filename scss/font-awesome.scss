@@ -1,3 +1,8 @@
-@import "../node_modules/@fortawesome/fontawesome-free/css/all";
-@import "../node_modules/@fortawesome/fontawesome-free/css/regular";
-@import "../node_modules/@fortawesome/fontawesome-free/css/brands";
+// Modify the path to fonts
+
+$fa-font-path: '../fonts' !default;
+
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
