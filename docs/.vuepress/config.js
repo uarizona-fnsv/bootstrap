@@ -58,6 +58,7 @@ module.exports = {
         ['carousel', 'Carousel'],
         ['collapse', 'Collapse'],
         ['dropdowns', 'Dropdowns'],
+        ['font-awesome-icons', 'Font Awesome'],
         ['forms', 'Forms'],
         ['input-group', 'Input Group'],
         ['jumbotron', 'Jumbotron'],
@@ -69,7 +70,8 @@ module.exports = {
         ['popovers', 'Popovers'],
         ['progress', 'Progress'],
         ['scrollspy', 'Scrollspy'],
-        ['tooltips', 'Tooltips']
+        ['tooltips', 'Tooltips'],
+        ['ua-brand-icons', 'UA Brand Icons']
       ]
     },
     lastUpdated: 'Last Updated',

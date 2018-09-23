@@ -13,10 +13,10 @@
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/custom.scss dist/bootstrap.css",
     "fa-icons:all": "npm run fa-icons:fonts && npm run fa-icons:compile && npm run fa-icons:minify",
-    "fa-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/font-awesome.scss dist/fso-font-awesome.css",
+    "fa-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/fso-font-awesome.scss dist/fso-font-awesome.css",
     "fa-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/fso-font-awesome.min.css dist/fso-font-awesome.css",
     "fa-icons:fonts": "copy \"node_modules/@fortawesome/fontawesome-free/webfonts/**.*\" \"fonts\"",
-    "ua-icons:all": "npm run ua-icons:compile && ua-icons:minify",
+    "ua-icons:all": "npm run ua-icons:compile && npm run ua-icons:minify",
     "ua-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ua-brand-icons.scss dist/ua-brand-icons.css",
     "ua-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/ua-brand-icons.min.css dist/ua-brand-icons.css"
   },

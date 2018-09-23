@@ -18,13 +18,13 @@ Font Awesome is opt-in, meaning that it is compiled to a seperate css file that 
 To import, use:
 
 ```html
-<link src="...path-to-node-modules.../bootstrap/dist/css/font-awesome.css">
+<link src="...path-to-node-modules.../bootstrap/dist/css/fso-font-awesome.min.css">
 ```
 
 or, via `scss`:
 
 ```scss
-@import "...path-to-node-modules.../bootstrap/scss/font-awesome";
+@import "...path-to-node-modules.../bootstrap/scss/fso-font-awesome";
 ```
 
 This is opt-in because Font Awesome is a large library, and importing it adds 1+ mb of imports to your application. All available CSS options are available for use, including all three font types: `regular`, `solid`, and `brands`. Keep in mind that not all icons in the `regular` font type are available to the free version of font awesome used here.
@@ -52,5 +52,5 @@ Basic usage is as follows:
 <style lang="scss">
   /* Fix relative pathing of fonts for this import inside of docs */
   $fa-font-path: '../../fonts' !default;
-  @import "../../scss/font-awesome.scss";
+  @import "../../scss/fso-font-awesome.scss";
 </style>

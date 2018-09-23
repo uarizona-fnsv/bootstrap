@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "ua-brand-symbols";
+  font-style: "ua-brand-symbols";
+  font-weight: "ua-brand-symbols";
+  src: url("../fonts/ua-brand-symbols.eot") format("eot"), url("../fonts/ua-brand-symbols.woff") format("woff"), url("../fonts/ua-brand-symbols.ttf") format("truetype"), url("../fonts/ua-brand-symbols.svg") format("svg");
+}
+
 .ua {
   font-family: 'ua-brand-symbols';
   font-style: normal;

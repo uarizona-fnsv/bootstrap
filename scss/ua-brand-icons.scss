@@ -1,6 +1,12 @@
-// @include font-face('ua-brand-symbols', '../fonts/', 'ua-brand-symbols', 'ua-brand-symbols');
-
 $ua-css-prefix: ua !default;
+$ua-font-path:  '../fonts/' !default;
+
+@font-face {
+  font-family: "ua-brand-symbols";
+  font-style: "ua-brand-symbols";
+  font-weight: "ua-brand-symbols";
+  src: url($ua-font-path + "ua-brand-symbols.eot") format("eot"), url($ua-font-path + "ua-brand-symbols.woff") format("woff"), url($ua-font-path + "ua-brand-symbols.ttf") format("truetype"), url($ua-font-path + "ua-brand-symbols.svg") format("svg");
+}
 
 .#{$ua-css-prefix} {
 	font-family: 'ua-brand-symbols';
