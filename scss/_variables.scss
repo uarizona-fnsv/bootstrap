@@ -93,26 +93,40 @@ $yiq-contrasted-threshold:  190 !default;
 // Fonts
 //
 // Replace the bootstrap fonts with UA fonts
-
 $font-family-serif:        MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
 $font-family-sans-serif:   MiloWeb, Verdana, Geneva, sans-serif !default;
 
 // Bump up the base font size a slight amount since the milo fonts are a bit smaller than the
 // default bootstrap fonts.
 $font-size-base:           1rem * 1.1 !default; // Assumes the browser default, typically `16px`
-
 $mark-bg:                  $warmgray !default;
 
 // Links
-//
-// Make links the accent color
-
 $link-color:               extra-color("accent") !default;
 
 // Pagination
-
 $pagination-active-bg:     extra-color("accent") !default;
 
 // Code
-
 $code-color:               extra-color("accent") !default;
+
+// Card header background
+$card-cap-bg:              rgba($coolgray, 1) !default;
+
+// Breadcrumb background
+$breadcrumb-bg:            $coolgray !default;
+
+// Input
+$input-disabled-bg:                    $coolgray !default;
+$input-group-addon-bg:                 $coolgray !default;
+$custom-control-indicator-disabled-bg: $coolgray !default;
+$custom-select-disabled-bg:            $coolgray !default;
+
+// Dropdowns
+$dropdown-divider-bg: $coolgray !default;
+
+// Jumbotron
+$jumbotron-bg: $coolgray !default;
+
+// List Group
+$list-group-action-active-bg: $coolgray !default;

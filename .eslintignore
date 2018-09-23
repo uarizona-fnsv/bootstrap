@@ -1,3 +1,2 @@
-**/*.min.js
-**/dist/*
 *.html
+docs/.vuepress/public/*

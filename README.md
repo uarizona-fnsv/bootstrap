@@ -1,129 +1,109 @@
 # FSO Bootstrap
 
-This is a fork of Bootstrap v4 with slight modifications for UA coloring and fonts.
+FSO Bootstrap is a theme built on top of [Bootstrap](https://getbootstrap.com). We use UA branding colors and make some changes to bootstraps functionality to reflect UA branding. However, we make some of our own choices by default, but build in methods of using UA Branding choices when necessary.
 
-### Updating from Bootstrap
+*Note:* This is for FSO Bootstrap 1.x, which is based on the final release (and subsequent updates) of Bootstrap 4. For FSO Bootstrap 0.x, see [the v1 branch](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/tree/v4-alpha-based-backup) and it's [documentation]().
 
-Twitter's repository is set up as remote 'twitter', so to update with the latest version simply pull and rebase. However, best practice may be to pull into a new branch and resolve the likely merge conflicts before merging with our master branch.
+## Usage
 
-Until v4 is final, the remote branch to pull from is `v4-dev`.
+### CDN
+
+Coming Soon...
+
+### NPM
+
+To get started with FSO Bootstrap, you can install it from npm:
 
 ```shell
-git fetch twitter v4-dev
-git rebase twitter/v4-dev
+npm install --save-dev git+https://git@gitlab.fso.arizona.edu/FAST/fso-bootstrap.git
 ```
 
-Fortunately, most of our code edits are held within custom files that won't necessarily create merge conflicts.
+Then, use the assets:
 
-### Getting started
-
-You will need to have a few things installed globally. Node, npm, bower, and Ruby in particular.
-
-To work with the docs server, you will also need bundle and grunt.
-
-```shell
-npm install -g grunt-cli
-gem install bundler
+```scss
+// Import as css
+@import "<path-to node_modules>/bootstrap/dist/css/bootstrap.css";
+// Import as scss (preferred)
+@import "<path-to node_modules>/bootstrap/scss/fso-bootstrap";
 ```
 
-You will need to run a few commands to get your enviornment up and running:
+```html
+<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/bootstrap.min.css">
+```
+
+If you need to use javascript functionality, you'll also need to import it _after_ importing it's jquery and tether dependencies, like so:
+
+```html
+<script src="<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js">
+```
+
+#### Javascript
+
+While FSO Bootstrap does not modify the javascript of bootstrap at all, we include the minified js dist for simplicity.
+
+```js
+// Assuming you've already imported jquery and tether
+import '<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js';
+```
+
+If you need/want to use individual js files, you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
+
+#### Optional imports
+
+If you need to use Font Awesome (i.e. you can't use font awesome via it's native js library):
+
+```scss
+// Import as css
+@import "<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.css";
+// Import as scss (preferred)
+@import "<path-to node_modules>/bootstrap/scss/fso-font-awesome";
+```
+
+```html
+<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.min.css">
+```
+
+If you need to use UA Branding Icons:
+
+```scss
+// Import as css
+@import "<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.css";
+// Import as scss (preferred)
+@import "<path-to node_modules>/bootstrap/scss/ua-brand-icons";
+```
+
+```html
+<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.min.css">
+```
+
+## Development
+
+To get started with development, clone the project and install dependencies:
 
 ```shell
+git clone git@gitlab.fso.arizona.edu:fast/fso-bootstrap.git
+cd fso-bootstrap
 npm install
-bower install
-bundle install
 ```
 
-### Development
+### Theming
 
-Most variables and settings are taken care of through the `scss/_custom.scss` file.
+All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
 
-Documentation is found in the `docs/` folder. Please update documentation with any changes to how things work. As of right now, this is only necessary for our custom components.
+### Docs Site
 
-The documentation site is built using [Jekyll](https://jekyllrb.com/docs/home/), which is a simple to use, markdown-based static-site generator. Generally this means you can write some information in a markdown file, include some examples, then you'll be good to go!
+Documentation is found in the `docs/` folder. To run the site locally, use `npm run docs:dev`.
 
-#### Development Tools Usage
+Any changes to the theming should be verified using the docs site. If documentation changes are required, be sure to update the respective markdown file. These files are more or less copied from the bootstrap site, though with some changes for our `<example>` component and using VuePress instead of Jekyll.
 
-To test and lint, use `grunt test`.
+If new bootstrap features are added, be sure to appropriately document them here. 
 
-To build the docs server (i.e. you are editing documentation or want to see how your changes look), run  `npm run rebuild-docs`, which will delete the existing (if any) docs deployment and then run necessary grunt tasks to build the documentation.
+For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
 
-To start the docs server, run `bundle exec jekyll serve` and you'll find it at `http://localhost:9001`.
+### Deployment
 
-Once the server is running, a watch task should see any changes to sass, js, or jekyll and pull those files in on a page refresh. If a change isn't reflected, rebuild the server.
+To compile changes, run `npm run dist`. This will build all the css and copy files to where they are supposed to be.
 
-### Deploying the Documentation Website
+TODO: Deploy instructions for cutting a new version
 
-Deploy to the documentation site via:
-```shell
-git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
-git push docsserver master
-```
-
-TODO. Set up a grunt task? (bootstrap did it through one, currently commented out)
-
-### Setting up the documentation server
-
-NOTE: This process doesn't currently work. In the meantime, clone the repo on the server, build it using `bundle exec jekyll build`, and use `sudo rsync -av /<path-to-repo>/_gh_pages/ /var/www/html/`. Nginx will then serve the content.
-
-The documentation server need to be running Jekyll and Ruby. To make this process easy (as well as updating), use rvm to handle the installation.
-
-Install Ruby:
-```shell
-curl -L https://get.rvm.io | bash -s stable # install rvm
-source ~/.rvm/scripts/rvm                   # source rvm to use right now
-rvm requirements                            # install any requirements
-rvm install <version>                       # install the latest stable (v2.4.0 as of 2/9/17)
-rvm use <version>                           # use the version you installed
-ruby --version                              # double check what's running
-```
-
-Install the latest RubyGems and Jekyll:
-```shell
-rvm rubygems current                        # install the latest rubygems
-gem install jekyll                          # install Jekyll (finally!) NOTE: don't use sudo since that bypasses rvm for some reason.
-```
-
-Prepare the server for pulling and deploying from gitlab:
-```shell
-sudo apt-get install git-core                        # install git core
-cd /                                                 # switch to a new repo
-sudo mkdir repos && cd repos
-sudo mkdir bootstrap.git && cd bootstrap.git
-sudo git init --bare                                 # initialize a bare repo. Very important!
-```
-
-Set up the script to run whenever an incoming push occurs:
-```shell
-cd hooks
-sudo touch post-receive
-sudo vi post-receive
-```
-
-Paste in the following:
-```script
-#!/bin/bash -l
-GIT_REPO=$HOME/repos/bootstrap.git
-TMP_GIT_CLONE=$HOME/tmp/git/bootstrap
-PUBLIC_WWW=/var/www/bootstrap
-
-git clone $GIT_REPO $TMP_GIT_CLONE
-jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
-rm -Rf $TMP_GIT_CLONE
-exit
-```
-
-Now, give the script write permissions:
-```shell
-sudo chmod +x post-receive
-```
-
-Now you should be able to add this repo as a git remote and then push to it to start a build.
-
-On your local machine:
-```shell
-git remote add docsserver <youruseraccount>@test.fso.arizona.edu:repos/bootstrap.git
-git push docsserver master
-```
-
-Then, the script should run, deploying the site.
+Gitlab CI will take care of the deployment of the docs site and the CDN.

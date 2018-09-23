@@ -1,7 +1,11 @@
 ---
 title: 'Figures'
 description: 'Documentation and examples for displaying related images and text with the figure component in Bootstrap.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.
@@ -10,7 +14,7 @@ Use the included `.figure` , `.figure-img` and `.figure-caption` classes to prov
 
 <Example>
   <figure class="figure">
-    <img v-holder="'img=400x300'" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
     <figcaption class="figure-caption">A caption for the above image.</figcaption>
   </figure>
 </Example>
@@ -19,7 +23,7 @@ Aligning the figure's caption is easy with our [text utilities]().
 
 <Example>
   <figure class="figure">
-    <img v-holder="'img=400x300'" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
     <figcaption class="figure-caption text-right">A caption for the above image.</figcaption>
   </figure>
 </Example>

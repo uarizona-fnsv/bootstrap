@@ -1,19 +1,18 @@
 <template>
   <div class="dropdown-wrapper" :class="{ open }">
-    <a class="dropdown-title" @click="toggle">
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow" :class="open ? 'down' : 'right'"></span>
+    <a class="nav-link dropdown-toggle" @click="toggle" role="button">
+      {{ item.text }}
     </a>
     <DropdownTransition>
       <ul class="nav-dropdown" v-show="open">
         <li
-        class="dropdown-item"
+        class="nav-dropdown__item"
         v-for="(subItem, index) in item.items"
         :key="subItem.link || index">
           <h4 v-if="subItem.type === 'links'">{{ subItem.text }}</h4>
-          <ul class="dropdown-subitem-wrapper" v-if="subItem.type === 'links'">
+          <ul class="subitem-wrapper" v-if="subItem.type === 'links'">
             <li
-            class="dropdown-subitem"
+            class="nav-dropdown__subitem"
             v-for="childSubItem in subItem.items"
             :key="childSubItem.link">
               <NavLink :item="childSubItem"/>
@@ -66,7 +65,7 @@ export default {
     }
   }
   .nav-dropdown {
-    .dropdown-item {
+    .nav-dropdown__item {
       color: inherit;
       line-height: 1.7rem;
       h4 {
@@ -74,10 +73,10 @@ export default {
         border-top: 1px solid #eee;
         padding: 0.45rem 1.5rem 0 1.25rem;
       }
-      .dropdown-subitem-wrapper {
+      .subitem-wrapper {
         padding: 0;
         list-style: none;
-        .dropdown-subitem {
+        .nav-dropdown__subitem {
           font-size: 0.9em;
         }
       }
@@ -124,7 +123,7 @@ export default {
     .nav-dropdown {
       transition: height 0.1s ease-out;
       overflow: hidden;
-      .dropdown-item {
+      .nav-dropdown__item {
         h4 {
           border-top: 0;
           margin-top: 0;
@@ -134,7 +133,7 @@ export default {
           font-size: 15px;
           line-height: 2rem;
         }
-        .dropdown-subitem {
+        .nav-dropdown__subitem {
           font-size: 14px;
           padding-left: 1rem;
         }

@@ -6,12 +6,14 @@
       <p class="description">
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
+      <p class="font-italic">version {{ $site.themeConfig.version }}</p>
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
       </p>
     </div>
     <div class="features" v-if="data.features && data.features.length">
       <div class="feature" v-for="feature in data.features">
+        <img v-if="feature.image" :src="$withBase(feature.image)">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
@@ -52,7 +54,7 @@ export default {
   .hero {
     text-align: center;
     img {
-      max-height: 280px;
+      max-height: 380px;
       display: block;
       margin: 3rem auto 1.5rem;
     }
@@ -80,6 +82,7 @@ export default {
       border-bottom: 1px solid darken($accentColor, 10%);
       &:hover {
         background-color: lighten($accentColor, 10%);
+        text-decoration: none;
       }
     }
   }
@@ -97,6 +100,11 @@ export default {
     flex-grow: 1;
     flex-basis: 30%;
     max-width: 30%;
+    img {
+      max-height: 100px;
+      display: block;
+      margin: 3rem auto;
+    }
     h2 {
       font-size: 1.4rem;
       font-weight: 500;

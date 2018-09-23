@@ -1,7 +1,11 @@
 ---
 title: 'Font Awesome Icons'
 description: 'Font Awesome is an easy-to-use, full-featured, library of over 1300 icons.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ::: warning This is not recommended

@@ -1,7 +1,11 @@
 ---
 title: 'Code'
 description: 'Documentation and examples for displaying inline and multiline blocks of code with Bootstrap.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## Inline code

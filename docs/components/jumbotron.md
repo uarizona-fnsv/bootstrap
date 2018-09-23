@@ -1,7 +1,11 @@
 ---
 title: 'Jumbotron'
 description: 'Lightweight, flexible component for showcasing hero unit style content.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.

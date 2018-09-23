@@ -1,7 +1,11 @@
 ---
 title: 'Alerts'
 description: 'Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 <example>

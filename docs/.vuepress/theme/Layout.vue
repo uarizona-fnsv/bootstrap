@@ -3,7 +3,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <slot name="sidebar-top" slot="top"/>
@@ -130,4 +130,4 @@ export default {
 </script>
 
 <style src="./scss/theme.scss" lang="scss"></style>
-<style src="../../../scss/custom.scss" lang="scss"></style>
+<style src="../../../scss/fso-bootstrap.scss" lang="scss"></style>

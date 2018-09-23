@@ -1,7 +1,11 @@
 ---
 title: 'Dropdowns'
 description: 'Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## Overview
