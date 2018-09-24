@@ -1,6 +1,6 @@
 module.exports = {
   title: 'FSO Bootstrap',
-  description: 'Bootstrap meets University of Arizona branding',
+  description: 'Bootstrap 4 meets University of Arizona branding',
   base: '/fso-bootstrap/',
   dest: 'public',
   head: [
