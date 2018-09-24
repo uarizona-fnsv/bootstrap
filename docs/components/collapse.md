@@ -1,7 +1,11 @@
 ---
 title: 'Collapse'
 description: 'Toggle the visibility of content across your project with a few classes and our JavaScript plugins.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## How it works

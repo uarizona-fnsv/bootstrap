@@ -1,7 +1,11 @@
 ---
 title: 'Button Group'
 description: 'Group a series of buttons together on a single line with the button group, and super-power them with JavaScript.'
-bootstrapLink: ''
+buttons:
+- label: Bootstrap Docs
+  icon: fas fa-book
+  type: info
+  link: ''
 ---
 
 Wrap a series of buttons with `.btn` in `.btn-group.` Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.

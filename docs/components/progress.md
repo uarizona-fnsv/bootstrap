@@ -1,7 +1,11 @@
 ---
 title: 'Progress'
 description: 'Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## How it works

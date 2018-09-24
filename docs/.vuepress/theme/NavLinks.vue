@@ -16,7 +16,7 @@
       rel="noopener noreferrer">
       {{ repoLabel }}
       <!-- <OutboundLink/> -->
-      <i class="fa fa-link" aria-hidden="true"/>
+      <i class="fas fa-external-link-alt" aria-hidden="true"/>
     </a>
   </nav>
 </template>

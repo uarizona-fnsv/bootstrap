@@ -1,7 +1,11 @@
 ---
 title: 'UA Brand Icons'
 description: 'An icon set from the UA Branding team'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 uaIcons: ['uaccess', 'checklist', 'spring-fling', 'tour', 'athletics', 'feedback', 'alumni', 'document', 'az-index', 'directory', 'weather', 'video', 'campus-map', 'news', 'foursquare', 'pinterest', 'youtube', 'facebook', 'mobile', 'googleplus', 'instagram', 'linkedin', 'twitter', 'rss', 'bookmark', 'unbookmark', 'search', 'checkmark', 'x', 'hamburger', 'minus', 'plus', 'email', 'print', 'link', 'refresh', 'upload', 'download', 'minimize', 'maximize', 'fast-forward', 'stop', 'pause', 'rewind', 'down-point', 'up-right-point', 'right-point', 'down-right-point', 'up-point', 'left-point', 'down-left-point', 'up-left-point', 'bottom-corner', 'top-right-corner', 'right-corner', 'bottom-right-corner', 'top-corner', 'left-corner', 'bottom-left-corner', 'top-left-corner', 'down-arrow', 'up-right-arrow', 'right-arrow', 'down-right-arrow', 'up-arrow', 'left-arrow', 'down-left-arrow', 'up-left-arrow']
 ---
 

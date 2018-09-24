@@ -1,7 +1,11 @@
 ---
 title: 'Images'
 description: 'Documentation and examples for opting images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## Responsive images

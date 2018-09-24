@@ -2,12 +2,20 @@
   <div class="page">
     <div class="page-header">
       <div class="d-flex flex-row justify-content-end">
-        <a class="btn btn-outline-info" :href="$page.frontmatter.bootstrapLink"
+        <a v-for="button in $page.frontmatter.buttons" :key="button.label"
+           :class="'btn btn-outline-' + button.type" :href="button.link"
            target="_blank" rel="noopener noreferrer">
-          <span>Bootstrap Docs</span>
+          <i :class="button.icon + ' mr-1'"></i>
+          <span>{{ button.label }}</span>
         </a>
+        <!-- <a class="btn btn-outline-info" :href="$page.frontmatter.bootstrapLink"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-book mr-1"></i>
+          <span>Bootstrap Docs</span>
+        </a> -->
         <a class="btn btn-outline-dark ml-1" :href="editLink"
            target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-gitlab mr-1"></i>
           <span>Edit in Gitlab</span>
         </a>
       </div>

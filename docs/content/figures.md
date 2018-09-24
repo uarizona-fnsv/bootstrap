@@ -1,7 +1,11 @@
 ---
 title: 'Figures'
 description: 'Documentation and examples for displaying related images and text with the figure component in Bootstrap.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.

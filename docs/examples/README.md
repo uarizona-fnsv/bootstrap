@@ -1,5 +1,4 @@
 ---
 title: 'Examples'
 description: ''
-bootstrapLink: ''
 ---

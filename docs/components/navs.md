@@ -1,7 +1,11 @@
 ---
 title: 'Navs'
 description: 'Documentation and examples for how to use Bootstrap’s included navigation components.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 ## Base nav

@@ -1,7 +1,6 @@
 ---
 title: 'Migrating from FSO-Bootstrap 1.x (Bootstrap 4 Alpha)'
 description: ''
-bootstrapLink: ''
 ---
 
 - uared -> accent

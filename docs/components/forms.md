@@ -1,7 +1,11 @@
 ---
 title: 'Forms'
 description: 'Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 Bootstrap’s form controls expand on our Rebooted form styles with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.

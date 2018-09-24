@@ -1,7 +1,11 @@
 ---
 title: 'Breadcrumb'
 description: 'Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.'
-bootstrapLink: ''
+buttons: 
+- label: Bootstrap Docs
+  icon: fas fa-book   
+  type: info   
+  link: ''
 ---
 
 <example>
