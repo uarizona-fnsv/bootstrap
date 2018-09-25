@@ -38,8 +38,9 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Content', link: '/content/' },
       { text: 'Components', link: '/components/' },
-      { text: 'Examples', link: '/examples/' },
+      // { text: 'Examples', link: '/examples/' },
       { text: 'Usage', link: '/usage/' },
+      { text: 'Changelog', link: '/changelog'}
     ],
     sidebar: {
       '/content/': [
@@ -77,9 +78,14 @@ module.exports = {
         ['scrollspy', 'Scrollspy'],
         ['tooltips', 'Tooltips'],
         ['ua-brand-icons', 'UA Brand Icons']
+      ],
+      '/usage/': [
+        ['/usage/', 'Usage'],
+        ['migrating', 'Migrating']
       ]
     },
     lastUpdated: 'Last Updated',
+    version: '4.1.3',
     repo: 'https://gitlab.fso.arizona.edu/FAST/fso-bootstrap',
     docsDir: 'docs',
     editLinks: true,
