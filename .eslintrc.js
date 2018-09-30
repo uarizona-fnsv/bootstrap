@@ -19,13 +19,10 @@
   ],
   "parserOptions": {
     "ecmaVersion": 8,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
+    "sourceType": "module"
   },
   "rules": {
-    "indent": ["error", 4],
+    "indent": ["error", 2],
     "linebreak-style": 0,
     "quotes": 0,
     "semi": [
@@ -98,3 +95,4 @@
     "vue/max-attributes-per-line": 0
   }
 };
+

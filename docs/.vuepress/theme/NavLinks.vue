@@ -1,23 +1,11 @@
 <template>
-  <nav class="nav-links-docs" v-if="userLinks.length || repoLink">
+  <nav class="navbar-nav" v-if="userLinks.length || repoLink">
     <!-- user links -->
-    <div
-      class="nav-item-docs"
-      v-for="item in userLinks"
-      :key="item.link">
+    <li class="nav-item" :class="[{'dropdown': item.type === 'links'}]"
+      v-for="item in userLinks" :key="item.link">
       <DropdownLink v-if="item.type === 'links'" :item="item"/>
       <NavLink v-else :item="item"/>
-    </div>
-    <!-- repo link -->
-    <a v-if="repoLink"
-      :href="repoLink"
-      class="repo-link"
-      target="_blank"
-      rel="noopener noreferrer">
-      {{ repoLabel }}
-      <!-- <OutboundLink/> -->
-      <i class="fas fa-external-link-alt" aria-hidden="true"/>
-    </a>
+    </li>
   </nav>
 </template>
 
@@ -68,31 +56,6 @@ export default {
           items: (link.items || []).map(resolveNavLinkItem)
         })
       })
-    },
-    repoLink () {
-      const { repo } = this.$site.themeConfig
-      if (repo) {
-        return /^https?:/.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-      }
-    },
-    repoLabel () {
-      if (!this.repoLink) return
-      if (this.$site.themeConfig.repoLabel) {
-        return this.$site.themeConfig.repoLabel
-      }
-
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/)[0]
-      const platforms = ['GitHub', 'GitLab', 'Bitbucket']
-      for (let i = 0; i < platforms.length; i++) {
-        const platform = platforms[i]
-        if (new RegExp(platform, 'i').test(repoHost)) {
-          return platform
-        }
-      }
-
-      return 'Source'
     }
   }
 }
@@ -116,17 +79,6 @@ export default {
     display: inline-block;
     margin-left: 1.5rem;
     line-height: 2rem;
-  }
-  .repo-link {
-    margin-left: 1.5rem;
-  }
-}
-
-@media (max-width: $MQMobile) {
-  .nav-links-docs {
-    .nav-item-docs, .repo-link {
-      margin-left: 0;
-    }
   }
 }
 

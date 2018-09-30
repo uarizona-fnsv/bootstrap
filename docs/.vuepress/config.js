@@ -40,7 +40,14 @@ module.exports = {
       { text: 'Components', link: '/components/' },
       // { text: 'Examples', link: '/examples/' },
       { text: 'Usage', link: '/usage/' },
-      { text: 'Changelog', link: '/changelog'}
+      { text: 'Changelog', link: '/changelog'},
+      {
+        text: 'Languages',
+        items: [
+          { text: 'Chinese', link: '/language/chinese' },
+          { text: 'Japanese', link: '/language/japanese' }
+        ]
+      }
     ],
     sidebar: {
       '/content/': [
@@ -87,8 +94,9 @@ module.exports = {
     lastUpdated: 'Last Updated',
     version: '4.1.3',
     repo: 'https://gitlab.fso.arizona.edu/FAST/fso-bootstrap',
+    repoLabel: 'Source',
     docsDir: 'docs',
     editLinks: true,
     logo: '/logo.png'
   }
-}
+};
