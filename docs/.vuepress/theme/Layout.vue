@@ -130,4 +130,4 @@ export default {
 </script>
 
 <style src="./scss/theme.scss" lang="scss"></style>
-<style src="../../../scss/custom.scss" lang="scss"></style>
+<style src="../../../scss/fso-bootstrap.scss" lang="scss"></style>

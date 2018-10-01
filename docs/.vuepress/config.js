@@ -40,14 +40,7 @@ module.exports = {
       { text: 'Components', link: '/components/' },
       // { text: 'Examples', link: '/examples/' },
       { text: 'Usage', link: '/usage/' },
-      { text: 'Changelog', link: '/changelog'},
-      {
-        text: 'Languages',
-        items: [
-          { text: 'Chinese', link: '/language/chinese' },
-          { text: 'Japanese', link: '/language/japanese' }
-        ]
-      }
+      { text: 'Changelog', link: '/changelog'}
     ],
     sidebar: {
       '/content/': [
