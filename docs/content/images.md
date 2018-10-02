@@ -13,7 +13,7 @@ buttons:
 Images in Bootstrap are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
 
 <Example :show-code="false">
-  <img v-holder="'img=100px250'" class="img-fluid" alt="Generic responsive image">
+  <img data-src="holder.js/100px250" class="img-fluid" alt="Generic responsive image">
 </Example>
 
 ```html
@@ -29,7 +29,7 @@ In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately siz
 In addition to our [border-radius utilities](), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
 
 <Example :show-code="false">
-  <img v-holder="'img=200x200'" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
+  <img data-src="holder.js/200x200" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
 </Example>
 
 ```html
@@ -41,8 +41,8 @@ In addition to our [border-radius utilities](), you can use `.img-thumbnail` to 
 Align images with the [helper float classes]() or [text alignment classes](). `block`-level images can be centered using [the `.mx-auto` margin utility class]().
 
 <Example :show-code="false" style="display: flex">
-  <img v-holder="'img=200x200'" class="rounded float-left" alt="A generic square placeholder image with rounded corners">
-  <img v-holder="'img=200x200'" class="rounded float-right" alt="A generic square placeholder image with rounded corners">
+  <img data-src="holder.js/200x200" class="rounded float-left" alt="A generic square placeholder image with rounded corners">
+  <img data-src="holder.js/200x200" class="rounded float-right" alt="A generic square placeholder image with rounded corners">
 </Example>
 
 ```html
@@ -53,7 +53,7 @@ Align images with the [helper float classes]() or [text alignment classes](). `b
 <br>
 
 <Example :show-code="false">
-  <img v-holder="'img=200x200'" class="rounded mx-auto d-block" alt="A generic square placeholder image with rounded corners">
+  <img data-src="holder.js/200x200" class="rounded mx-auto d-block" alt="A generic square placeholder image with rounded corners">
 </Example>
 
 ```html
@@ -64,7 +64,7 @@ Align images with the [helper float classes]() or [text alignment classes](). `b
 
 <Example :show-code="false">
   <div class="text-center">
-    <img v-holder="'img=200x200'" class="rounded" alt="A generic square placeholder image with rounded corners">
+    <img data-src="holder.js/200x200" class="rounded" alt="A generic square placeholder image with rounded corners">
   </div>
 </Example>
 

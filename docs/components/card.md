@@ -12,7 +12,7 @@ A **card** is a flexible and extensible content container. It includes options f
 
 <example>
     <div class="card" style="width: 18rem;">
-    <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+    <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -61,7 +61,7 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 
 <example>
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+        <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
         <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
@@ -317,7 +317,7 @@ Similar to headers and footers, cards can include top and bottom “image caps�
 
 <example>
     <div class="card mb-3">
-        <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+        <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -330,7 +330,7 @@ Similar to headers and footers, cards can include top and bottom “image caps�
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <img class="card-img-bottom" v-holder="'100px180'" alt="Card image cap">
+        <img class="card-img-bottom" data-img="holder.js/100px180" alt="Card image cap">
     </div>
 </example>
 
@@ -340,7 +340,7 @@ Turn an image into a card background and overlay your card’s text. Depending o
 
 <example :show-code="false">
     <div class="card bg-dark text-white">
-        <img class="card-img" v-holder="'100px180?bg=473a3c'" alt="Card image">
+        <img class="card-img" data-img="holder.js/100px180?bg=473a3c" alt="Card image">
         <div class="card-img-overlay">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -516,7 +516,7 @@ Use card groups to render cards as a single, attached element with equal width a
 <example>
     <div class="card-group">
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -524,7 +524,7 @@ Use card groups to render cards as a single, attached element with equal width a
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -532,7 +532,7 @@ Use card groups to render cards as a single, attached element with equal width a
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -547,7 +547,7 @@ When using card groups with footers, their content will automatically line up.
 <example>
     <div class="card-group">
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -557,7 +557,7 @@ When using card groups with footers, their content will automatically line up.
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -567,7 +567,7 @@ When using card groups with footers, their content will automatically line up.
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -586,7 +586,7 @@ Need a set of equal width and height cards that aren’t attached to one another
 <example>
     <div class="card-deck">
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -594,7 +594,7 @@ Need a set of equal width and height cards that aren’t attached to one another
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -602,7 +602,7 @@ Need a set of equal width and height cards that aren’t attached to one another
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -617,7 +617,7 @@ Need a set of equal width and height cards that aren’t attached to one another
 <example>
     <div class="card-columns">
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'"" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180"" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title that wraps to a new line</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -634,7 +634,7 @@ Need a set of equal width and height cards that aren’t attached to one another
             </blockquote>
         </div>
         <div class="card">
-            <img class="card-img-top" v-holder="'100px180'" alt="Card image cap">
+            <img class="card-img-top" data-img="holder.js/100px180" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
