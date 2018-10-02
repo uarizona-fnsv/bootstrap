@@ -1,11 +1,6 @@
 ---
 title: 'Colors'
 description: 'Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.'
-buttons: 
-- label: Bootstrap Docs
-  icon: fas fa-book   
-  type: info   
-  link: ''
 colors: [
   { name: 'Primary Light', color: 'primary-light', hex: '#378dbd', alt: 'Oasis' },
   { name: 'Primary', color: 'primary', hex: '#1e5288', alt: 'Azurite' },
