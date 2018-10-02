@@ -1,7 +1,7 @@
 module.exports = {
   title: 'FSO Bootstrap',
   description: 'Bootstrap 4 meets University of Arizona branding',
-  base: '',
+  base: 'v2/',
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
