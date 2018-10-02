@@ -37,41 +37,16 @@ If you need to use javascript functionality, you'll also need to import it _afte
 <script src="<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js">
 ```
 
+#### Javascript
+
+While FSO Bootstrap does not modify the javascript of bootstrap at all, we include the minified js dist for simplicity.
+
 ```js
 // Assuming you've already imported jquery and tether
 import '<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js';
 ```
 
-Or, using webpack and the Provide Plugin:
-
-```js
-// In your webpack config
-// ...
-plugins: {
-  new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery",
-    jquery: "jquery",
-    "window.jQuery": "jquery",
-    Tether: "tether",
-    "window.Tether": "tether",
-    Alert: "exports-loader?Alert!bootstrap/dist/js/alert",
-    Button: "exports-loader?Button!bootstrap/dist/js/button",
-    Carousel: "exports-loader?Carousel!bootstrap/dist/js/carousel",
-    Collapse: "exports-loader?Collapse!bootstrap/dist/js/collapse",
-    Dropdown: "exports-loader?Dropdown!bootstrap/dist/js/dropdown",
-    Modal: "exports-loader?Modal!bootstrap/dist/js/modal",
-    Popover: "exports-loader?Popover!bootstrap/dist/js/popover",
-    Scrollspy: "exports-loader?Scrollspy!bootstrap/dist/js/scrollspy",
-    Tab: "exports-loader?Tab!bootstrap/dist/js/tab",
-    Tooltip: "exports-loader?Tooltip!bootstrap/dist/js/tooltip",
-    Util: "exports-loader?Util!bootstrap/dist/js/util"
-  })
-},
-// ...
-```
-
-While it appears more complicated, this will allow you to globally register these files without relying on a cdn, which can be desireable for tree-shaking purposes.
+If you need/want to use individual js files, you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
 
 #### Optional imports
 
