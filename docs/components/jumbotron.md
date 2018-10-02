@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'http://getbootstrap.com/docs/4.1/components/jumbotron/'
 ---
 
 A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.

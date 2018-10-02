@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'http://getbootstrap.com/docs/4.1/components/scrollspy/'
 ---
 
 See [bootstraps documentation](http://getbootstrap.com/docs/4.1/components/scrollspy/) to learn about Scrollspy.

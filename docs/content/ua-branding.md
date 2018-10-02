@@ -1,12 +1,6 @@
 ---
 title: 'University of Arizona Branding Colors'
 description: 'These docs introduce the UA color palatte as well as our FSO Bootstrap Palatte (a subset of the UA branding colors with some additional options), as well as the many utilities available to implement these colors.'
-buttons: 
-- label: Bootstrap Docs
-  icon: fas fa-book   
-  type: info   
-  link: ''
-
 primary: [
   { name: 'Bloom', color: 'bloom', hex: '#ef4056' },
   { name: 'UA Red', color: 'uared', hex: '#ab0520' },
@@ -17,7 +11,6 @@ primary: [
   { name: 'Arizona Blue', color: 'arizonablue', hex: '#0c234b' },
   { name: 'Midnight', color: 'midnight', hex: '#001c48' }
 ]
-
 secondary: [
   { name: 'Leaf', color: 'leaf', hex: '#70b865' },
   { name: 'River', color: 'river', hex: '#007d84' },
@@ -25,12 +18,10 @@ secondary: [
   { name: 'Mesa', color: 'mesa', hex: '#a95c42' },
   { name: 'Sand*', color: 'sand', hex: '#f19e1f' }
 ]
-
 neutral: [
   { name: 'Cool Gray', color: 'coolgray', hex: '#e2e9eb' },
   { name: 'Warm Gray', color: 'warmgray', hex: '#f4ede5' }
 ]
-
 legacy: [
   { name: 'Ash', color: 'ash', hex: '#403635' },
   { name: 'Sage', color: 'sage', hex: '#4a634e' },

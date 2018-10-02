@@ -1,26 +1,21 @@
 <template>
   <div class="page">
     <div class="page-header">
+      <h1 class="display-4">{{ $page.title }}</h1>
+      <p class="lead">{{ $page.frontmatter.description }}</p>
       <div class="d-flex flex-row justify-content-end">
         <a v-for="button in $page.frontmatter.buttons" :key="button.label"
-           :class="'btn btn-outline-' + button.type" :href="button.link"
+           :class="'mr-1 btn btn-outline-' + button.type" :href="button.link"
            target="_blank" rel="noopener noreferrer">
           <i :class="button.icon + ' mr-1'"></i>
           <span>{{ button.label }}</span>
         </a>
-        <!-- <a class="btn btn-outline-info" :href="$page.frontmatter.bootstrapLink"
-           target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-book mr-1"></i>
-          <span>Bootstrap Docs</span>
-        </a> -->
-        <a class="btn btn-outline-dark ml-1" :href="editLink"
+        <a class="btn btn-outline-dark" :href="editLink"
            target="_blank" rel="noopener noreferrer">
           <i class="fab fa-gitlab mr-1"></i>
           <span>Edit in Gitlab</span>
         </a>
       </div>
-      <h1 class="display-4">{{ $page.title }}</h1>
-      <p class="lead">{{ $page.frontmatter.description }}</p>
     </div>
     <Content :custom="false"/>
     <div class="page-edit">

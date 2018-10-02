@@ -39,7 +39,6 @@ module.exports = {
       { text: 'Components', link: '/components/' },
       // { text: 'Examples', link: '/examples/' },
       { text: 'Usage', link: '/usage/' },
-      { text: 'Changelog', link: '/changelog'}
     ],
     sidebar: {
       '/content/': [

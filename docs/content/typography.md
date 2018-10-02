@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'http://getbootstrap.com/docs/4.1/content/typography/'
 ---
 
 Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]().

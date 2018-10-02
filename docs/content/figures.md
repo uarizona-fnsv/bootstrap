@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'http://getbootstrap.com/docs/4.1/content/figures/'
 ---
 
 Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.

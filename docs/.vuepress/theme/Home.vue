@@ -54,7 +54,7 @@ export default {
   .hero {
     text-align: center;
     img {
-      max-height: 380px;
+      max-height: 300px;
       display: block;
       margin: 3rem auto 1.5rem;
     }

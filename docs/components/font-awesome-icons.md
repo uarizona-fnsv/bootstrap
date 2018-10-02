@@ -2,10 +2,14 @@
 title: 'Font Awesome Icons'
 description: 'Font Awesome is an easy-to-use, full-featured, library of over 1300 icons.'
 buttons: 
-- label: Bootstrap Docs
+- label: Font Awesome Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use'
+- label: Icons
+  icon: fas fa-flag
+  type: secondary
+  link: 'https://fontawesome.com/icons?d=gallery&m=free'
 ---
 
 ::: warning This is not recommended

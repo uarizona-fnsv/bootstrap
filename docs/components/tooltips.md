@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: ''
+  link: 'http://getbootstrap.com/docs/4.1/components/tooltips/'
 ---
 
 See [Bootstrap's carousel documentation](http://getbootstrap.com/docs/4.1/components/popovers/) to learn more.

@@ -1,6 +1,6 @@
 ---
 title: 'Migrating'
-description: ''
+description: 'Details on migrating from older versions on FSO Bootstrap'
 ---
 
 ## Migrating from 0.1.x
