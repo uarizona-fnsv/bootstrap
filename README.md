@@ -100,10 +100,70 @@ If new bootstrap features are added, be sure to appropriately document them here
 
 For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
 
-### Deployment
+### Releasing a new version
 
 To compile changes, run `npm run dist`. This will build all the css and copy files to where they are supposed to be.
 
 TODO: Deploy instructions for cutting a new version
 
 Gitlab CI will take care of the deployment of the docs site and the CDN.
+
+## Documentation Site
+
+The documentation site is deployed via Gitlab CI to an AWS S3 bucket. Each branch has a folder in the bucket, which is cleaned up manually. The `master/` folder is mapped to our docs site url, but otherwise you can look at the [Gitlab CI environments page](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/environments) to see a direct link for each branch.
+
+### Initial configuration of the docs site
+
+If for some reason the docs site bucket has been destroyed, re-creating it is easy. Unless the IAM user and programatic access user account was deleted, you shouldn't need to recreate it.
+
+1. Create an S3 bucket with public read access and enable "Static Website Hosting". Set the "Index document" field to `index.html`. The bucket can be named anything, however, we've generally been using the `fast-docs-<name>` naming scheme for sanity.
+2. Open the S3 bucket's Permisions pane and select `Bucket Policy`. Paste in the following policy, changing as appropriate. (AWS will complain about granting public access; disregard it since the buckets structure is public anyway)
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::fast-docs-bootstrap/*",
+            "Principal": "*"
+        }
+    ]
+}
+``` 
+3. Create an IAM policy for gitlab to use with the following configuration. A good naming convention (again, for sanity) is `gitlab-ci_<bucket-name>`, and give it a description saying that it's for gitlab ci to work with s3 to deploy documentation sites.
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::fast-docs-bootstrap/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:ListObjects",
+            "Resource": "*"
+        }
+    ]
+}
+```
+4. Attach the policy to the IAM User `gitlab-ci-s3-deploy`. Click on "Attach existing policies directly" and give it the IAM policy listed above. 
+
+<small>If the user doesn't already exist, make one with the user name `gitlab-ci-s3-deploy`, grant it "Programmatic access". Be sure to copy the Access Key ID and Secret access key down and place them in Stache. If you don't know what that is, ask!</small>
+
+5. Set up Gitlab CI's enviornment variables. In the project, go to Settings -> CI/CD -> Variables and add the following items (you'll need to get them from Stache):
+    - `AWS_ACCESS_KEY_ID`: the Access Key ID
+    - `AWS_SECRET_ACCESS_KEY`: the secret access key
+Do not protect them since we want all branches to use the keys when deploying to s3.
+
+Everything should be good to go now. Once you push a branch or merge into `develop` or `master`, our static site should be deployed to s3. If this is a new deployment, be sure to wire up the docs site url (it should be `bootstrap.docs.fso.arizona.edu` to the bucket's master branch folder).
