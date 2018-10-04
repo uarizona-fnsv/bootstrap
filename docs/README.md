@@ -15,3 +15,5 @@ features:
   image: images/award.svg
 footer: MIT Licensed | Copyright © 2017-present Financial Services Office
 ---
+
+To see the old documentation site for alpha versions of bootstrap, [click here](http://fast-docs-fso-bootstrap-alpha.s3-website-us-west-2.amazonaws.com/)

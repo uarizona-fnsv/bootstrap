@@ -4,19 +4,21 @@ stages:
 
 variables:
   AWS_DEFAULT_REGION: us-west-2
-  BUCKET_NAME: fast-docs-bootstrap
+  CDN_BUCKET_NAME: fastdev
+  DOCS_BUCKET_NAME: fast-docs-bootstrap
+  PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules
+    - .cache
 
 build_site:
   stage: build
   image: node:8
   script:
     - npm install
-    - npm install replace-in-file
     # Ensure our base url matches the folder in s3 so that assets are served properly
     - "npx replace-in-file \"base: ''\" \"base: '/${CI_COMMIT_REF_SLUG}/'\" docs/.vuepress/config.js"
     - npm run docs:build
@@ -24,7 +26,43 @@ build_site:
     paths:
       - public
 
-deploy_s3:
+# Deploy to the cdn on S3 whenever a tag is merged into develop
+# It is sent as `@next` in the cdn
+deploy_cdn_next:
+  stage: deploy
+  image: python:latest
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_REF_NAME == 'develop'
+  dependencies:
+    - build_site
+  before_script:
+    - pip install awscli
+  script:
+    - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
+
+# Deploy to the cdn on S3 whenever a tag is merged into master
+# It is sent as the tagged version (i.e. `x.x.x`) and as the default (root) version in the cdn
+deploy_cdn_release:
+  stage: deploy
+  image: python:latest
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_REF_NAME == 'master'
+  dependencies:
+    - build_site
+  before_script:
+    - pip install awscli
+  script:
+    - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
+    - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
+
+# Deploy a documentation site for every branch to S3
+deploy_documentation_site:
   stage: deploy
   image: python:latest
   dependencies:
@@ -32,13 +70,14 @@ deploy_s3:
   before_script:
     - pip install awscli
   script:
-    - aws s3 cp public s3://${BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive
+    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive
   environment:
     name: ${CI_COMMIT_REF_SLUG}
     url: http://${BUCKET_NAME}.s3-website.${AWS_DEFAULT_REGION}.amazonaws.com/${CI_COMMIT_REF_SLUG}
-    on_stop: clean_s3 # clean up s3 manually or when branch is deleted/merged
+    on_stop: clean_documentation_site # clean up s3 manually or when branch is deleted/merged
 
-clean_s3:
+# Clean up documentation sites on S3 for branches that are deleted
+clean_documentation_site:
   stage: deploy
   image: python:latest
   before_script:
