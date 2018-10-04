@@ -6,9 +6,23 @@ FSO Bootstrap is a theme built on top of [Bootstrap](https://getbootstrap.com). 
 
 ## Usage
 
+FSO Bootstrap can be installed via CDN or NPM. The NPM is recommended in most instances.
+
 ### CDN
 
-Coming Soon...
+When working outside of a node application, our CDN deploy can be used to import bootstrap.
+
+```html
+<link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/bootstrap.css">
+```
+
+If you need a specific version, or want to lock it down for manual checking, you can use a specific version.
+
+```html
+<link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/v1.0.0/bootstrap.css">
+```
+
+The version will map to the release tag in Gitlab.
 
 ### NPM
 
@@ -22,31 +36,20 @@ Then, use the assets:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/bootstrap.css";
+@import "<path-to node_modules>/fso-bootstrap/dist/bootstrap.css";
 // Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/fso-bootstrap";
+@import "<path-to node_modules>/fso-bootstrap/scss/fso-bootstrap";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/bootstrap.min.css">
 ```
 
-If you need to use javascript functionality, you'll also need to import it _after_ importing it's jquery and tether dependencies, like so:
-
-```html
-<script src="<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js">
-```
+*Note:* To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`).
 
 #### Javascript
 
-While FSO Bootstrap does not modify the javascript of bootstrap at all, we include the minified js dist for simplicity.
-
-```js
-// Assuming you've already imported jquery and tether
-import '<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js';
-```
-
-If you need/want to use individual js files, you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
+FSO Bootstrap does not include Bootstrap's JS. If you need to use you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them, or use the js assets via bootstrap's CDN. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
 
 #### Optional imports
 
@@ -54,26 +57,24 @@ If you need to use Font Awesome (i.e. you can't use font awesome via it's native
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.css";
-// Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/fso-font-awesome";
+@import "<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.min.css">
 ```
+
+*Note:* If you want to import the font awesome via scss, you'll need to install Font Awesome as well (`npm install --save-dev @fort-awesome/font-awesome-free`). Honestly at this point, deal with font awesome on your own and import via js or individual icons needed via scss.
 
 If you need to use UA Branding Icons:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.css";
-// Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/ua-brand-icons";
+@import "<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.min.css">
 ```
 
 ## Development
@@ -85,6 +86,15 @@ git clone git@gitlab.fso.arizona.edu:fast/fso-bootstrap.git
 cd fso-bootstrap
 npm install
 ```
+
+### Workflow
+
+The main workflow behind development is as follows:
+- Feature branches are used to add features (duh). As development is pushed up to it's branch on gitlab, a documentation site (for more information, see [here](#documentation-site)) is created so that you can view changes and share them if necessary
+- Once features are established, they are merged into `develop` via a merge request. At this point, the documentation site for `develop` is updated.
+- When things are ready for a release, it's time to create a new feature branch (named whatever) and run `npm run release -- <version>` as described [here](#releasing-a-new-version).
+- Merge that commit and tag into `develop` via a merge request. This will now create a `@next/` folder on the CDN with the releases code, for testing.
+- If everything is good, it's time to merge that into `master` via a merge request. On merge, gitlab will deploy the documentation site to `master` and deploy the CDN under the versions name (i.e. `x.x.x/`).
 
 ### Theming
 
@@ -102,11 +112,19 @@ For more information on VuePress, see [it's documentation site](https://vuepress
 
 ### Releasing a new version
 
-To compile changes, run `npm run dist`. This will build all the css and copy files to where they are supposed to be.
+Releasing a new version is easy.
 
-TODO: Deploy instructions for cutting a new version
+1. **Make sure you are up to date.** Be sure to `git pull`, commit any final changes, and perform a rebase on develop to make sure you are 100% ready.
+1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense.
+1. **Do it! [_lightsaber sounds_]** Run `npm run release -- <version>`, with `<version>` being the next version number. This executes `/build/release.sh`, which does the following for you:
+    - Run `npm run change-version` to modify all our assets with the correct version number for releasing.
+    - Run `npm run dist` to compile all the assets with the new versions. Make sure this succeeds and places the appropriate files in the `dist/` folder
+    - Tag the release in git
+1. Now, run `git push && git push --tags` to push the compiled code and the new tag to gitlab
 
-Gitlab CI will take care of the deployment of the docs site and the CDN.
+Gitlab CI will take care of the docs site, CDN, and nexus repository deploys when the pipeline succeeds.
+- CDN is updated when a release is created and a tag is pushed to Gitlab
+- Docs site is always updated whenever a deploy runs. See [below](#Documentation-site) for more information.
 
 ## Documentation Site
 
@@ -167,3 +185,5 @@ If for some reason the docs site bucket has been destroyed, re-creating it is ea
 Do not protect them since we want all branches to use the keys when deploying to s3.
 
 Everything should be good to go now. Once you push a branch or merge into `develop` or `master`, our static site should be deployed to s3. If this is a new deployment, be sure to wire up the docs site url (it should be `bootstrap.docs.fso.arizona.edu` to the bucket's master branch folder).
+
+**What about the CDN deploy?** A similar process should be used for the `fastassets` cdn (or wherever the main CDN for these is), just follow the same process as above for that bucket. Again, this should only need to be recreated if something terrible happens to the bucket.
