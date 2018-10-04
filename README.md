@@ -22,31 +22,20 @@ Then, use the assets:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/bootstrap.css";
+@import "<path-to node_modules>/fso-bootstrap/dist/bootstrap.css";
 // Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/fso-bootstrap";
+@import "<path-to node_modules>/fso-bootstrap/scss/fso-bootstrap";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/bootstrap.min.css">
 ```
 
-If you need to use javascript functionality, you'll also need to import it _after_ importing it's jquery and tether dependencies, like so:
-
-```html
-<script src="<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js">
-```
+*Note:* To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`).
 
 #### Javascript
 
-While FSO Bootstrap does not modify the javascript of bootstrap at all, we include the minified js dist for simplicity.
-
-```js
-// Assuming you've already imported jquery and tether
-import '<path-to node_modules>/bootstrap/dist/js/bootstrap.min.js';
-```
-
-If you need/want to use individual js files, you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
+FSO Bootstrap does not include Bootstrap's JS. If you need to use you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them, or use the js assets via bootstrap's CDN. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
 
 #### Optional imports
 
@@ -54,26 +43,24 @@ If you need to use Font Awesome (i.e. you can't use font awesome via it's native
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.css";
-// Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/fso-font-awesome";
+@import "<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/fso-font-awesome.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.min.css">
 ```
+
+*Note:* If you want to import the font awesome via scss, you'll need to install Font Awesome as well (`npm install --save-dev @fort-awesome/font-awesome-free`). Honestly at this point, deal with font awesome on your own and import via js or individual icons needed via scss.
 
 If you need to use UA Branding Icons:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.css";
-// Import as scss (preferred)
-@import "<path-to node_modules>/bootstrap/scss/ua-brand-icons";
+@import "<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/bootstrap/dist/css/ua-brand-icons.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.min.css">
 ```
 
 ## Development
@@ -102,11 +89,16 @@ For more information on VuePress, see [it's documentation site](https://vuepress
 
 ### Releasing a new version
 
-To compile changes, run `npm run dist`. This will build all the css and copy files to where they are supposed to be.
+Releasing a new version is easy.
 
-TODO: Deploy instructions for cutting a new version
+1. **Make sure you are up to date.** Be sure to `git pull`, commit any final changes, and perform a rebase on develop to make sure you are 100% ready.
+1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense.
+1. **Do it! [_lightsaber sounds_]** Run `npm run release -- <version>`, with `<version>` being the next version number. This does the following for you:
+    - Run `npm run change-version` to modify all our assets with the correct version number for releasing.
+    - Run `npm run dist` to compile all the assets with the new versions. Make sure this succeeds and places the appropriate files in the `dist/` folder
+    - Tag the release in git
 
-Gitlab CI will take care of the deployment of the docs site and the CDN.
+Gitlab CI will take care of the docs site, CDN, and nexus repository deploys when the pipeline succeeds.
 
 ## Documentation Site
 

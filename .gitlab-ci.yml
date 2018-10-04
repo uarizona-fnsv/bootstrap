@@ -16,7 +16,6 @@ build_site:
   image: node:8
   script:
     - npm install
-    - npm install replace-in-file
     # Ensure our base url matches the folder in s3 so that assets are served properly
     - "npx replace-in-file \"base: ''\" \"base: '/${CI_COMMIT_REF_SLUG}/'\" docs/.vuepress/config.js"
     - npm run docs:build

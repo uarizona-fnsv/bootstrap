@@ -1,24 +1,24 @@
 {
   "name": "fso-bootstrap",
-  "version": "1.0.0",
+  "version": "1.0.0-beta2",
   "description": "A Bootstrap theme utilizing University of Arizona branding",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "lint": "eslint --ext .js,.vue \"docs/.vuepress/*\" --config .eslintrc.js --ignore-path .eslintignore --format codeframe --color",
-    "dist": "npm run css:all && npm run fa-icons:all && npm run ua-icons:all && npm run copy-js",
-    "copy-js": "copy \"node_modules/bootstrap/dist/js/bootstrap.min.*\" \"dist/js\"",
+    "change-version": "node build/change-version.js",
+    "dist": "npm run css:all && npm run fa-icons:all && npm run ua-icons:all",
     "css:all": "npm run css:compile && npm run css:prefix && npm run css:minify",
-    "css:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css",
-    "css:prefix": "postcss --config postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
-    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/fso-bootstrap.scss dist/css/bootstrap.css",
+    "css:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/bootstrap.min.css dist/bootstrap.css",
+    "css:prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/fso-bootstrap.scss dist/bootstrap.css",
     "fa-icons:all": "npm run fa-icons:fonts && npm run fa-icons:compile && npm run fa-icons:minify",
-    "fa-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/fso-font-awesome.scss dist/css/fso-font-awesome.css",
-    "fa-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/fso-font-awesome.min.css dist/css/fso-font-awesome.css",
+    "fa-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/fso-font-awesome.scss dist/fso-font-awesome.css",
+    "fa-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/fso-font-awesome.min.css dist/fso-font-awesome.css",
     "fa-icons:fonts": "copy \"node_modules/@fortawesome/fontawesome-free/webfonts/**.*\" \"fonts\"",
     "ua-icons:all": "npm run ua-icons:compile && npm run ua-icons:minify",
-    "ua-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ua-brand-icons.scss dist/css/ua-brand-icons.css",
-    "ua-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/ua-brand-icons.min.css dist/css/ua-brand-icons.css"
+    "ua-icons:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ua-brand-icons.scss dist/ua-brand-icons.css",
+    "ua-icons:minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/ua-brand-icons.min.css dist/ua-brand-icons.css"
   },
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "postcss-cli": "^5.0.0",
     "pretty": "^2.0.0",
     "prismjs": "^1.15.0",
+    "replace-in-file": "^3.4.2",
     "sass-loader": "^7.0.3",
     "vuepress": "^0.14.0"
   }
