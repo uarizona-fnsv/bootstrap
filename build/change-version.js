@@ -14,7 +14,7 @@ function main (args) {
     process.exit(1);
   }
 
-  const newVersion = args[1];
+  const newVersion = args[0];
 
   const oldVersion = packageJSON.version;
 
