@@ -1,3 +1,7 @@
+# 1.0.0 Release Candidate
+
+The RC introduces a full-blown, super awesome, totally not over-complicated CI/CD workflow that handles automated versioning via an npm task, deployment of documentation sites based on branch, and deployment of released code to a CDN.
+
 # 1.0.0 Beta
 
 This version includes numerous major changes, including:
