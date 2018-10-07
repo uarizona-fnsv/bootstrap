@@ -79,7 +79,8 @@ module.exports = {
       ],
       '/usage/': [
         ['/usage/', 'Usage'],
-        ['migrating', 'Migrating']
+        ['migrating', 'Migrating'],
+        ['release-notes', 'Release Notes']
       ]
     },
     lastUpdated: 'Last Updated',

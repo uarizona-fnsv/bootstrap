@@ -96,7 +96,7 @@ clean_documentation_site:
   before_script:
     - pip install awscli
   script:
-    - aws s3 rm s3://${BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive
+    - aws s3 rm s3://${BUCKET_NAME}/${CI_ENVIRONMENT_NAME} --recursive
   environment:
     name: ${CI_COMMIT_REF_SLUG}
     action: stop
