@@ -26,16 +26,28 @@ build_site:
     paths:
       - public
 
-# Deploy to the cdn on S3 whenever a tag is merged into develop
+# Deploy to the cdn on S3 whenever a tag is pushed into gitlab
+# It is sent as the tagged version (i.e. `x.x.x`)
+deploy_cdn_tag:
+  stage: deploy
+  image: python:latest
+  only:
+    - tags
+  dependencies:
+    - build_site
+  before_script:
+    - pip install awscli
+  script:
+    - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
+
+# Deploy to the cdn on S3 whenever merged into develop
 # It is sent as `@next` in the cdn
 deploy_cdn_next:
   stage: deploy
   image: python:latest
   only:
     refs:
-      - tags
-    variables:
-      - $CI_COMMIT_REF_NAME == 'develop'
+      - develop
   dependencies:
     - build_site
   before_script:
@@ -43,23 +55,20 @@ deploy_cdn_next:
   script:
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
 
-# Deploy to the cdn on S3 whenever a tag is merged into master
-# It is sent as the tagged version (i.e. `x.x.x`) and as the default (root) version in the cdn
+# Deploy to the cdn on S3 whenever merged into master
+# It is sent as the default (root) version in the cdn
 deploy_cdn_release:
   stage: deploy
   image: python:latest
   only:
     refs:
-      - tags
-    variables:
-      - $CI_COMMIT_REF_NAME == 'master'
+      - master
   dependencies:
     - build_site
   before_script:
     - pip install awscli
   script:
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
-    - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
 
 # Deploy a documentation site for every branch to S3
 deploy_documentation_site:
