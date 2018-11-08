@@ -74,13 +74,22 @@ deploy_cdn_release:
 deploy_documentation_site:
   stage: deploy
   image: python:latest
-  except:
-    - tags
   dependencies:
     - build_site
   before_script:
     - pip install awscli
   script:
+    - >
+      if [ "${CI_COMMIT_TAG}" != "" ];
+          then echo "folder=${CI_COMMIT_TAG}"
+      elif [ "${CI_COMMIT_REF_SLUG}" == "master" ];
+          then echo "folder=latest"
+      elif [ "${CI_COMMIT_REF_SLUG}" == "develop" ];
+          then echo "folder=next"
+      else
+          echo "folder=${CI_COMMIT_REF_SLUG}"
+      fi
+    - $folder
     - aws s3 cp public s3://${DOCS_BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive
   environment:
     name: ${CI_COMMIT_REF_SLUG}
