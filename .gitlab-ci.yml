@@ -7,6 +7,7 @@ variables:
   CDN_BUCKET_NAME: fastdev
   DOCS_BUCKET_NAME: fast-docs-bootstrap
   PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache
+  GLOBAL_FOLDER: $CI_COMMIT_REF_SLUG
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -20,28 +21,55 @@ build_site:
   script:
     - npm install
     # Ensure our base url matches the folder in s3 so that assets are served properly
-    - "npx replace-in-file \"base: ''\" \"base: '/${CI_COMMIT_REF_SLUG}/'\" docs/.vuepress/config.js"
+    # tag -> tag hash, master -> latest, develop -> next, any other branch -> test-<branchname>
+    - >
+      if [ "${CI_COMMIT_TAG}" != "" ]; then
+          BASE=${CI_COMMIT_TAG}
+      elif [ "${CI_COMMIT_REF_SLUG}" == "master" ]; then
+          BASE=latest
+      elif [ "${CI_COMMIT_REF_SLUG}" == "develop" ]; then
+          BASE=next
+      else
+          BASE=test-${CI_COMMIT_REF_SLUG}
+      fi
+    - echo $BASE
+    - "npx replace-in-file \"base: ''\" \"base: '/$BASE/'\" docs/.vuepress/config.js"
     - npm run docs:build
   artifacts:
     paths:
       - public
 
-# Deploy to the cdn on S3 whenever a tag is pushed into gitlab
-# It is sent as the tagged version (i.e. `x.x.x`)
-deploy_cdn_tag:
+# ----------------------------------
+# DEPLOY ROUTING LAMBDA@EDGE FUCTION
+# ----------------------------------
+
+# TODO: How?
+
+# --------------------
+# DEPLOY ASSETS TO CDN
+# --------------------
+
+# These jobs do the following:
+#  - deploy_cdn_version: deploy any tag to `<tagname>`
+#  - deploy_cdn_next: deploy develop to `@next`
+#  - deploy_cdn_latest: deploy master to the root of the cdn
+
+# NOTE: Assets will be packaged locally before deploying to gitlab
+
+
+# Tags -> tag in cdn (i.e. `x.x.x`)
+deploy_cdn_version:
   stage: deploy
   image: python:latest
   only:
     - tags
   dependencies:
     - build_site
-  before_script:
-    - pip install awscli
   script:
+    - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
 
-# Deploy to the cdn on S3 whenever merged into develop
-# It is sent as `@next` in the cdn
+# Develop -> @next in cdn
 deploy_cdn_next:
   stage: deploy
   image: python:latest
@@ -50,13 +78,11 @@ deploy_cdn_next:
       - develop
   dependencies:
     - build_site
-  before_script:
-    - pip install awscli
   script:
+    - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
 
-# Deploy to the cdn on S3 whenever merged into master
-# It is sent as the default (root) version in the cdn
+# Master -> root of cdn
 deploy_cdn_release:
   stage: deploy
   image: python:latest
@@ -65,39 +91,116 @@ deploy_cdn_release:
       - master
   dependencies:
     - build_site
-  before_script:
-    - pip install awscli
   script:
+    - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
 
-# Deploy a documentation site for every branch to S3
-deploy_documentation_site:
+# ------------------------
+# DEPLOY TO SONATYPE NEXUS
+# ------------------------
+
+# TODO: How?
+
+# --------------------------
+# DEPLOY DOCUMENTATION SITES
+# --------------------------
+
+# These jobs do the following:
+#  - deploy_site_test: deploy any branch to `test-<branchname>`
+#  - deploy_site_version: deploy any tag to `<tagname>`
+#  - deploy_site_next: deploy develop to `next`
+#  - deploy_site_latest: deploy master to `latest`
+# `deploy_site_test` also has a cleanup job (`clean_site_test`) which
+# removes the site from the folder in s3 when the branch is deleted
+
+# We can consolidate these scripts (eventually) if we can set this $FOLDER variable globally
+# and then use that in the environment object
+# # Determine the correct folder to deploy changes to s3 with
+# - >
+#   if [ "${CI_COMMIT_TAG}" != "" ];
+#       then echo "FOLDER=${CI_COMMIT_TAG}"
+#   elif [ "${CI_COMMIT_REF_SLUG}" == "master" ];
+#       then echo "FOLDER=latest"
+#   elif [ "${CI_COMMIT_REF_SLUG}" == "develop" ];
+#       then echo "FOLDER=next"
+#   fi
+
+# <branch> -> test-<branch>
+deploy_site_test:
   stage: deploy
   image: python:latest
+  only:
+    - branches
   except:
+    - master
+    - develop
+  dependencies:
+    - build_site
+  script:
+    - pip install awscli
+    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/test-${CI_COMMIT_REF_SLUG} --recursive
+  environment:
+    name: test/$CI_COMMIT_REF_SLUG
+    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/test-$CI_COMMIT_REF_SLUG
+    on_stop: clean_site_test # clean up s3 manually or when branch is deleted/merged
+
+clean_site_test:
+  stage: deploy
+  image: python:latest
+  only:
+    - branches
+  except:
+    - master
+    - develop
+  script:
+    - pip install awscli
+    - aws s3 rm s3://${DOCS_BUCKET_NAME}/test-${CI_COMMIT_REF_SLUG} --recursive
+  environment:
+    name: test/$CI_COMMIT_REF_SLUG
+    action: stop
+  when: manual
+
+# tag -> tag (i.e. `/x.x.x/`)
+deploy_site_version:
+  stage: deploy
+  image: python:latest
+  only:
     - tags
   dependencies:
     - build_site
-  before_script:
-    - pip install awscli
   script:
-    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive
+    - pip install awscli
+    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/${CI_COMMIT_TAG} --recursive
   environment:
-    name: ${CI_COMMIT_REF_SLUG}
-    url: http://${BUCKET_NAME}.s3-website.${AWS_DEFAULT_REGION}.amazonaws.com/${CI_COMMIT_REF_SLUG}
-    on_stop: clean_documentation_site # clean up s3 manually or when branch is deleted/merged
+    name: $CI_COMMIT_TAG
+    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/$CI_COMMIT_TAG
 
-# Clean up documentation sites on S3 for branches that are deleted
-clean_documentation_site:
+# Develop -> /next/
+deploy_site_next:
   stage: deploy
   image: python:latest
-  except:
-    - tags
-  before_script:
-    - pip install awscli
+  only:
+    - develop
+  dependencies:
+    - build_site
   script:
-    - aws s3 rm s3://${BUCKET_NAME}/${CI_ENVIRONMENT_NAME} --recursive
+    - pip install awscli
+    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/next --recursive
   environment:
-    name: ${CI_COMMIT_REF_SLUG}
-    action: stop
-  when: manual
+    name: next
+    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/next
+
+# MASTER -> /latest/
+deploy_site_latest:
+  stage: deploy
+  image: python:latest
+  only:
+    - master
+  dependencies:
+    - build_site
+  script:
+    - pip install awscli
+    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/latest --recursive
+  environment:
+    name: latest
+    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/latest

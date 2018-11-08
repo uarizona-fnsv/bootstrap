@@ -59,7 +59,16 @@ Gitlab CI will take care of the docs site, CDN, and nexus repository deploys whe
 
 ## Documentation Site
 
-The documentation site is deployed via Gitlab CI to an AWS S3 bucket. Each branch has a folder in the bucket, which is cleaned up manually. The `master/` folder is mapped to our docs site url, but otherwise you can look at the [Gitlab CI environments page](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/environments) to see a direct link for each branch.
+The documentation site is deployed via Gitlab CI to an AWS S3 bucket. Each branch has a folder in the bucket, which is cleaned up manually. The `latest/` folder (deployed from `master`) is the default route, but otherwise you can look at the [Gitlab CI environments page](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/environments) to see a direct link for each branch.
+
+In general, available options will be:
+| Bucket Folder | Gitlab Branch | Example |
+|:-------------:|:-------------:|:---------|
+| `latest/` | `master` | |
+| `next/`   | `develop`| |
+| `{branchname}`| `{branchname}`| `3-update-styles` |
+| `x.x.x`   | tag | `1.1.1` |
+All branches and tags will have a folder. Eventually, the site itself will include a switching functionality in it's navbar.
 
 ### Initial configuration of the docs site
 
