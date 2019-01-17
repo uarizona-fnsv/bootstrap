@@ -19,7 +19,8 @@ build_site:
   stage: build
   image: node:8
   script:
-    - npm install
+    # TODO: Don't use our registry since ci can't find it, we should fix this
+    - npm install --registry https://registry.npmjs.org
     # Ensure our base url matches the folder in s3 so that assets are served properly
     # tag -> tag hash, master -> latest, develop -> next, any other branch -> test-<branchname>
     - >
