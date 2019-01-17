@@ -21,7 +21,7 @@ npm install
 ### Workflow
 
 The main workflow behind development is as follows:
-- Feature branches are used to add features (duh). As development is pushed up to it's branch on gitlab, a documentation site (for more information, see [here](#documentation-site)) is created so that you can view changes and share them if necessary
+- Feature branches are used to add features (duh). As development is pushed up to it's branch on gitlab, a documentation site (for more information, see [here](#documentation-site)) is created so that you can view changes and share them if necessary.
 - Once features are established, they are merged into `develop` via a merge request. At this point, the documentation site for `develop` is updated.
 - When things are ready for a release, it's time to create a new feature branch (named whatever) and run `npm run release -- <version>` as described [here](#releasing-a-new-version).
 - Merge that commit and tag into `develop` via a merge request. This will now create a `@next/` folder on the CDN with the releases code, for testing.
@@ -45,9 +45,11 @@ For more information on VuePress, see [it's documentation site](https://vuepress
 
 Releasing a new version is easy.
 
-1. **Make sure you are up to date.** Be sure to `git pull`, commit any final changes, and perform a rebase on develop to make sure you are 100% ready.
+1. **Make sure you are up to date.** Be sure to commit any final changes, and perform a rebase on develop to make sure you are 100% ready.
 1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense.
-1. **Do it! [_lightsaber sounds_]** Run `npm run release -- <version>`, with `<version>` being the next version number. This executes `/build/release.sh`, which does the following for you:
+1. **Test the publish method.** Make sure you try out `npm publish --dry-run` to see what the published package will include. If there are files in the list you don't think should be published, update the whitelish in `package.json` to not include them, or add them to the `.gitignore` if it shouldn't upload to git either. Don't forget the `--dry-run` flag, or else you might upload a broken package.
+1. **Test that the package installs.** It is also a good idea to install the package on your computer. To do so, run `npm install . -g`, which will attempt to globally install this package and will point out any errors. Use `npm ls -g` to verify the install worked. You can then enter the node-repl and try to import the package to see if it does what it's supposed to do.
+1. **Do it! _lightsaber sounds_** Run `npm run release -- <version>`, with `<version>` being the next version number. This executes `/build/release.sh`, which does the following for you:
     - Run `npm run change-version` to modify all our assets with the correct version number for releasing.
     - Run `npm run dist` to compile all the assets with the new versions. Make sure this succeeds and places the appropriate files in the `dist/` folder
     - Tag the release in git
