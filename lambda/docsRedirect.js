@@ -13,16 +13,16 @@
  * another website if needed.
  */
 
-const path = require('path');
+exports.handler = async (event, context, callback) => {
+  const { request } = event.Records[0].cf;
 
-exports.handler = (evt, ctx, cb) => {
-  const { request } = evt.Records[0].cf;
-
-  if (!path.extname(request.uri)) {
-    if (request.uri.startsWith('/')) {
-      request.uri = '/latest/';
-    }
+  if (request.uri === '/') {
+    request.uri = '/latest/index.html';
+  } else if (request.uri.match(/\/.+\//g)) {
+    request.uri = request.uri + 'index.html';
+  } else if (request.uri.match(/\/.+/g)) {
+    request.uri = request.uri + '/index.html';
   }
 
-  cb(null, request);
+  callback(null, request);
 };
