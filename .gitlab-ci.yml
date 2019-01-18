@@ -46,20 +46,19 @@ build_site:
 
 # TODO: How?
 
-# --------------------
-# DEPLOY ASSETS TO CDN
-# --------------------
+# ---------------------
+# PUBLISH ASSETS TO CDN
+# ---------------------
 
 # These jobs do the following:
-#  - deploy_cdn_version: deploy any tag to `<tagname>`
-#  - deploy_cdn_next: deploy develop to `@next`
-#  - deploy_cdn_latest: deploy master to the root of the cdn
+#  - publish_cdn_version: deploy any tag to `<tagname>`
+#  - publish_cdn_next: deploy develop to `@next`
+#  - publish_cdn_latest: deploy master to the root of the cdn
 
-# NOTE: Assets will be packaged locally before deploying to gitlab
-
+# NOTE: Assets will need to be packaged locally before deploying to gitlab
 
 # Tags -> tag in cdn (i.e. `x.x.x`)
-deploy_cdn_version:
+publish_cdn_version:
   stage: deploy
   image: python:latest
   only:
@@ -71,7 +70,7 @@ deploy_cdn_version:
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
 
 # Develop -> @next in cdn
-deploy_cdn_next:
+publish_cdn_next:
   stage: deploy
   image: python:latest
   only:
@@ -84,7 +83,7 @@ deploy_cdn_next:
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
 
 # Master -> root of cdn
-deploy_cdn_release:
+publish_cdn_release:
   stage: deploy
   image: python:latest
   only:
@@ -100,7 +99,32 @@ deploy_cdn_release:
 # DEPLOY TO SONATYPE NEXUS
 # ------------------------
 
-# TODO: How?
+# These jobs do the following:
+#  - publish_npm_version: deploy any tag to `<tagname>`
+#  - publish_npm_next: deploy as tag `@next` for testing beta releases from the repository
+# `npm` in our instance is our privately hosted Sonatype Nexus box
+
+# publish_npm_version:
+#   stage: deploy
+#   image: node:8
+#   only:
+#     - tags
+#   script:
+#     - npm set registry ${NPM_REGISTRY_URL} # http://10.220.130.232/repository/npm-internal/
+#     # Need to set the auth and/or login here...
+#     - npm publish
+
+# publish_npm_next:
+#   stage: deploy
+#   image: node:8
+#   only:
+#     refs:
+#       - develop
+#   script:
+#     # Need to ensure this is published as version "@next"
+#     - npm set registry ${NPM_REGISTRY_URL} # http://10.220.130.232/repository/npm-internal/
+#     # Need to set the auth and/or login here...
+#     - npm publish
 
 # --------------------------
 # DEPLOY DOCUMENTATION SITES
