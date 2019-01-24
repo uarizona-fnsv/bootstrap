@@ -2,7 +2,7 @@
 
 FSO Bootstrap is a theme built on top of [Bootstrap](https://getbootstrap.com). We use UA branding colors and make some changes to bootstraps functionality to reflect UA branding. However, we make some of our own choices by default, but build in methods of using UA Branding choices when necessary.
 
-*Note:* This is for FSO Bootstrap 1.x, which is based on the final release (and subsequent updates) of Bootstrap 4. For FSO Bootstrap 0.x, see [the v1 branch](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/tree/v4-alpha-based-backup) and it's [documentation]().
+*Note:* This is for FSO Bootstrap 1.x, which is based on the final release (and subsequent updates) of Bootstrap 4. For FSO Bootstrap 0.x, see [the v1 branch](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/tree/v4-alpha-based-backup) and it's [documentation](http://fast-docs-fso-bootstrap-alpha.s3-website-us-west-2.amazonaws.com/).
 
 ## Usage
 
@@ -22,42 +22,52 @@ npm install
 
 The main workflow behind development is as follows:
 - Feature branches are used to add features (duh). As development is pushed up to it's branch on gitlab, a documentation site (for more information, see [here](#documentation-site)) is created so that you can view changes and share them if necessary.
-- Once features are established, they are merged into `develop` via a merge request. At this point, the documentation site for `develop` is updated.
-- When things are ready for a release, it's time to create a new feature branch (named whatever) and run `npm run release -- <version>` as described [here](#releasing-a-new-version).
-- Merge that commit and tag into `develop` via a merge request. This will now create a `@next/` folder on the CDN with the releases code, for testing.
-- If everything is good, it's time to merge that into `master` via a merge request. On merge, gitlab will deploy the documentation site to `master` and deploy the CDN under the versions name (i.e. `x.x.x/`).
+- Once features are established, they are merged into `develop` via a merge request. At this point, the documentation site for `develop` is updated. See [testing your changes before release](#testing-your-changes-before-release) for more information on preparing for a release.
+- When things are ready for a release, it's time to create a new feature branch (named whatever) and create a release, as described [here](#releasing-a-new-version). At this point, the package will also be available on Sonatype Nexus as `@fso/bootstrap@x.x.x` (x.x.x being the release made) for installing via npm, as well as under the `fso-bootstrap/x.x.x` folder on the CDN.
+- Merge that commit and tag into `develop` via a merge request. This will update the docs site and CDN, though since you've already verified things with the previous commits, you should be good to move forward.
+- If everything is good, it's time to merge that into `master` via a merge request. On merge, gitlab will deploy the documentation site to production (i.e. the `latest` folder on s3) and update the root level of the CDN to the released version.
 
-### Theming
+### Testing your changes before release
 
-All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
+After you have merged changes into develop and you are ready for a release, it's time to test things for a final time. You can go about this in a few ways:
 
-### Docs Site
-
-Documentation is found in the `docs/` folder. To run the site locally, use `npm run docs:dev`.
-
-Any changes to the theming should be verified using the docs site. If documentation changes are required, be sure to update the respective markdown file. These files are more or less copied from the bootstrap site, though with some changes for our `<example>` component and using VuePress instead of Jekyll.
-
-If new bootstrap features are added, be sure to appropriately document them here. 
-
-For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
+1. **Use the `@next` tag in the cdn.** The CDN will have a `@next/` folder which can be used to test things. See the [instructions for installing from a cdn](./docs/usage/README.md#upcoming-features)
+1. **Installing from a local folder.** If you have this repository on your computer and have the latest changes on a branch, you can test that branch via a local npm install. To do so, run `npm install . -g`, which will attempt to globally install this package and will point out any errors. Use `npm ls -g` to verify the install worked. You can then enter the node-repl (type `node` in the terminal) and try to import the package to see if it does what it's supposed to do. You can also try and install it in another respository on your computer which uses the package by calling `npm install ../path-to-this-project` in that repository. Just be sure to reset that repository back to it's previous state after you finish testing. 
+1. **Installing from Gitlab.** You can also install from gitlab. See [instructions for installing from gitlab](.docs/usage/README.md#installing-from-gitlab). Be sure to reset the repository you install to back to it's previous state once you are finished testing.
 
 ### Releasing a new version
 
 Releasing a new version is easy.
 
-1. **Make sure you are up to date.** Be sure to commit any final changes, and perform a rebase on develop to make sure you are 100% ready.
-1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense.
+1. **Make a new feature branch and ensure you are up to date.** Before making a release, handle changes via other feature branches. When making a release, you should make a new feature branch *just to make this release* after having tested the current `develop` branch as discussed [above](#testing-your-changes-before-release).
+1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense. Don't change the version number yet, we'll do that later.
 1. **Test the publish method.** Make sure you try out `npm publish --dry-run` to see what the published package will include. If there are files in the list you don't think should be published, update the whitelish in `package.json` to not include them, or add them to the `.gitignore` if it shouldn't upload to git either. Don't forget the `--dry-run` flag, or else you might upload a broken package.
-1. **Test that the package installs.** It is also a good idea to install the package on your computer. To do so, run `npm install . -g`, which will attempt to globally install this package and will point out any errors. Use `npm ls -g` to verify the install worked. You can then enter the node-repl and try to import the package to see if it does what it's supposed to do.
-1. **Do it! _lightsaber sounds_** Run `npm run release -- <version>`, with `<version>` being the next version number. This executes `/build/release.sh`, which does the following for you:
+1. **Do it! _lightsaber sounds_** Run `npm run release -- <version>`, with `<version>` being the next version number that you determined in step 2. This executes `/build/release.sh`, which does the following for you:
     - Run `npm run change-version` to modify all our assets with the correct version number for releasing.
     - Run `npm run dist` to compile all the assets with the new versions. Make sure this succeeds and places the appropriate files in the `dist/` folder
     - Tag the release in git
 1. Now, run `git push && git push --tags` to push the compiled code and the new tag to gitlab
 
 Gitlab CI will take care of the docs site, CDN, and nexus repository deploys when the pipeline succeeds.
-- CDN is updated when a release is created and a tag is pushed to Gitlab
+- the CDN is updated when a release is created and a tag is pushed to Gitlab
+- our repository manager, Sonatype Nexus (https://zealot.fso.arizona.edu) is provided the new package so that it can be installed via npm
 - Docs site is always updated whenever a deploy runs. See [below](#Documentation-site) for more information.
+
+### The Repository
+
+#### Development
+
+All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
+
+#### Docs
+
+Documentation is found in the `docs/` folder. It is built with VuePress. To run the site locally, use `npm run docs:dev`.
+
+Any changes to the theming should be verified using the docs site. If documentation changes are required, be sure to update the respective markdown file. These files are more or less copied from the bootstrap site, though with some changes for our `<example>` component and using VuePress instead of Jekyll.
+
+If new bootstrap features are added, be sure to appropriately document them here. 
+
+For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
 
 ## Documentation Site
 

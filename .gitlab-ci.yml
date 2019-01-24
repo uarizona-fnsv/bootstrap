@@ -19,8 +19,6 @@ build_site:
   stage: build
   image: node:8
   script:
-    # TODO: Don't use our registry since ci can't find it, we should fix this
-    # - npm install --registry https://registry.npmjs.org
     - npm install
     # Ensure our base url matches the folder in s3 so that assets are served properly
     # tag -> tag hash, master -> latest, develop -> next, any other branch -> test-<branchname>
@@ -96,36 +94,21 @@ publish_cdn_release:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
 
-# ------------------------
-# DEPLOY TO SONATYPE NEXUS
-# ------------------------
+# -------------
+# DEPLOY TO NPM
+# -------------
 
-# These jobs do the following:
-#  - publish_npm_version: deploy any tag to `<tagname>`
-#  - publish_npm_next: deploy as tag `@next` for testing beta releases from the repository
-# `npm` in our instance is our privately hosted Sonatype Nexus box
-
-# publish_npm_version:
-#   stage: deploy
-#   image: node:8
-#   only:
-#     - tags
-#   script:
-#     - npm set registry ${NPM_REGISTRY_URL} # https://zealot.fso.arizona.edu/repository/npm-internal/
-#     # Need to set the auth and/or login here...
-#     - npm publish
-
-# publish_npm_next:
-#   stage: deploy
-#   image: node:8
-#   only:
-#     refs:
-#       - develop
-#   script:
-#     # Need to ensure this is published as version "@next"
-#     - npm set registry ${NPM_REGISTRY_URL} # https://zealot.fso.arizona.edu/repository/npm-internal/
-#     # Need to set the auth and/or login here...
-#     - npm publish
+# `npm` in our instance is our privately hosted Sonatype Nexus box @ http://zealot.fso.arizona.edu/repository/npm-internal/
+# deploy any tag to `<tagname>`, making it available in the repository as `@fso/bootstrap@x.x.x`
+publish_npm:
+  stage: deploy
+  image: node:8
+  only:
+    - tags
+  script:
+    - npm install npm-cli-login
+    - npx npm-cli-login -u ${NPM_USER} -p ${NPM_PASSWORD} -e ${NPM_EMAIL} -r ${NPM_REGISTRY} -s @fso
+    - npm publish
 
 # --------------------------
 # DEPLOY DOCUMENTATION SITES
