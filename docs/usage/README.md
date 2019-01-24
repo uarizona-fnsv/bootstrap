@@ -7,26 +7,40 @@ FSO Bootstrap can be installed via CDN or NPM. The NPM is recommended in most in
 
 ## CDN
 
-When working outside of a node application, our CDN deploy can be used to import bootstrap.
-
+When working outside of a node application, our CDN deploy can be used to import bootstrap. This will install the latest version that is considered production (i.e., the `master` branch).
 ```html
 <link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/bootstrap.css">
 ```
-
-If you need a specific version, or want to lock it down for manual checking, you can use a specific version.
-
+### Upcoming features
+To test out upcoming feature (i.e. what is currently on the `develop` branch) you can install the `@next` folder:
 ```html
-<link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/v1.0.0/bootstrap.css">
+<link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/@next/bootstrap.css">
+```
+### Specific Versions
+If you need a specific version, or want to lock it down for manual checking, you can use a specific version:
+```html
+<link rel="stylesheet" src="https://assets.cdn.fso.arizona.edu/fso-bootstrap/x.x.x/bootstrap.css">
 ```
 
 The version will map to the release tag in Gitlab.
 
-## Node.js (npm)
-
-To get started with FSO Bootstrap, you can install it from npm:
-
+## Node Package Manager (npm)
+We use Sonatype Nexus to host our internal npm packages at https://zealot.fso.arizona.edu. To install packages from there, you must configure npm to use that repository for the `@fso` scope. To do so, run the following in the root folder of your project:
 ```shell
-npm install --save-dev git+https://git@gitlab.fso.arizona.edu/FAST/fso-bootstrap.git
+npm config set @fso:registry https://zealot.fso.arizona.edu/repository/npm-internal
+```
+This will add a `.npmrc` file which tells npm to go to our Sonatype Nexus server for packages with the `@fso` scope.
+
+Most of our projects that use npm packages we've created will already be setup to use Sonatype Nexus, so you can refer to other code repositories for specific setup information as well.
+
+To install from npm, run:
+```shell
+npm install @fso/bootstrap
+```
+
+You can install a specific version by adding a version tag:
+```shell
+npm install @fso/bootstrap@x.x.x
 ```
 
 Then, use the assets:
@@ -42,13 +56,19 @@ Then, use the assets:
 <link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/bootstrap.min.css">
 ```
 
-*Note:* To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`).
+*Note:* To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`). You may want to make sure it is the same version used by FSO Bootstrap for improved compatibility. `npm` should warn you if the version is incompabile.
 
-### Javascript
+## Installing from Gitlab
+You should install from npm whenever possible. If you need to install a specific branch for testing, you can do so via:
+```shell
+npm install --save-dev git+https://git@gitlab.fso.arizona.edu/FAST/fso-bootstrap.git
+```
 
+::: warning
 FSO Bootstrap does not include Bootstrap's JS. If you need to use you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them, or use the js assets via bootstrap's CDN. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
+:::
 
-### Optional imports
+## Optional imports
 
 FSO Bootstrap keeps several things out of the normal import since they can be incredibly expensive for the pages loading time if not needed.
 

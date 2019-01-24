@@ -26,7 +26,7 @@
     "url": "git@gitlab.fso.arizona.edu:FAST/fso-bootstrap.git"
   },
   "publishConfig": {
-    "registry": "http://10.220.130:8081/repository/npm-internal/",
+    "registry": "http://zealot.fso.arizona.edu:8081/repository/npm-internal/",
     "access": "public"
   },
   "keywords": [
