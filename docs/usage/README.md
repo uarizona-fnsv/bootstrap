@@ -56,7 +56,9 @@ Then, use the assets:
 <link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/bootstrap.min.css">
 ```
 
-*Note:* To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`). You may want to make sure it is the same version used by FSO Bootstrap for improved compatibility. `npm` should warn you if the version is incompabile.
+::: tip
+To import as scss, you'll need to also install bootstrap via npm (`npm install --save-dev bootstrap`). You may want to make sure it is the same version used by FSO Bootstrap for improved compatibility. `npm` should warn you if the version is incompabile.
+:::
 
 ## Installing from Gitlab
 You should install from npm whenever possible. If you need to install a specific branch for testing, you can do so via:

@@ -18,22 +18,6 @@ cd fso-bootstrap
 npm install
 ```
 
-### The Repository
-
-#### Theming
-
-All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
-
-#### Docs Site
-
-Documentation is found in the `docs/` folder. It is built with VuePress. To run the site locally, use `npm run docs:dev`.
-
-Any changes to the theming should be verified using the docs site. If documentation changes are required, be sure to update the respective markdown file. These files are more or less copied from the bootstrap site, though with some changes for our `<example>` component and using VuePress instead of Jekyll.
-
-If new bootstrap features are added, be sure to appropriately document them here. 
-
-For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
-
 ### Workflow
 
 The main workflow behind development is as follows:
@@ -68,6 +52,22 @@ Gitlab CI will take care of the docs site, CDN, and nexus repository deploys whe
 - the CDN is updated when a release is created and a tag is pushed to Gitlab
 - our repository manager, Sonatype Nexus (https://zealot.fso.arizona.edu) is provided the new package so that it can be installed via npm
 - Docs site is always updated whenever a deploy runs. See [below](#Documentation-site) for more information.
+
+### The Repository
+
+#### Development
+
+All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
+
+#### Docs
+
+Documentation is found in the `docs/` folder. It is built with VuePress. To run the site locally, use `npm run docs:dev`.
+
+Any changes to the theming should be verified using the docs site. If documentation changes are required, be sure to update the respective markdown file. These files are more or less copied from the bootstrap site, though with some changes for our `<example>` component and using VuePress instead of Jekyll.
+
+If new bootstrap features are added, be sure to appropriately document them here. 
+
+For more information on VuePress, see [it's documentation site](https://vuepress.vuejs.org).
 
 ## Documentation Site
 
