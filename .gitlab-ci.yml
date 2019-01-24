@@ -100,8 +100,6 @@ publish_cdn_release:
 # -------------
 
 # `npm` in our instance is our privately hosted Sonatype Nexus box @ http://zealot.fso.arizona.edu/repository/npm-internal/
-# If Sonatype nexus ever supports `dist-tag` then we can look into setting up a versioning workflow. See: https://issues.sonatype.org/browse/NEXUS-9862
-
 # deploy any tag to `<tagname>`, making it available in the repository as `@fso/bootstrap@x.x.x`
 publish_npm:
   stage: deploy
