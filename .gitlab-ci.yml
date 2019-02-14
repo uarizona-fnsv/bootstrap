@@ -20,7 +20,8 @@ build_site:
   image: node:8
   script:
     # TODO: Don't use our registry since ci can't find it, we should fix this
-    - npm install --registry https://registry.npmjs.org
+    # - npm install --registry https://registry.npmjs.org
+    - npm install
     # Ensure our base url matches the folder in s3 so that assets are served properly
     # tag -> tag hash, master -> latest, develop -> next, any other branch -> test-<branchname>
     - >
@@ -110,7 +111,7 @@ publish_cdn_release:
 #   only:
 #     - tags
 #   script:
-#     - npm set registry ${NPM_REGISTRY_URL} # http://10.220.130.232/repository/npm-internal/
+#     - npm set registry ${NPM_REGISTRY_URL} # https://zealot.fso.arizona.edu/repository/npm-internal/
 #     # Need to set the auth and/or login here...
 #     - npm publish
 
@@ -122,7 +123,7 @@ publish_cdn_release:
 #       - develop
 #   script:
 #     # Need to ensure this is published as version "@next"
-#     - npm set registry ${NPM_REGISTRY_URL} # http://10.220.130.232/repository/npm-internal/
+#     - npm set registry ${NPM_REGISTRY_URL} # https://zealot.fso.arizona.edu/repository/npm-internal/
 #     # Need to set the auth and/or login here...
 #     - npm publish
 
