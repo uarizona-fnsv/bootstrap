@@ -1,3 +1,17 @@
+# 1.0.0 - Money For Nothing
+
+![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
+*(click to play)*
+
+> Listen here
+> Now that ain't workin' that's the way to do it
+
+Implementing bootstrap is now a breeze in our projects and i'll make all those electronics store workers jealous. Maybe. Idk. It's a stretch but sums up my attitude towards this project in comparison to working with UA Bootstrap.
+
+Finally, FSO-Bootstrap is fully mature after nearly 2 years! (Granted, 0.1.4 was _very_ stable aside from still being based on bootstrap 4-alpha.6)
+
+This release finalizes any style changes from default bootstrap.
+
 # 1.0.0 Release Candidate
 
 The RC introduces a full-blown, super awesome, totally not over-complicated CI/CD workflow that handles automated versioning via an npm task, deployment of documentation sites based on branch, and deployment of released code to a CDN.
