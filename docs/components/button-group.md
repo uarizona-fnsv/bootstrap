@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book
   type: info
-  link: 'http://getbootstrap.com/docs/4.1/components/button-group/'
+  link: 'https://getbootstrap.com/docs/4.3/components/button-group/'
 ---
 
 Wrap a series of buttons with `.btn` in `.btn-group.` Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.

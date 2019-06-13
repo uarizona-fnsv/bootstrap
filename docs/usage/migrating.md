@@ -14,7 +14,7 @@ _i.e. versions of FSO Bootstrap based on Bootstrap v4 alpha's_
 - Font Awesome is no longer included by default. Font Awesome is included as an optional install for ease-of-migration, however, 
 - no more uabranding by default
 
-Please also refer to Bootstrap's guide to migrating to the [full release of Bootstrap 4](http://getbootstrap.com/docs/4.1/migration/).
+Please also refer to Bootstrap's guide to migrating to the [full release of Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/).
 
 
 # Migrating from UA Bootstrap
@@ -33,4 +33,4 @@ For UA specific-styling and color changes, refer to our documentation for colors
 - **Well**: Use a card
 - **Callout**: Use an alert or card
 
-For any other changes, you'll want to refer to Bootstrap's list of migrations required for [moving from Bootstrap 3 to 4](http://getbootstrap.com/docs/4.1/migration/#summary).
+For any other changes, you'll want to refer to Bootstrap's list of migrations required for [moving from Bootstrap 3 to 4](https://getbootstrap.com/docs/4.3/migration/#summary).

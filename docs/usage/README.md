@@ -67,7 +67,7 @@ npm install --save-dev git+https://git@gitlab.fso.arizona.edu/FAST/fso-bootstrap
 ```
 
 ::: warning
-FSO Bootstrap does not include Bootstrap's JS. If you need to use you'll need to [install Bootstrap](http://getbootstrap.com/docs/4.1/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them, or use the js assets via bootstrap's CDN. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
+FSO Bootstrap does not include Bootstrap's JS. If you need to use you'll need to [install Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/download/#npm) alongside FSO Bootstrap since we do not include them, or use the js assets via bootstrap's CDN. FSO Bootstrap is configured so that npm will warn you if it is incompatible with the version of Bootstrap you install alongside it. While this won't necessarily break your app, you may want to ensure you are using the same version that FSO Bootstrap is currently using.
 :::
 
 ## Optional imports

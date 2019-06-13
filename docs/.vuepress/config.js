@@ -74,6 +74,8 @@ module.exports = {
         ['popovers', 'Popovers'],
         ['progress', 'Progress'],
         ['scrollspy', 'Scrollspy'],
+        ['spinners', 'Spinners'],
+        ['toasts', 'Toasts'],
         ['tooltips', 'Tooltips'],
         ['ua-brand-icons', 'UA Brand Icons']
       ],

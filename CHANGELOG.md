@@ -1,12 +1,31 @@
+# 1.1.0 - Tonight, Tonight
+
+[![](http://img.youtube.com/vi/NOG3eus4ZSo/0.jpg)](https://www.youtube.com/watch?v=NOG3eus4ZSo "Tonight, Tonight - click to play")
+*(click to play)*
+
+> Believe in me as I believe in you
+
+This release supports Bootstrap 4.3.1 (and all the 4.2.1 bits we previously missed) in all of it's glory, full of new components we actually could really use, like toast notifications, spinners, and switches!
+
+### New Things
+- Spinner (for loading indicators)
+- Switch (an iOS like reskin of a checkbox)
+- Toast (displaying notifications)
+- Various other little niceities like `.modal-xl`, `.text-decoration-none`, `.streached-link`, `.rounded-sm`/`.rounded-lg`, `.list-group-horizontal`, and more.
+- Tons of css and js optimizations
+- Really cool responsive font sizes, which you can turn on if you want to use it. This is turned off by default (and will likely be until bootstrap v5, since it can break things) but if a project looks fine with it turned on, then use it! This is done with the `$enable-responsive-font-sizes` boolean wherever you import the sass files for bootstrap. If you aren't using sass, you won't be able to use them.
+
+For detailed information, see Bootstrap's [4.2.1 release notes](https://blog.getbootstrap.com/2018/12/21/bootstrap-4-2-1/) and [4.3.0 release notes](https://blog.getbootstrap.com/2019/02/11/bootstrap-4-3-0/).
+
 # 1.0.0 - Money For Nothing
 
-![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
+[![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
 *(click to play)*
 
 > Listen here
 > Now that ain't workin' that's the way to do it
 
-Implementing bootstrap is now a breeze in our projects and i'll make all those electronics store workers jealous. Maybe. Idk. It's a stretch but sums up my attitude towards this project in comparison to working with UA Bootstrap.
+Implementing bootstrap is now a breeze in our projects and I'll make all those electronics store workers jealous. Maybe. Idk. It's a stretch but sums up my attitude towards this project in comparison to working with UA Bootstrap.
 
 Finally, FSO-Bootstrap is fully mature after nearly 2 years! (Granted, 0.1.4 was _very_ stable aside from still being based on bootstrap 4-alpha.6)
 

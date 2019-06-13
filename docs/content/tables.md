@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: 'http://getbootstrap.com/docs/4.1/content/tables/'
+  link: 'https://getbootstrap.com/docs/4.3/content/tables/'
 colors: ['primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark']
 ---
 

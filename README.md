@@ -16,6 +16,8 @@ To get started with development, clone the project and install dependencies:
 git clone git@gitlab.fso.arizona.edu:fast/fso-bootstrap.git
 cd fso-bootstrap
 npm install
+# start the dev server
+npm run docs:dev
 ```
 
 ### Workflow

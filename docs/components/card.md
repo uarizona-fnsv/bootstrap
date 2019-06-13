@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book
   type: info
-  link: 'http://getbootstrap.com/docs/4.1/components/card/'
+  link: 'https://getbootstrap.com/docs/4.3/components/card/'
 ---
 
 A **card** is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
@@ -231,7 +231,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 
 ## Text alignment
 
-You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes](http://getbootstrap.com/docs/4.1/utilities/text/#text-alignment).
+You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes](https://getbootstrap.com/docs/4.3/utilities/text/#text-alignment).
 
 <example>
     <div class="card" style="width: 18rem;">

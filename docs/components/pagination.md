@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: 'http://getbootstrap.com/docs/4.1/components/pagination/'
+  link: 'https://getbootstrap.com/docs/4.3/components/pagination/'
 ---
 
 ## Overview

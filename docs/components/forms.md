@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: 'http://getbootstrap.com/docs/4.1/components/forms/'
+  link: 'https://getbootstrap.com/docs/4.3/components/forms/'
 ---
 
 Bootstrap’s form controls expand on our Rebooted form styles with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
@@ -1040,6 +1040,21 @@ Custom checkboxes and radios can also be disabled. Add the `disabled` boolean at
         <input type="radio" name="radioDisabled" id="customRadioDisabled" class="custom-control-input" disabled/>
         <label class="custom-control-label" for="customRadioDisabled">Toggle this custom radio</label>
     </div>
+</example>
+
+### Switches
+
+A switch has the markup of a custom checkbox but uses the `.custom-switch` class to render a toggle switch. Switches also support the `disabled` attribute.
+
+<example>
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+  </div>
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+    <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+  </div>
 </example>
 
 ### Select menu

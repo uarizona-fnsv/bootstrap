@@ -3,7 +3,7 @@ title: 'Components'
 description: ''
 ---
 
-These examples show basic usage of what [Bootstrap components](http://getbootstrap.com/docs/4.1/components/alerts/) look like in FSO Bootstrap, including any extra color options and varieties of the default controls. Most components include the bulk of bootstrap's normal documentation for ease-of-reading and for testing changes. Be sure to check the full documentation of these components. Each page includes a link to bootstraps relavent documentation at the top of the page.
+These examples show basic usage of what [Bootstrap components](https://getbootstrap.com/docs/4.3/components/alerts/) look like in FSO Bootstrap, including any extra color options and varieties of the default controls. Most components include the bulk of bootstrap's normal documentation for ease-of-reading and for testing changes. Be sure to check the full documentation of these components. Each page includes a link to bootstraps relavent documentation at the top of the page.
 
 ## New Components
 

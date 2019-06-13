@@ -5,7 +5,7 @@ buttons:
 - label: Bootstrap Docs
   icon: fas fa-book   
   type: info   
-  link: 'http://getbootstrap.com/docs/4.1/components/carousel/'
+  link: 'https://getbootstrap.com/docs/4.3/components/carousel/'
 ---
 
-See [Bootstrap's carousel documentation](http://getbootstrap.com/docs/4.1/components/carousel/) to learn more.
+See [Bootstrap's carousel documentation](https://getbootstrap.com/docs/4.3/components/carousel/) to learn more.
