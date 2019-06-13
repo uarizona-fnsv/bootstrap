@@ -47,13 +47,13 @@ Then, use the assets:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/fso-bootstrap/dist/bootstrap.css";
+@import "<path-to node_modules>/@fso/bootstrap/dist/bootstrap.css";
 // Import as scss (preferred)
-@import "<path-to node_modules>/fso-bootstrap/scss/fso-bootstrap";
+@import "<path-to node_modules>/@fso/bootstrap/scss/fso-bootstrap";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/bootstrap.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/@fso/bootstrap/dist/bootstrap.min.css">
 ```
 
 ::: tip
@@ -84,11 +84,11 @@ If you need to use Font Awesome (i.e. you can't use font awesome via it's native
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.css";
+@import "<path-to node_modules>/@fso/bootstrap/dist/fso-font-awesome.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/fso-font-awesome.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/@fso/bootstrap/dist/fso-font-awesome.min.css">
 ```
 
 *Note:* If you want to import the font awesome via scss, you'll need to install Font Awesome as well (`npm install --save-dev @fort-awesome/font-awesome-free`). Honestly at this point, deal with font awesome on your own and import via js or individual icons needed via scss.
@@ -99,9 +99,9 @@ If you need to use UA Branding Icons:
 
 ```scss
 // Import as css
-@import "<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.css";
+@import "<path-to node_modules>/@fso/bootstrap/dist/ua-brand-icons.css";
 ```
 
 ```html
-<link rel="stylesheet" src="<path-to node_modules>/fso-bootstrap/dist/ua-brand-icons.min.css">
+<link rel="stylesheet" src="<path-to node_modules>/@fso/bootstrap/dist/ua-brand-icons.min.css">
 ```

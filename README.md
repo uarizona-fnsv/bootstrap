@@ -20,6 +20,18 @@ npm install
 npm run docs:dev
 ```
 
+Then, you can use the npm commands to build, develop, and generate the plugin and documentation site. The commands are as follows:
+
+| Command               | Description |
+| --------------------- | :---------- |
+| npm run dist          | Compile styles, this runs css linting, compilation, and minification and puts the results in `dist/` |
+| npm run docs:dev      | Runs the documentation site's development server |
+| npm run docs:build    | Geneate the SSR site for deployment |
+| npm run lint          | Lint the files with `eslint` |
+| npm run release       | Create a release. See [releasing instructions](#releasing-a-new-version) |
+
+When developing anything in FSO Bootstrap, be sure to update the documentation under the `docs/` folder. Not every component or change has to be documented, but it's a good idea to document as much as possible, particularly if it is something usable by developers.
+
 ### Workflow
 
 The main workflow behind development is as follows:
@@ -42,26 +54,40 @@ After you have merged changes into develop and you are ready for a release, it's
 Releasing a new version is easy.
 
 1. **Make a new feature branch and ensure you are up to date.** Before making a release, handle changes via other feature branches. When making a release, you should make a new feature branch *just to make this release* after having tested the current `develop` branch as discussed [above](#testing-your-changes-before-release).
+1. **Update the changelog.** Many any changelog updates now.
 1. **Determine the Version Number.** We use the semver of `major.minor.patch`. Be sure to see what the previous version is in the `package.json` and determine what makes sense. Don't change the version number yet, we'll do that later.
 1. **Test the publish method.** Make sure you try out `npm publish --dry-run` to see what the published package will include. If there are files in the list you don't think should be published, update the whitelish in `package.json` to not include them, or add them to the `.gitignore` if it shouldn't upload to git either. Don't forget the `--dry-run` flag, or else you might upload a broken package.
 1. **Do it! _lightsaber sounds_** Run `npm run release -- <version>`, with `<version>` being the next version number that you determined in step 2. This executes `/build/release.sh`, which does the following for you:
     - Run `npm run change-version` to modify all our assets with the correct version number for releasing.
     - Run `npm run dist` to compile all the assets with the new versions. Make sure this succeeds and places the appropriate files in the `dist/` folder
+    - Deploy the release to our Sonatype Nexus instance (as long as you've configured everything properly, see [here](#deploying-to-sonatype-nexus))
     - Tag the release in git
 1. Now, run `git push && git push --tags` to push the compiled code and the new tag to gitlab
 
 Gitlab CI will take care of the docs site, CDN, and nexus repository deploys when the pipeline succeeds.
 - the CDN is updated when a release is created and a tag is pushed to Gitlab
-- our repository manager, Sonatype Nexus (https://zealot.fso.arizona.edu) is provided the new package so that it can be installed via npm
 - Docs site is always updated whenever a deploy runs. See [below](#Documentation-site) for more information.
 
-### The Repository
+### Deploying to Sonatype Nexus
+Sonatype nexus is our internal `npm` package respository. The `package.json` is already configured to use our repository for publishing, all you need to do is log in beforehand. Once you log in on your machine, the credentials should be stores in base64 in your global `.npmrc` config file.
 
-#### Development
+To login, first have the systems team create credentials for you on our Sonatype Nexus server (`zealot.fso.arizona.edu`). Then, run the following command and use those credentials:
+
+```shell
+npm login --registry=http://zealot.fso.arizona.edu/repository/npm-internal/
+```
+
+Now you should be ready to follow the rest of the release steps above.
+
+*Note:* Once you've logged in on a machine once, you should be good to go unless your npm config is changed, since `npm login` stores an auth token in your `~/.npmrc` file, which is then sent every time you do anything with the npm repository.
+
+## The Repository
+
+### Development
 
 All of the magic of FSO Bootstrap happens in the `scss/` folder, which is where we import Bootstrap and override it's default variables (`scss/variables.scss`) and add/override other various functions, mixins, and components. Overriden/added-to files are stored in the `scss/changes/` folder for organization purposes, and any additional pages or changes should be made here with the same file names as found in bootstrap's `scss/` folder.
 
-#### Docs
+### Docs
 
 Documentation is found in the `docs/` folder. It is built with VuePress. To run the site locally, use `npm run docs:dev`.
 
@@ -78,10 +104,10 @@ The documentation site is deployed via Gitlab CI to an AWS S3 bucket. Each branc
 In general, available options will be:
 | Bucket Folder | Gitlab Branch | Example |
 |:-------------:|:-------------:|:---------|
-| `latest/` | `master` | |
-| `next/`   | `develop`| |
-| `{branchname}`| `{branchname}`| `3-update-styles` |
-| `x.x.x`   | tag | `1.1.1` |
+| `/` | `master` | |
+| `versions/next/`   | `develop`| |
+| `versions/{branchname}`| `{branchname}`| `3-update-styles` |
+| `versions/x.x.x`   | tag | `1.1.1` |
 All branches and tags will have a folder. Eventually, the site itself will include a switching functionality in it's navbar.
 
 ### Initial configuration of the docs site
