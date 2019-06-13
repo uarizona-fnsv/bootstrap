@@ -74,12 +74,14 @@ Sonatype nexus is our internal `npm` package respository. The `package.json` is 
 To login, first have the systems team create credentials for you on our Sonatype Nexus server (`zealot.fso.arizona.edu`). Then, run the following command and use those credentials:
 
 ```shell
-npm login --registry=http://zealot.fso.arizona.edu/repository/npm-internal/
+npm login --registry=https://zealot.fso.arizona.edu/repository/npm-internal/
 ```
 
 Now you should be ready to follow the rest of the release steps above.
 
 *Note:* Once you've logged in on a machine once, you should be good to go unless your npm config is changed, since `npm login` stores an auth token in your `~/.npmrc` file, which is then sent every time you do anything with the npm repository.
+
+*Gah! It failed!* Don't worry, just make sure you login or fix the issue, then run `npm publish` again until it works.
 
 ## The Repository
 
