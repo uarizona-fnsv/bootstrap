@@ -17,6 +17,13 @@ This release supports Bootstrap 4.3.1 (and all the 4.2.1 bits we previously miss
 
 For detailed information, see Bootstrap's [4.2.1 release notes](https://blog.getbootstrap.com/2018/12/21/bootstrap-4-2-1/) and [4.3.0 release notes](https://blog.getbootstrap.com/2019/02/11/bootstrap-4-3-0/).
 
+### Other Improvements
+In addition to the css changes, this release includes the following:
+- Improved documentation site changelog, home page, and usage instructions
+- Better deploys to the static site (master deploys to the root of the bucket, everything else to `versions/` folder for easy access)
+- Improved deploys to Sonatype Nexus
+- Minor updates to packages
+
 # 1.0.0 - Money For Nothing
 
 [![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
