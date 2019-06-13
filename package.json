@@ -1,6 +1,6 @@
 {
   "name": "@fso/bootstrap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Bootstrap theme utilizing University of Arizona branding",
   "scripts": {
     "docs:dev": "vuepress dev docs",
