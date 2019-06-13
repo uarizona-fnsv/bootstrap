@@ -41,6 +41,12 @@ printf "\n%sTag the release...%s" $magenta $end
 printf "\n%s=======================================================\n%s" $cyan $end
 git tag "$1"
 
+# TODO: Upload to NPM
+printf "\n%s=======================================================%s" $cyan $end
+printf "\n%sPublish to Sonatype Nexus...%s" $magenta $end
+printf "\n%s=======================================================\n%s" $cyan $end
+npm publish --registry="https://zealot.fso.arizona.edu/repository/npm-internal/"
+
 printf "\n%sSuccess!!!%s" $green $end
 printf "\n%sExecute 'git push && git push --tags' to push the dist and the tag up to gitlab %s" $green $end
 printf "\n%sSee how Gitlab CI fares, and make a merge request against develop.%s" $green $end
