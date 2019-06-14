@@ -1,3 +1,5 @@
+let { version } = require('../../package.json');
+
 module.exports = {
   title: 'FSO Bootstrap',
   description: 'Bootstrap 4 meets University of Arizona branding',
@@ -20,7 +22,7 @@ module.exports = {
     // Bootstrap JS
     ['script', { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' }],
     ['script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' }],
-    ['script', { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' }]
+    ['script', { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' }]
   ],
   serviceWorker: true,
   evergreen: true,
@@ -86,8 +88,8 @@ module.exports = {
       ]
     },
     lastUpdated: 'Last Updated',
-    version: '1.0.0',
-    bootstrapVersion: '4.1.3',
+    version: version,
+    bootstrapVersion: '4.3.1',
     repo: 'https://gitlab.fso.arizona.edu/FAST/fso-bootstrap',
     repoLabel: 'Source',
     docsDir: 'docs',
