@@ -15,8 +15,6 @@ publish_cdn_version:
   image: python:latest
   only:
     - tags
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
@@ -28,8 +26,6 @@ publish_cdn_next:
   only:
     refs:
       - develop
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
@@ -41,8 +37,6 @@ publish_cdn_release:
   only:
     refs:
       - master
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
