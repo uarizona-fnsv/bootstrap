@@ -1,3 +1,18 @@
+stages:
+  - deploy
+
+variables:
+  AWS_DEFAULT_REGION: us-west-2
+  CDN_BUCKET_NAME: fastdev
+  DOCS_BUCKET_NAME: fast-docs-bootstrap
+  PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules
+    - .cache
+
 # ---------------------
 # PUBLISH ASSETS TO CDN
 # ---------------------
