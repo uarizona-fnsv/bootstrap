@@ -1,11 +1,9 @@
 stages:
-  - build
   - deploy
 
 variables:
   AWS_DEFAULT_REGION: us-west-2
   CDN_BUCKET_NAME: fastdev
-  DOCS_BUCKET_NAME: fast-docs-bootstrap
   PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache
 
 cache:
@@ -13,30 +11,6 @@ cache:
   paths:
     - node_modules
     - .cache
-
-build_site:
-  stage: build
-  image: node:10
-  script:
-    - npm install
-    # Ensure our base url matches the folder in s3 so that assets are served properly
-    # tag -> tag hash, master -> latest, develop -> next, any other branch -> test-<branchname>
-    - >
-      if [ "${CI_COMMIT_TAG}" != "" ]; then
-          BASE="/versions/${CI_COMMIT_TAG}/"
-      elif [ "${CI_COMMIT_REF_SLUG}" == "master" ]; then
-          BASE="/"
-      elif [ "${CI_COMMIT_REF_SLUG}" == "develop" ]; then
-          BASE="/versions/next/"
-      else
-          BASE="/versions/test-${CI_COMMIT_REF_SLUG}/"
-      fi
-    - echo $BASE
-    - "npx replace-in-file \"base: '/'\" \"base: '$BASE'\" docs/.vuepress/config.js"
-    - npm run docs:build
-  artifacts:
-    paths:
-      - public
 
 # ---------------------
 # PUBLISH ASSETS TO CDN
@@ -55,8 +29,6 @@ publish_cdn_version:
   image: python:latest
   only:
     - tags
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/${CI_COMMIT_TAG_NAME} --recursive --exclude "*" --include "bootstrap.*"
@@ -68,8 +40,6 @@ publish_cdn_next:
   only:
     refs:
       - develop
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/@next --recursive --exclude "*" --include "bootstrap.*"
@@ -81,100 +51,6 @@ publish_cdn_release:
   only:
     refs:
       - master
-  dependencies:
-    - build_site
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
-
-# --------------------------
-# DEPLOY DOCUMENTATION SITES
-# --------------------------
-
-# These jobs do the following:
-#  - deploy_site_test: deploy any branch to `test-<branchname>`
-#  - deploy_site_version: deploy any tag to `<tagname>`
-#  - deploy_site_next: deploy develop to `next`
-#  - deploy_site_latest: deploy master to `latest`
-# `deploy_site_test` also has a cleanup job (`clean_site_test`) which
-# removes the site from the folder in s3 when the branch is deleted
-
-# <branch> -> test-<branch>
-deploy_site_test:
-  stage: deploy
-  image: python:latest
-  only:
-    - branches
-  except:
-    - master
-    - develop
-  dependencies:
-    - build_site
-  script:
-    - pip install awscli
-    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/versions/test-${CI_COMMIT_REF_SLUG} --recursive
-  environment:
-    name: test/$CI_COMMIT_REF_SLUG
-    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/versions/test-$CI_COMMIT_REF_SLUG
-    on_stop: clean_site_test # clean up s3 manually or when branch is deleted/merged
-
-clean_site_test:
-  stage: deploy
-  image: python:latest
-  only:
-    - branches
-  except:
-    - master
-    - develop
-  script:
-    - pip install awscli
-    - aws s3 rm s3://${DOCS_BUCKET_NAME}/versions/test-${CI_COMMIT_REF_SLUG} --recursive
-  environment:
-    name: test/$CI_COMMIT_REF_SLUG
-    action: stop
-  when: manual
-
-# tag -> tag (i.e. `/x.x.x/`)
-deploy_site_version:
-  stage: deploy
-  image: python:latest
-  only:
-    - tags
-  dependencies:
-    - build_site
-  script:
-    - pip install awscli
-    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/versions/${CI_COMMIT_TAG} --recursive
-  environment:
-    name: $CI_COMMIT_TAG
-    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/versions/$CI_COMMIT_TAG
-
-# Develop -> /next/
-deploy_site_next:
-  stage: deploy
-  image: python:latest
-  only:
-    - develop
-  dependencies:
-    - build_site
-  script:
-    - pip install awscli
-    - aws s3 cp public s3://${DOCS_BUCKET_NAME}/versions/next --recursive
-  environment:
-    name: next
-    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/versions/next
-
-# MASTER -> /latest/
-deploy_site_latest:
-  stage: deploy
-  image: python:latest
-  only:
-    - master
-  dependencies:
-    - build_site
-  script:
-    - pip install awscli
-    - aws s3 cp public s3://${DOCS_BUCKET_NAME} --recursive
-  environment:
-    name: latest
-    url: http://$DOCS_BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/
