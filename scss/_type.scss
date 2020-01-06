@@ -1,19 +1,24 @@
 // Allow for serif h1 and h2 headings for when needing to comply with UA branding completely
-h1, h2,
-.h1, .h2 {
+h1,
+h2,
+.h1,
+.h2 {
   &.serif {
-    font-family: $font-family-serif !important;
+    font-family: $font-family-headings !important;
   }
 }
 
 // Type display classes should be serif by default, possible to override
-.display-1, .display-2, .display-3, .display-4 {
-  font-family: $font-family-serif !important;
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-family: $font-family-headings !important;
 }
 
 // Use Milo (serif) font for text
 .text-serif {
-  font-family: $font-family-serif !important;
+  font-family: $font-family-headings !important;
 }
 
 // UA Triangle-style lists
@@ -35,7 +40,7 @@ ul {
         height: 0;
         border-left: 4px solid #000;
         border-bottom: 4px solid transparent;
-        content: '';
+        content: "";
 
         border-top: 4px solid transparent;
         border-right: 0;

@@ -1,13 +1,21 @@
+# Unreleased
+
+- Bump to Bootstrap 4.4.1
+- Remove FontAwesome
+- Make our changes more in line with Arizona Bootstrap
+- Remove unused mixins and flatten folder structure
+
 # 1.1.0 - Tonight, Tonight
 
 [![](http://img.youtube.com/vi/NOG3eus4ZSo/0.jpg)](https://www.youtube.com/watch?v=NOG3eus4ZSo "Tonight, Tonight - click to play")
-*(click to play)*
+_(click to play)_
 
 > Believe in me as I believe in you
 
 This release supports Bootstrap 4.3.1 (and all the 4.2.1 bits we previously missed) in all of it's glory, full of new components we actually could really use, like toast notifications, spinners, and switches!
 
 ### New Things
+
 - Spinner (for loading indicators)
 - Switch (an iOS like reskin of a checkbox)
 - Toast (displaying notifications)
@@ -18,7 +26,9 @@ This release supports Bootstrap 4.3.1 (and all the 4.2.1 bits we previously miss
 For detailed information, see Bootstrap's [4.2.1 release notes](https://blog.getbootstrap.com/2018/12/21/bootstrap-4-2-1/) and [4.3.0 release notes](https://blog.getbootstrap.com/2019/02/11/bootstrap-4-3-0/).
 
 ### Other Improvements
+
 In addition to the css changes, this release includes the following:
+
 - Improved documentation site changelog, home page, and usage instructions
 - Better deploys to the static site (master deploys to the root of the bucket, everything else to `versions/` folder for easy access)
 - Improved deploys to Sonatype Nexus
@@ -27,7 +37,7 @@ In addition to the css changes, this release includes the following:
 # 1.0.0 - Money For Nothing
 
 [![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
-*(click to play)*
+_(click to play)_
 
 > Listen here
 > Now that ain't workin' that's the way to do it
@@ -65,13 +75,14 @@ This is the final alpha-based release.
 # 0.1.3
 
 ## New Features
-- Install via npm! Yay! 
+
+- Install via npm! Yay!
 - Numerous Documentation page fixes
 - Sage and Silver documentation site! Because we can!
 
 # 0.1.2
 
-This release includes numerous background color types and some changes to better reflect UA branding. It is also 100% compatable with Django-Base-App! :smile: 
+This release includes numerous background color types and some changes to better reflect UA branding. It is also 100% compatable with Django-Base-App! :smile:
 
 # 0.1.1
 
@@ -82,12 +93,14 @@ This adds the `fonts/` directory to the distribution so that this can actually b
 This is the initial release that includes the basic branding changes.
 
 ## Highlights
-*  Colors: All Bootstrap colors have been UAified
-*  Alerts, Buttons, Badges, Cards, etc: All bootstrap components that use the color schemes have been updated to better make use of those colors
-*  Fonts: We now use Milo Web and Milo Sans Web to match up with the UA branding style 
-*  UA Branding Icons: Use the UA Glyphicon set!
-*  Font Awesome: Since Bootstrap dropped Glyphicons, we are going to use Font Awesome cuz it's awesome. It's also better, and generally what the bootstrap creators recommend anyway.
-*  A few convenience classes were added, such as `.uppercase` and `.sans` to help with some of the branding style
+
+- Colors: All Bootstrap colors have been UAified
+- Alerts, Buttons, Badges, Cards, etc: All bootstrap components that use the color schemes have been updated to better make use of those colors
+- Fonts: We now use Milo Web and Milo Sans Web to match up with the UA branding style
+- UA Branding Icons: Use the UA Glyphicon set!
+- Font Awesome: Since Bootstrap dropped Glyphicons, we are going to use Font Awesome cuz it's awesome. It's also better, and generally what the bootstrap creators recommend anyway.
+- A few convenience classes were added, such as `.uppercase` and `.sans` to help with some of the branding style
 
 ## Bootstrap Version
+
 This release is based on [Bootstrap 4 Alpha 6](https://github.com/twbs/bootstrap/releases/tag/v4.0.0-alpha.6) so check out the changes they note there, and over the course of the alphas. A lot of things are the same as in Bootstrap 3, but there are quite a few small changes here and there.

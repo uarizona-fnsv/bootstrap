@@ -1,11 +1,118 @@
-// Colors
+// From Arizona Bootstrap
+// https://bitbucket.org/az-digital/arizona-bootstrap/src/master/
 
-// Grays and basic colors
 //
-// These aren't modified (as of 2/14/2019) but here for easy overriding in the future and for use in our styles
+// > COLORS
+//
 
-// Grays
-$white:    #fff !default;
+//
+// >> Brand Colors
+//
+$red: #ab0520;
+$bloom: #ef4056;
+$chili: #8b0015;
+
+$blue: #0c234b;
+$sky: #81d3eb;
+$oasis: #378dbd;
+$azurite: #1e5288;
+$midnight: #001c48;
+
+$cool-gray: #e2e9eb;
+$warm-gray: #f4ede5;
+
+$leaf: #70b865;
+$river: #007d84;
+$silver: #9eabae;
+$dark-silver: #49595e; // to be used for text only
+$mesa: #a95c42;
+
+$ash: #403635;
+$sage: #4a634e;
+
+$white: #fff;
+$black: #000;
+
+$colors: ();
+$colors: map-merge(
+  (
+    "red": $red,
+    "bloom": $bloom,
+    "chili": $chili,
+    "blue": $blue,
+    "sky": $sky,
+    "oasis": $oasis,
+    "azurite": $azurite,
+    "midnight": $midnight,
+    "cool-gray": $cool-gray,
+    "warm-gray": $warm-gray,
+    "leaf": $leaf,
+    "river": $river,
+    "silver": $silver,
+    "mesa": $mesa,
+    "ash": $ash,
+    "sage": $sage,
+    "white": $white,
+    "black": $black
+  ),
+  $colors
+);
+
+//
+// >> Transparent Brand Colors
+//
+$transparent-red: rgba($red, 0.8);
+$transparent-bloom: rgba($bloom, 0.8);
+$transparent-chili: rgba($chili, 0.8);
+
+$transparent-blue: rgba($blue, 0.8);
+$transparent-sky: rgba($sky, 0.8);
+$transparent-oasis: rgba($oasis, 0.8);
+$transparent-azurite: rgba($azurite, 0.8);
+$transparent-midnight: rgba($midnight, 0.8);
+
+$transparent-cool-gray: rgba($cool-gray, 0.8);
+$transparent-warm-gray: rgba($warm-gray, 0.8);
+
+$transparent-leaf: rgba($leaf, 0.8);
+$transparent-river: rgba($river, 0.8);
+$transparent-silver: rgba($silver, 0.8);
+$transparent-mesa: rgba($mesa, 0.8);
+
+$transparent-ash: rgba($ash, 0.8);
+$transparent-sage: rgba($sage, 0.8);
+
+$transparent-white: rgba($white, 0.8);
+$transparent-black: rgba($black, 0.8);
+
+$colors-transparent: ();
+$colors-transparent: map-merge(
+  (
+    "transparent-red": $transparent-red,
+    "transparent-bloom": $transparent-bloom,
+    "transparent-chili": $transparent-chili,
+    "transparent-blue": $transparent-blue,
+    "transparent-sky": $transparent-sky,
+    "transparent-oasis": $transparent-oasis,
+    "transparent-azurite": $transparent-azurite,
+    "transparent-midnight": $transparent-midnight,
+    "transparent-cool-gray": $transparent-cool-gray,
+    "transparent-warm-gray": $transparent-warm-gray,
+    "transparent-leaf": $transparent-leaf,
+    "transparent-river": $transparent-river,
+    "transparent-silver": $transparent-silver,
+    "transparent-mesa": $transparent-mesa,
+    "transparent-ash": $transparent-ash,
+    "transparent-sage": $transparent-sage,
+    "transparent-white": $transparent-white,
+    "transparent-black": $transparent-black
+  ),
+  $colors-transparent
+);
+
+//
+// >> Grayscale Colors
+//
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -15,10 +122,8 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
 
-$grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
+$grays: ();
 $grays: map-merge(
   (
     "100": $gray-100,
@@ -34,163 +139,108 @@ $grays: map-merge(
   $grays
 );
 
-// Basic Colors
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-
-$colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-  (
-    "blue":       $blue,
-    "indigo":     $indigo,
-    "purple":     $purple,
-    "pink":       $pink,
-    "red":        $red,
-    "orange":     $orange,
-    "yellow":     $yellow,
-    "green":      $green,
-    "teal":       $teal,
-    "cyan":       $cyan,
-    "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800
-  ),
-  $colors
-);
-
-// UA Branding Colors
 //
-// These are the UA theme colors and overrides of the default bootstrap colors.
+// >> Theme Colors
+//
 
-// Primary colors
-$bloom:       #ef4056 !default;
-$uared:       #ab0520 !default;
-$chili:       #8b0015 !default;
-$sky:         #81d3eb !default;
-$oasis:       #378dbd !default;
-$azurite:     #1e5288 !default;
-$arizonablue: #0c234b !default;
-$midnight:    #001c48 !default;
+$primary: $azurite;
+$secondary: $silver;
+$success: $leaf;
+$info: $sky;
+$warning: #f19e1f; // to be used for warnings only
+$danger: $mesa;
+$light: $gray-300;
+$dark: $gray-800;
 
-// Neutral colors
-$coolgray:    #e2e9eb !default;
-$warmgray:    #f4ede5 !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
-
-// Secondary colors
-$leaf:        #70b865 !default;
-$river:       #007d84 !default;
-$silver:      #9eabae !default;
-// Technically not a ua brand color anymore, but we need it for warning
-$sand:        #f19e1f !default;
-
-// Legacy colors
-$ash:         #403635 !default;
-$sage:        #4a634e !default;
-// $silver is a legacy brand color too
-$darksilver:  #49595e !default;
-$copper:      #a95c42 !default;
-
-// Colors map
-$ua-colors: () !default;
-$ua-colors: map-merge((
-  "bloom": $bloom,
-  "uared": $uared,
-  "chili": $chili,
-  "sky": $sky,
-  "oasis": $oasis,
-  "azurite": $azurite,
-  "arizonablue": $arizonablue,
-  "midnight": $midnight,
-  "coolgray": $coolgray,
-  "warmgray": $warmgray,
-  "leaf": $leaf,
-  "river": $river,
-  "silver": $silver,
-  "mesa": $copper,
-  "sand": $sand,
-  "ash": $ash,
-  "sage": $sage,
-  "darksilver": $darksilver,
-  "copper": $copper
-), $ua-colors);
-
-// Override the default bootstrap theme colors
 $theme-colors: (
-  "primary": $azurite,
-  "success": $leaf,
-  "info": $river,
-  "warning": $sand,
-  "danger": $bloom,
-  "secondary": $silver,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
   "light": $light,
   "dark": $dark
 );
 
-// Additional theme colors, kept seperate since we don't want all bootstrap
-// components to auto-compile them through for loops
-$extra-colors: () !default;
-$extra-colors: map-merge((
-  "primary-dark": $arizonablue,
-  "primary-light": $oasis,
-  "accent": $uared
-), $extra-colors);
-
-// Legacy colors
-$legacy-colors: () !default;
-$legacy-colors: map-merge((
-  "ash": $ash,
-  "sage": $sage,
-  "silver": $silver,
-  "dark-silver": $darksilver,
-  "copper": $copper
-), $legacy-colors);
-
-
-// Be a little more forgiving of when to use dark text for lighter colors
-// An acceptable value for accessibility is between 0 and 255.
-$yiq-contrasted-threshold:  190 !default;
-
-
-// Fonts
 //
-// Replace the bootstrap fonts with UA fonts
-$font-family-serif:        MiloSerifWeb, Baskerville, Georgia, TimesNewRoman, "Times New Roman", Times, serif;
-$font-family-sans-serif:   MiloWeb, Verdana, Geneva, sans-serif !default;
+// > FONTS
+//
+$font-size-base: 1rem;
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: MiloWeb, Verdana, Geneva, sans-serif;
+$font-family-headings: MiloSerifWeb, TimesNewRoman, "Times New Roman", Times,
+  Baskerville, Georgia, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+// stylelint-enable value-keyword-case
 
-// Highlight color
-$mark-bg:                  $warmgray !default;
+$link-color: $chili;
 
-// Links
-$link-color:               extra-color("accent") !default;
+//
+// > COMPONENTS
+//
 
-// Pagination
-$pagination-active-bg:     extra-color("accent") !default;
+// >> Breadcrumbs
+$breadcrumb-color: $azurite;
+$breadcrumb-bg: $white;
 
-// Code
-$code-color:               extra-color("accent") !default;
+// >> Cards
+$card-cap-bg: $gray-200;
+$card-cap-bg-darken: rgba($black, 0.075);
 
-// Card header background
-$card-cap-bg:              $gray-100 !default;
+// >> Dropdowns
+$dropdown-link-color: $azurite;
+$dropdown-link-hover-color: $midnight;
+$dropdown-link-hover-bg: $gray-100;
+$dropdown-link-active-bg: $gray-200;
 
-// Breadcrumb background
-$breadcrumb-bg:            $coolgray !default;
+// >> Jumbotron
+$jumbotron-bg: $white;
+$jumbotron-padding: 2rem;
 
-// Dropdowns
-$dropdown-divider-bg: $coolgray !default;
+// >> Navs
+$nav-link-color: $azurite;
+$nav-link-hover-color: $midnight;
+$nav-link-active-color: $midnight;
+$nav-link-active-bg: $gray-200;
 
-// Jumbotron
-$jumbotron-bg: $coolgray !default;
+$nav-tabs-border-color: $gray-200;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color
+  $nav-tabs-border-color $white;
+$nav-tabs-link-bg: $gray-200;
+$nav-tabs-link-active-bg: $white;
 
-// List Group
-$list-group-action-active-bg: $coolgray !default;
+$nav-tabs-lg-link-padding: 1.25em 1.75em;
+
+$nav-pills-link-active-color: $midnight;
+$nav-pills-link-active-bg: $gray-200;
+
+// >> Navbar
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-y: 1.25rem;
+$navbar-nav-link-padding-x: 1.5rem;
+
+$navbar-light-border-color: $gray-200;
+$navbar-light-border-width: 1px 0;
+$navbar-light-link-color: $azurite;
+$navbar-light-link-active-color: $midnight;
+$navbar-light-link-active-bg: $gray-200;
+$navbar-light-link-hover-bg: $gray-100;
+
+// >> Pagination
+$pagination-color: $breadcrumb-color;
+$pagination-hover-color: $midnight;
+
+// >> Popovers
+$popover-font-size: $font-size-base;
+
+// >> Tables
+$table-head-color: $gray-800;
+$table-head-bg: $gray-300;
+$table-accent-bg: rgba($table-head-bg, 0.4);
+$table-hover-bg: rgba($table-head-bg, 0.5);
+
+// >> Tooltips
+$tooltip-arrow-color: $blue;
+$tooltip-bg: $blue;
