@@ -4,6 +4,11 @@
 - Remove FontAwesome
 - Make our changes more in line with Arizona Bootstrap
 - Remove unused mixins and flatten folder structure
+- Color scheme changes:
+  - `arizonablue` -> `blue`
+  - `uared` -> `red`
+  - `primarylight` -> `primary-light`
+  - `primarydark` -> `primary-dark`
 
 # 1.1.0 - Tonight, Tonight
 

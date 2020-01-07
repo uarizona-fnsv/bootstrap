@@ -144,16 +144,22 @@ $grays: map-merge(
 //
 
 $primary: $azurite;
+$primary-dark: $blue;
+$primary-light: $oasis;
+$accent: $red;
 $secondary: $silver;
 $success: $leaf;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
-$danger: $mesa;
+$danger: $bloom; // changed from mesa (?!?) in AZ Bootstrap
 $light: $gray-300;
 $dark: $gray-800;
 
 $theme-colors: (
   "primary": $primary,
+  "primary-dark": $primary-dark,
+  "primary-light": $primary-light,
+  "accent": $accent,
   "secondary": $secondary,
   "success": $success,
   "info": $info,

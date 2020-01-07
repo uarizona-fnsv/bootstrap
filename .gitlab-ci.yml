@@ -4,6 +4,7 @@ stages:
 variables:
   AWS_DEFAULT_REGION: us-west-2
   CDN_BUCKET_NAME: fastdev
+  DOCS_BUCKET_NAME: fast-docs-docs
   PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache
 
 cache:
@@ -54,3 +55,15 @@ publish_cdn_release:
   script:
     - pip install awscli
     - aws s3 cp dist s3://${CDN_BUCKET_NAME}/assets/${CI_PROJECT_NAME}/ --recursive --exclude "*" --include "bootstrap.*"
+
+deploy_docs_site:
+  stage: deploy
+  image: python:latest
+  only:
+    - master
+  script:
+    - pip install awscli
+    - aws s3 sync docs s3://${DOCS_BUCKET_NAME} --delete
+  environment:
+    name: master
+    url: http://$BUCKET_NAME.s3-website.$AWS_DEFAULT_REGION.amazonaws.com/

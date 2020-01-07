@@ -1,15 +1,14 @@
 # FSO Bootstrap
 
-FSO Bootstrap is a theme built for [Bootstrap 4](https://getbootstrap.com). Refer to their documentation for most usage information.
+FSO Bootstrap is a theme built for [Bootstrap 4](https://getbootstrap.com), based heavily on the Arizona Digital team's Arizona Bootstrap theme.
 
-> \*\*Version Note
-> This is for FSO Bootstrap 1.x, which is based on the stable release of Bootstrap 4. For FSO Bootstrap 0.x, _which was a complete fork of Bootstrap 4 alpha,_ see [the v4-alpha branch](https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/tree/v4-alpha-based-backup) and it's [documentation](http://fast-docs-fso-bootstrap-alpha.s3-website-us-west-2.amazonaws.com/).
+The aim of this theme is to provide University of Arizona brand colors, typography, and to only make changes changes needed to support those things. Otherwise, it is Twitter Bootstrap, and you should refer to their documentation for usage.
 
 Refer to [colors.html](/colors.html) for the theme's color scheme.
 
 ## Installation
 
-FSO Bootstrap can be installed via CDN or NPM. The NPM is recommended in most instances.
+FSO Bootstrap can be installed via CDN or as an NPM package. The CDN is recommended in most instances.
 
 ### CDN Install
 
@@ -46,9 +45,9 @@ If you need a specific version, or want to lock it down for manual checking, you
 
 The version will map to the release tag in Gitlab.
 
-### Gitlab Install
+### NPM Install
 
-You should install from npm whenever possible. If you need to install a specific branch for testing, you can do so via:
+If you need to install a specific branch for testing, you can do so via:
 
 ```shell
 npm install --save-dev git+https://git@gitlab.fso.arizona.edu/FAST/fso-bootstrap.git
@@ -91,8 +90,6 @@ The theme's colors and and their usage are documented in [colors.html](/colors.h
 There are a couple additional, optional components described below.
 
 _These optional imports are only available with the npm installation, **not** from the CDN._
-
-FSO Bootstrap keeps several things out of the normal import since they can be incredibly expensive for the pages loading time if not needed.
 
 ### UA Branding Icons
 
