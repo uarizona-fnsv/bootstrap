@@ -1,19 +1,19 @@
-# Unreleased
+# 1.2.0 - Sanity Check
 
-- Bump to Bootstrap 4.4.1
-- Remove FontAwesome
-- Make our changes more in line with Arizona Bootstrap
-- Remove unused mixins and flatten folder structure
+### BREAKING
+
 - Color scheme changes:
   - `arizonablue` -> `blue`
   - `uared` -> `red`
   - `primarylight` -> `primary-light`
   - `primarydark` -> `primary-dark`
 
-# 1.1.0 - Tonight, Tonight
+- Bump to Bootstrap 4.4.1
+- Remove bundled FontAwesome
+- Make our changes more in line with Arizona Bootstrap
+- Remove unused mixins and flatten folder structure
 
-[![](http://img.youtube.com/vi/NOG3eus4ZSo/0.jpg)](https://www.youtube.com/watch?v=NOG3eus4ZSo "Tonight, Tonight - click to play")
-_(click to play)_
+# 1.1.0 - Tonight, Tonight
 
 > Believe in me as I believe in you
 
@@ -40,9 +40,6 @@ In addition to the css changes, this release includes the following:
 - Minor updates to packages
 
 # 1.0.0 - Money For Nothing
-
-[![](http://img.youtube.com/vi/lAD6Obi7Cag/0.jpg)](https://www.youtube.com/watch?v=lAD6Obi7Cag "Money For Nothing - Click to play")
-_(click to play)_
 
 > Listen here
 > Now that ain't workin' that's the way to do it
