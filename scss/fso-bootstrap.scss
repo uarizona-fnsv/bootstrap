@@ -5,22 +5,20 @@
  * A theme for Bootstrap
  */
 
-
 // Additions and Tweaks
-@import "functions";
+@import "https://cdn.uadigital.arizona.edu/lib/ua-brand-fonts/1.0.0/milo.min.css";
 @import "variables";
-@import "mixins";
-@import "fonts";
 
 // Bootstrap (imported here so that our variables don't get overriden
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Overrides
-@import "changes/mixins/caret";
-@import "changes/buttons";
-@import "changes/card";
-@import "changes/dropdowns";
-@import "changes/jumbotron";
-@import "changes/utilities";
-@import "changes/table";
-@import "changes/type";
+@import "mixins/bg_transparent";
+@import "mixins/caret";
+@import "card";
+@import "colors";
+@import "dropdowns";
+@import "jumbotron";
+@import "table";
+@import "type";
+@import "utilities";
