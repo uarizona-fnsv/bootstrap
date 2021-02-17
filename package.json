@@ -11,7 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.fso.arizona.edu:FAST/fso-bootstrap.git"
+    "url": "https://github.com/uarizona-fnsv/bootstrap.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "dist/**.css",
