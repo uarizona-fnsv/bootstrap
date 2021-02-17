@@ -1,14 +1,12 @@
-'use strict'
+"use strict";
 
 module.exports = (ctx) => ({
-  map: ctx.file.dirname.includes('examples') ? false : {
+  map: {
     inline: false,
     annotation: true,
-    sourcesContent: true
+    sourcesContent: true,
   },
   plugins: {
-    autoprefixer: {
-      cascade: false
-    }
-  }
-})
+    autoprefixer: true,
+  },
+});

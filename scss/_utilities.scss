@@ -5,7 +5,7 @@
 // Add additional background colors from `colors`
 
 @each $color, $value in $colors {
-  @include bg-variant(".bg-#{$color}", $value);
+  @include bg-variant(".bg-#{$color}", $value, $ignore-warning: true);
 }
 
 @if $enable-gradients {
@@ -19,5 +19,9 @@
 // Add additional text colors from `colors`
 
 @each $color, $value in $colors {
-  @include text-emphasis-variant(".text-#{$color}", $value);
+  @include text-emphasis-variant(
+    ".text-#{$color}",
+    $value,
+    $ignore-warning: true
+  );
 }
