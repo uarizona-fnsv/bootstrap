@@ -1,6 +1,6 @@
-# FSO Bootstrap
+# @uarizona-fnsv/bootstrap
 
-FSO Bootstrap is a theme built for [Bootstrap 4](https://getbootstrap.com), based heavily on the Arizona Digital team's Arizona Bootstrap theme.
+@uarizona-fnsv/bootstrap is a theme built for [Bootstrap 4](https://getbootstrap.com), based heavily on the Arizona Digital team's Arizona Bootstrap theme.
 
 The aim of this theme is to provide University of Arizona brand colors, typography, and to only make changes changes needed to support those things. Otherwise, it is Twitter Bootstrap, and you should refer to their documentation for usage.
 
