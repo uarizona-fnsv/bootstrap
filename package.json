@@ -50,7 +50,7 @@
     "url": "https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/issues"
   },
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "jquery": ">=1.9.1",
     "sass-font-face": "^1.0.1",
     "tether": "^1.4.0"
