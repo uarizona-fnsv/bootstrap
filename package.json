@@ -1,7 +1,14 @@
 {
-  "name": "bootstrap",
-  "description": "Bootstrap with the sweet stylings of FSO",
-  "version": "4.0.0-alpha.6",
+  "name": "@uarizona-fnsv/bootstrap",
+  "version": "0.1.5",
+  "description": "A Bootstrap theme utilizing University of Arizona branding",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uarizona-fnsv/bootstrap.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "css",
     "sass",
@@ -42,10 +49,6 @@
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
   "main": "dist/js/bootstrap",
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.fso.arizona.edu/FAST/fso-bootstrap"
-  },
   "bugs": {
     "url": "https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/issues"
   },
