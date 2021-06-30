@@ -1,9 +1,0 @@
-.dropdown-toggle {
-  @include fso-caret;
-}
-
-.dropup {
-  .dropdown-toggle {
-    @include fso-caret(up);
-  }
-}

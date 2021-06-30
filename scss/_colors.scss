@@ -3,33 +3,6 @@
 //
 
 //
-// >> Text Color
-//
-
-// >>> Brand
-@each $color, $value in $colors {
-  .text-#{$color} {
-    color: $value;
-  }
-}
-
-// >>> Theme
-@each $color, $value in $theme-colors {
-  .text-#{$color} {
-    // check for color contrast
-    @if $value == $sky {
-      // stylelint-disable-next-line declaration-no-important
-      color: $azurite !important;
-    } @else {
-      color: $value;
-    }
-  }
-}
-.text-dark-silver {
-  color: $dark-silver;
-}
-
-//
 // >> Background Color
 //
 
@@ -68,18 +41,6 @@
       .h5,
       .h6 {
         color: $midnight;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     } @else if $value == $bloom or $value == $white {
       color: $black;
@@ -97,18 +58,6 @@
       .h5,
       .h6 {
         color: $black;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     } @else {
       color: $white;
@@ -126,24 +75,15 @@
       .h5,
       .h6 {
         color: $white;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     }
   }
 }
 
 // >>> Brand Transparent
+@mixin background-transparent($bg-color) {
+  background-color: rgba($bg-color, 0.7);
+}
 @each $color, $value in $colors-transparent {
   .bg-#{$color} {
     @include background-transparent($value);
@@ -170,18 +110,6 @@
       .h5,
       .h6 {
         color: $midnight;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     } @else if $value == $warning or $value == $danger {
       color: $black;
@@ -199,18 +127,6 @@
       .h5,
       .h6 {
         color: $black;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     } @else {
       color: $white;
@@ -228,18 +144,6 @@
       .h5,
       .h6 {
         color: $white;
-        @each $text-color, $text-value in $colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
-        @each $text-color, $text-value in $theme-colors {
-          // ensure elements using color classes aren't overwritten
-          &.text-#{$text-color} {
-            color: $text-value;
-          }
-        }
       }
     }
     background-color: $value;
@@ -272,18 +176,6 @@
     .h5,
     .h6 {
       color: $text;
-      @each $text-color, $text-value in $colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
-      @each $text-color, $text-value in $theme-colors {
-        // ensure elements using color classes aren't overwritten
-        &.text-#{$text-color} {
-          color: $text-value;
-        }
-      }
     }
     background-color: $background;
   }
@@ -306,18 +198,6 @@
   .h5,
   .h6 {
     color: $black;
-    @each $text-color, $text-value in $colors {
-      // ensure elements using color classes aren't overwritten
-      &.text-#{$text-color} {
-        color: $text-value;
-      }
-    }
-    @each $text-color, $text-value in $theme-colors {
-      // ensure elements using color classes aren't overwritten
-      &.text-#{$text-color} {
-        color: $text-value;
-      }
-    }
   }
   background-color: $light;
 }
@@ -337,18 +217,6 @@
   .h5,
   .h6 {
     color: $white;
-    @each $text-color, $text-value in $colors {
-      // ensure elements using color classes aren't overwritten
-      &.text-#{$text-color} {
-        color: $text-value;
-      }
-    }
-    @each $text-color, $text-value in $theme-colors {
-      // ensure elements using color classes aren't overwritten
-      &.text-#{$text-color} {
-        color: $text-value;
-      }
-    }
   }
   background-color: $dark;
 
@@ -363,5 +231,29 @@
 @each $color, $value in $colors {
   .border-#{$color} {
     border-color: $value;
+  }
+}
+
+//
+// >> Text Color
+//
+
+// >>> Brand
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+// >>> Theme
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    // check for color contrast
+    @if $value == $sky {
+      // stylelint-disable-next-line declaration-no-important
+      color: $azurite !important;
+    } @else {
+      color: $value !important;
+    }
   }
 }
