@@ -61,29 +61,29 @@ $colors: map-merge(
 //
 // >> Transparent Brand Colors
 //
-$transparent-red: rgba($red, 0.8);
-$transparent-bloom: rgba($bloom, 0.8);
-$transparent-chili: rgba($chili, 0.8);
+$transparent-red: $red;
+$transparent-bloom: $bloom;
+$transparent-chili: $chili;
 
-$transparent-blue: rgba($blue, 0.8);
-$transparent-sky: rgba($sky, 0.8);
-$transparent-oasis: rgba($oasis, 0.8);
-$transparent-azurite: rgba($azurite, 0.8);
-$transparent-midnight: rgba($midnight, 0.8);
+$transparent-blue: $blue;
+$transparent-sky: $sky;
+$transparent-oasis: $oasis;
+$transparent-azurite: $azurite;
+$transparent-midnight: $midnight;
 
-$transparent-cool-gray: rgba($cool-gray, 0.8);
-$transparent-warm-gray: rgba($warm-gray, 0.8);
+$transparent-cool-gray: $cool-gray;
+$transparent-warm-gray: $warm-gray;
 
-$transparent-leaf: rgba($leaf, 0.8);
-$transparent-river: rgba($river, 0.8);
-$transparent-silver: rgba($silver, 0.8);
-$transparent-mesa: rgba($mesa, 0.8);
+$transparent-leaf: $leaf;
+$transparent-river: $river;
+$transparent-silver: $silver;
+$transparent-mesa: $mesa;
 
-$transparent-ash: rgba($ash, 0.8);
-$transparent-sage: rgba($sage, 0.8);
+$transparent-ash: $ash;
+$transparent-sage: $sage;
 
-$transparent-white: rgba($white, 0.8);
-$transparent-black: rgba($black, 0.8);
+$transparent-white: $white;
+$transparent-black: $black;
 
 $colors-transparent: ();
 $colors-transparent: map-merge(
