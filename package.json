@@ -1,6 +1,6 @@
 {
   "name": "@uarizona-fnsv/bootstrap",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "A Bootstrap theme utilizing University of Arizona branding",
   "scripts": {
     "build": "npm run css:all",
