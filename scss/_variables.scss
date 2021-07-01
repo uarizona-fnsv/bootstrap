@@ -53,7 +53,7 @@ $colors: map-merge(
     "ash": $ash,
     "sage": $sage,
     "white": $white,
-    "black": $black
+    "black": $black,
   ),
   $colors
 );
@@ -105,7 +105,7 @@ $colors-transparent: map-merge(
     "transparent-ash": $transparent-ash,
     "transparent-sage": $transparent-sage,
     "transparent-white": $transparent-white,
-    "transparent-black": $transparent-black
+    "transparent-black": $transparent-black,
   ),
   $colors-transparent
 );
@@ -134,7 +134,7 @@ $grays: map-merge(
     "600": $gray-600,
     "700": $gray-700,
     "800": $gray-800,
-    "900": $gray-900
+    "900": $gray-900,
   ),
   $grays
 );
@@ -151,7 +151,7 @@ $secondary: $silver;
 $success: $leaf;
 $info: $sky;
 $warning: #f19e1f; // to be used for warnings only
-$danger: $bloom; // changed from mesa (?!?) in AZ Bootstrap
+$danger: $bloom;
 $light: $gray-300;
 $dark: $gray-800;
 
@@ -166,7 +166,7 @@ $theme-colors: (
   "warning": $warning,
   "danger": $danger,
   "light": $light,
-  "dark": $dark
+  "dark": $dark,
 );
 
 //
