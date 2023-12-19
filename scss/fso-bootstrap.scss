@@ -6,7 +6,10 @@
  */
 
 // Additions and Tweaks
-@import "https://brand.arizona.edu/sites/default/files/v2/ua-brand-fonts/milo.css";
+
+// UA Brand (now 'marcom') decided to use Proxima Nova instead of Milo
+// We'll (try) loading it in fso-bootstrap.scss with the @font-face function
+// or whatever it's called in css
 @import "variables";
 
 // Bootstrap (imported here so that our variables override bootstrap defaults)
