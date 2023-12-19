@@ -172,12 +172,6 @@ $theme-colors: (
 //
 // > FONTS
 //
-@font-face {
-    // This is parsed as a normal function call that takes a quoted string.
-    src: url('https://use.typekit.net/emv3zbo.css');
-
-    font-family: "proxima-nova";
-}
 
 $font-size-base: 1rem;
 // stylelint-disable value-keyword-case

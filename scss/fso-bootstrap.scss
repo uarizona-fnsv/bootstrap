@@ -1,15 +1,12 @@
 /*!
- * FSO-Bootstrap v1.1.0 (https://bootstrap.docs.fso.arizona.edu/)
- * Copyright 2017-2018 FSO IT - FAST Team
- * Licenced under MIT (https://gitlab.fso.arizona.edu/FAST/fso-bootstrap/blob/master/LICENSE)
+ * FSO-Bootstrap v2.2.1 (https://uarizona-fnsv.github.io/bootstrap/)
+ * Copyright 2017-2023 FSO IT - FAST Team
+ * Licenced under MIT (https://github.com/uarizona-fnsv/bootstrap/blob/main/LICENSE)
  * A theme for Bootstrap
  */
 
 // Additions and Tweaks
 
-// UA Brand (now 'marcom') decided to use Proxima Nova instead of Milo
-// We'll (try) loading it in fso-bootstrap.scss with the @font-face function
-// or whatever it's called in css
 @import "variables";
 
 // Bootstrap (imported here so that our variables override bootstrap defaults)
