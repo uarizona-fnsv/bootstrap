@@ -1,6 +1,6 @@
 {
   "name": "@uarizona-fnsv/bootstrap",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "A Bootstrap theme utilizing University of Arizona branding",
   "scripts": {
     "build": "npm run css:all",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.2.4",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^4.6.0",
     "clean-css-cli": "^4.1.10",
     "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
